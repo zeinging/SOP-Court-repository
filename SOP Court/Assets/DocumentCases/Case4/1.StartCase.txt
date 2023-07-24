@@ -1,0 +1,10 @@
+july 20th 12:00 PM
+[judge] is the prosection read?
+[prosection] the prosection is ready you honor.
+[judge] Let's Hear the Witness's Testimony.
+[WitnessTestimony]
+
+You may Cross Examine the Witness.
+[CrossExamination]
+
+[Contradiction]

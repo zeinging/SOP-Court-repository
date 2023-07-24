@@ -1,8 +1,0 @@
-july 20th 12:00 PM
-Let's Hear the Witness's Testimony.
-[WitnessTestimony]
-
-You may Cross Examine the Witness.
-[CrossExamination]
-
-[Contradiction]

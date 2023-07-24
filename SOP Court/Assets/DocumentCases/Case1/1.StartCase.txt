@@ -1,0 +1,6 @@
+july 20th 12:00 PM
+[judge] is the prosection ready?
+[prosection] the prosection is ready your honor.
+[judge]is the defence ready?
+[defence] the defence is ready your honor.
+[judge] Let's Hear the Witness's Testimony.

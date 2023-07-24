@@ -1,0 +1,11 @@
+[WitnessTestimony]
+I didn't see anything sus.
+[WitnessEnd]
+[Judge]You may Cross Examine the Witness.
+[CrossExamination]
+I didn't see anything sus.
+[Press]hold it, are you sure you didn't see anything?
+|Pool Cleaning Stick| uh, actually I heard something sus.
+[PressEnd]
+[Contradiction,8]Wait, this evidence clearly contradicts you statement.
+[CrossExaminationEnd]

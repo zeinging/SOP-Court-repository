@@ -6,15 +6,18 @@ public class DocumentTags
 {
 
     public string 
-    Press = "[Press]",
-    Contradiction = "[Contradiction]",
-    Confession = "[Confession]",
-    WitnessTestimony = "[WitnessTestimony]",
-    CrossExamination = "[CrossExamination]",
+    Defence = "[Defence]",
+    Prosecutor = "[Prosecutor]",
+    Judge = "Judge",
     Witness = "[Witness]",
     Victim = "[Victim]",
-    Perpetrator = "[Perpetrator]",
     MurderWeapon = "[MurderWeapon]",
-    CrimeScene = "[CrimeScene]";
+    Perpetrator = "[Perpetrator]",
+    CrimeScene = "[CrimeScene]",
+    Press = "[Press]",
+    WitnessTestimony = "[WitnessTestimony]",
+    CrossExamination = "[CrossExamination]",
+    Contradiction = "[Contradiction]",
+    Confession = "[Confession]";
 
 }

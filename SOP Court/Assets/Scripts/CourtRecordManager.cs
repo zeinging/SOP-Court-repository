@@ -15,6 +15,8 @@ public class CourtRecordManager : MonoBehaviour
     public GameObject ButtonsParent;
     public List<Button> ProfileButtons;
 
+    public Button LeftArrowButn, RightArrowButn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +25,15 @@ public class CourtRecordManager : MonoBehaviour
         // ProfileDescription.text = ProfileData[SelectedProfile].WitnessProfesion;
         //SelectProfile(GameplayControllerScript.instance.CurrentSuspect);
         
-        GameplayControllerScript.instance.GenerateListTest();
+        SuspectProfileScript.instance.GenerateListTest();
         
 
 
         SelectProfile(0);
+        //UnityEngine.EventSystems.EventSystem.current = null;
 
         GetButtons();
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
     }
 
 
@@ -40,8 +44,13 @@ public class CourtRecordManager : MonoBehaviour
 
             int profileIndex = i;
 
-            ProfileButtons[i].image.sprite = GameplayControllerScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
+            ProfileButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
             ProfileButtons[i].onClick.AddListener(() => SelectProfile(profileIndex));
+
+            if(SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10){
+                LeftArrowButn.gameObject.SetActive(true);
+                RightArrowButn.gameObject.SetActive(true);
+            }
             //ProfileButtons[i].onClick.AddListener(delegate {SelectProfile(i);});
             //Debug.Log(ProfileButtons[i].name);
 
@@ -53,9 +62,11 @@ public class CourtRecordManager : MonoBehaviour
     public void SelectProfile(int profileIndex){
         //SelectedProfile = i;
         //Debug.Log("" + profileIndex);
-        ProfileImage.sprite = GameplayControllerScript.instance.SuspectsEncounteredOrder[profileIndex].ProfileImage;
-        ProfileName.text = GameplayControllerScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessName;
-        ProfileDescription.text = GameplayControllerScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessProfesion;
+        ProfileImage.sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].ProfileImage;
+        ProfileName.text = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessName;
+        ProfileDescription.text = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessProfesion;
+
+        //ProfileButtons[profileIndex].transform.GetChild(0).gameObject.SetActive(true);
     }
 
     // Update is called once per frame

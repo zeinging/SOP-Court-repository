@@ -1,0 +1,26 @@
+<DialogStatements>
+	<DialogStatement>
+		<Text>I was at the store</Text>
+		<IsConflicting>true</IsConflicting>
+	</DialogStatement>
+	<DialogStatement>
+		<Text>and was eating some icecream</Text>
+		<IsConflicting>false</IsConflicting>
+	</DialogStatement>
+	<DialogStatement>
+		<Text>when suddenly someone attacked me.</Text>
+		<IsConflicting>false</IsConflicting>
+	</DialogStatement>
+	<DialogStatement>
+		<Text>I ran to the front</Text>
+		<IsConflicting>false</IsConflicting>
+	</DialogStatement>
+	<DialogStatement>
+		<Text>and turned around and the person who was</Text>
+		<IsConflicting>false</IsConflicting>
+	</DialogStatement>
+	<DialogStatement>
+		<Text>chasing me was dead on the floor.</Text>
+		<IsConflicting>false</IsConflicting>
+	</DialogStatement>
+</DialogStatements>

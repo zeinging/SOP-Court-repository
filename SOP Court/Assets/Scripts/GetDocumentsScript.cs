@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Xml.Linq;
+using System.Linq;
+using System;
 
 public class GetDocumentsScript : MonoBehaviour
 {
@@ -23,12 +26,38 @@ public class GetDocumentsScript : MonoBehaviour
     void Awake()
     {
         myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
-        GetCaseFolders();
-        GetFilesInFolder(FoldersInDocumentsFolder[0], FilesPathCase1Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[1], FilesPathCase2Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
+
+        string xmlFileName = myDocumentsFolderPath + "Case1/CrossExamination.xml";
+
+        if (!File.Exists(xmlFileName))
+        {
+            Debug.Log("Target File Doesn't Exist!");
+            return;
+        }
+
+        var crossExaminationXML = XElement.Load(xmlFileName);
+        var items =
+            from statement in crossExaminationXML.Elements()
+            select statement.Element("Text").Value + "";
+
+
+       
+        Debug.Log("Showing Results:");
+
+        foreach ( var item in items ) {
+
+            Debug.Log(item);
+        }
+
+
+
+
+        //GetCaseFolders();
+        //GetFilesInFolder(FoldersInDocumentsFolder[0], FilesPathCase1Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[1], FilesPathCase2Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
     }
 
     public void GetCaseFolders(){
@@ -41,7 +70,6 @@ public class GetDocumentsScript : MonoBehaviour
             FoldersInDocumentsFolder[s] = FoldersInDocumentsFolder[s].Remove(Sstart, 5);
             FoldersInDocumentsFolder[s] += "/";
         }
-
     }
 
     public void GetFilesInFolder(string casePath, List<string> Files){

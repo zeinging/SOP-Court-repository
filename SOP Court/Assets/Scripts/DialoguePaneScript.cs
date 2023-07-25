@@ -10,6 +10,7 @@ public class DialoguePaneScript : MonoBehaviour
 
     public int CurrentDialogue = 0;
 
+
     // Start is called before the first frame update
     void OnEnable()
     {

@@ -8,6 +8,8 @@ public class ScriptableObjectProfile : ScriptableObject
     public string WitnessName;
     public Sprite ProfileImage;
 
+    public RuntimeAnimatorController myAnim;
+
     public string WitnessProfesion;
 
     public Sprite[] WitnessEmoteFrames;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,15 +18,19 @@ public class DialoguePaneScript : MonoBehaviour
     void Update()
     {
 
-            if(Input.GetKeyDown(KeyCode.KeypadEnter)){
-                if(CurrentDialogue < GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1){
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            if (CurrentDialogue < GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1)
+            {
 
-                    CurrentDialogue++;
-                    Dialogue.text = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
+                CurrentDialogue++;
+                Dialogue.text = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
 
-                }else{
-                    gameObject.SetActive(false);
-                }
             }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }

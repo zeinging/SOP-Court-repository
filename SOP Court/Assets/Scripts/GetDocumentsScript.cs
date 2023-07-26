@@ -1,19 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using System.Xml.Linq;
 using System.Linq;
-using System;
+using System.Xml.Linq;
+using UnityEngine;
 
 public class GetDocumentsScript : MonoBehaviour
 {
 
     private string myDocumentsFolderPath;
-    
+
     public string[] FoldersInDocumentsFolder;
 
-    public List<string> 
+    private XElement witnessStatement;
+
+
+    public List<string>
     FilesPathCase1Folder,
     FilesPathCase2Folder,
     FilesPathCase3Folder,
@@ -35,16 +36,17 @@ public class GetDocumentsScript : MonoBehaviour
             return;
         }
 
-        var crossExaminationXML = XElement.Load(xmlFileName);
-        var items =
-            from statement in crossExaminationXML.Elements()
+        witnessStatement = XElement.Load(xmlFileName);
+        IEnumerable<string> items =
+            from statement in witnessStatement.Elements()
             select statement.Element("Text").Value + "";
 
 
-       
+
         Debug.Log("Showing Results:");
 
-        foreach ( var item in items ) {
+        foreach (string item in items)
+        {
 
             Debug.Log(item);
         }
@@ -60,24 +62,29 @@ public class GetDocumentsScript : MonoBehaviour
         //GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
     }
 
-    public void GetCaseFolders(){
+    public void GetCaseFolders()
+    {
         //namesArray = File.ReadAllLines(myFilePathCase1);
         //filesInCaseFolder = Directory.GetFiles(myFilePathCase1);
         FoldersInDocumentsFolder = Directory.GetFiles(myDocumentsFolderPath);
 
-        for(int s = 0; s < FoldersInDocumentsFolder.Length; s++){
+        for (int s = 0; s < FoldersInDocumentsFolder.Length; s++)
+        {
             int Sstart = FoldersInDocumentsFolder[s].IndexOf(".");
             FoldersInDocumentsFolder[s] = FoldersInDocumentsFolder[s].Remove(Sstart, 5);
             FoldersInDocumentsFolder[s] += "/";
         }
     }
 
-    public void GetFilesInFolder(string casePath, List<string> Files){
+    public void GetFilesInFolder(string casePath, List<string> Files)
+    {
 
-        string [] AllFiles = Directory.GetFiles(casePath);
+        string[] AllFiles = Directory.GetFiles(casePath);
 
-        for(int i = 0; i < AllFiles.Length; i++){
-            if(!AllFiles[i].Contains(".meta")){//don't add to list if it's a meta file
+        for (int i = 0; i < AllFiles.Length; i++)
+        {
+            if (!AllFiles[i].Contains(".meta"))
+            {//don't add to list if it's a meta file
                 //FilesInCase1Folder.Add(AllFiles[i]);
                 Files.Add(AllFiles[i]);
             }
@@ -85,7 +92,8 @@ public class GetDocumentsScript : MonoBehaviour
 
     }
 
-    public string[] GetTextFromFileTest(){
+    public string[] GetTextFromFileTest()
+    {
         //Debug.Log(FilesPathCase1Folder[0]);
         string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[0]);
         return Dialogue;
@@ -96,6 +104,6 @@ public class GetDocumentsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

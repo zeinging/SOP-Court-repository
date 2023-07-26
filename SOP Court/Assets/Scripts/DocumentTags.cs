@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class DocumentTags
 {
 
-    public string 
+    public string
     Defence = "[Defence]",
     Prosecutor = "[Prosecutor]",
     Judge = "Judge",
@@ -15,7 +11,7 @@ public class DocumentTags
     Perpetrator = "[Perpetrator]",
     CrimeScene = "[CrimeScene]",
     Press = "[Press]",
-    WitnessTestimony = "[WitnessTestimony]",
+    TestimonySection = "[TestimonySection]",
     CrossExamination = "[CrossExamination]",
     Contradiction = "[Contradiction]",
     Confession = "[Confession]";

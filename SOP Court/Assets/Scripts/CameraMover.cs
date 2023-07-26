@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMover : MonoBehaviour
@@ -14,9 +12,12 @@ public class CameraMover : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance != null && instance != this){
+        if (instance != null && instance != this)
+        {
             Destroy(this);
-        }else{
+        }
+        else
+        {
             instance = this;
         }
     }
@@ -24,24 +25,29 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             SnapCamHere(Witness.position);
         }
-        
-        if(Input.GetKeyDown(KeyCode.W)){
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
             SnapCamHere(Judge.position);
         }
 
-        if(Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             SnapCamHere(Defence.position);
         }
 
-        if(Input.GetKeyDown(KeyCode.R)){
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             SnapCamHere(Prosector.position);
         }
     }
 
-    public void SnapCamHere(Vector3 Pos){
+    public void SnapCamHere(Vector3 Pos)
+    {
         Cam.transform.position = new Vector3(Pos.x, Pos.y, Cam.transform.position.z);
     }
 }

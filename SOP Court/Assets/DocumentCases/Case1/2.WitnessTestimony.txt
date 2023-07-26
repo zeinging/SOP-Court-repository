@@ -1,4 +1,4 @@
-[WitnessTestimony]
+[TestimonySection]
 I didn't see anything sus.
 [WitnessEnd]
 [Judge]You may Cross Examine the Witness.

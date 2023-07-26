@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,9 +23,9 @@ public class CourtRecordManager : MonoBehaviour
         // ProfileName.text = ProfileData[SelectedProfile].WitnessName;
         // ProfileDescription.text = ProfileData[SelectedProfile].WitnessProfesion;
         //SelectProfile(GameplayControllerScript.instance.CurrentSuspect);
-        
+
         SuspectProfileScript.instance.GenerateListTest();
-        
+
 
 
         SelectProfile(0);
@@ -37,9 +36,11 @@ public class CourtRecordManager : MonoBehaviour
     }
 
 
-    private void GetButtons(){
+    private void GetButtons()
+    {
 
-        for(int i = 0; i < ButtonsParent.transform.childCount; i++){
+        for (int i = 0; i < ButtonsParent.transform.childCount; i++)
+        {
             ProfileButtons.Add(ButtonsParent.transform.GetChild(i).GetComponent<Button>());
 
             int profileIndex = i;
@@ -47,7 +48,8 @@ public class CourtRecordManager : MonoBehaviour
             ProfileButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
             ProfileButtons[i].onClick.AddListener(() => SelectProfile(profileIndex));
 
-            if(SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10){
+            if (SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10)
+            {
                 LeftArrowButn.gameObject.SetActive(true);
                 RightArrowButn.gameObject.SetActive(true);
             }
@@ -59,7 +61,8 @@ public class CourtRecordManager : MonoBehaviour
     }
 
 
-    public void SelectProfile(int profileIndex){
+    public void SelectProfile(int profileIndex)
+    {
         //SelectedProfile = i;
         //Debug.Log("" + profileIndex);
         ProfileImage.sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].ProfileImage;
@@ -72,6 +75,6 @@ public class CourtRecordManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

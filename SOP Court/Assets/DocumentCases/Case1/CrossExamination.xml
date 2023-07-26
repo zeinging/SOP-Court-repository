@@ -1,26 +1,66 @@
-<DialogStatements>
-	<DialogStatement>
-		<Text>I was at the store</Text>
-		<IsConflicting>true</IsConflicting>
-	</DialogStatement>
-	<DialogStatement>
-		<Text>and was eating some icecream</Text>
-		<IsConflicting>false</IsConflicting>
-	</DialogStatement>
-	<DialogStatement>
-		<Text>when suddenly someone attacked me.</Text>
-		<IsConflicting>false</IsConflicting>
-	</DialogStatement>
-	<DialogStatement>
-		<Text>I ran to the front</Text>
-		<IsConflicting>false</IsConflicting>
-	</DialogStatement>
-	<DialogStatement>
-		<Text>and turned around and the person who was</Text>
-		<IsConflicting>false</IsConflicting>
-	</DialogStatement>
-	<DialogStatement>
-		<Text>chasing me was dead on the floor.</Text>
-		<IsConflicting>false</IsConflicting>
-	</DialogStatement>
-</DialogStatements>
+<Cases>
+
+  <!-- Case One -->
+  <Case>
+    <TestimonySection>
+      <TestimonySeries>
+        <TestimonySection>
+          <Text>I was going door-to-door</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+        <TestimonySection>
+          <Text>selling subscriptions when I saw</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+        <TestimonySection>
+          <Text>a man fleeing an apartment.</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+      </TestimonySeries>
+      <TestimonySeries>
+        <TestimonySection>
+          <Text>I ran to the front</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+        <TestimonySection>
+          <Text>and turned around and the person who was</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+        <TestimonySection>
+          <Text>chasing me was dead on the floor.</Text>
+          <IsConflicting>false</IsConflicting>
+        </TestimonySection>
+      </TestimonySeries>
+    </TestimonySection>
+  </Case>
+
+  <!-- Case One -->
+  <Case>
+    <TestimonySection>
+      <TestimonySection>
+        <Text>I was at the store</Text>
+        <IsConflicting>true</IsConflicting>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>and was eating some icecream</Text>
+        <IsConflicting>false</IsConflicting>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>when suddenly someone attacked me.</Text>
+        <IsConflicting>false</IsConflicting>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>I ran to the front</Text>
+        <IsConflicting>false</IsConflicting>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>and turned around and the person who was</Text>
+        <IsConflicting>false</IsConflicting>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>chasing me was dead on the floor.</Text>
+        <IsConflicting>false</IsConflicting>
+      </TestimonySection>
+    </TestimonySection>
+  </Case>
+</Cases>

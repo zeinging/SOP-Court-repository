@@ -1,0 +1,4 @@
+# Specify the formatting rule for XML files
+[**.xml]
+indent_style = space
+indent_size = 2

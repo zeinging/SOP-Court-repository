@@ -65,7 +65,7 @@ public class CourtRecordManager : MonoBehaviour
         ProfileImage.sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].ProfileImage;
         ProfileName.text = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessName;
         ProfileDescription.text = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessProfesion;
-
+        //Debug.Log("selected " + SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessName);
         //ProfileButtons[profileIndex].transform.GetChild(0).gameObject.SetActive(true);
     }
 

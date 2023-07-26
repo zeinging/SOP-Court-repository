@@ -25,14 +25,24 @@ public class CourtRecordManager : MonoBehaviour
         // ProfileDescription.text = ProfileData[SelectedProfile].WitnessProfesion;
         //SelectProfile(GameplayControllerScript.instance.CurrentSuspect);
         
-        SuspectProfileScript.instance.GenerateListTest();
+        //SuspectProfileScript.instance.GenerateListTest();
         
 
 
-        SelectProfile(0);
+        //SelectProfile(0);
         //UnityEngine.EventSystems.EventSystem.current = null;
 
-        GetButtons();
+        //GetButtons();
+        //UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
+    }
+
+    private void OnEnable()
+    {
+        if (ProfileButtons.Count == 0) {
+            SuspectProfileScript.instance.GenerateListTest();
+            GetButtons();
+        }
+        SelectProfile(0);
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
     }
 

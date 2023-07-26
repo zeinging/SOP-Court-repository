@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameplayControllerScript : MonoBehaviour
 {
 
+    public GameObject DialogueBox;
+
     public ScriptableObjectProfile CurrentWitnessOnStand;
 
     public string[] CurrentSceneDialogue;
@@ -26,6 +28,14 @@ public class GameplayControllerScript : MonoBehaviour
             CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest();
         }
 
+        StartCoroutine(OpenDialogueBox());
+
+    }
+
+    private IEnumerator OpenDialogueBox() {
+
+        yield return new WaitForSeconds(1.5f);
+        DialogueBox.SetActive(true);
     }
 
     // Update is called once per frame

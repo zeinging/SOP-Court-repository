@@ -7,7 +7,7 @@ public class GameplayControllerScript : MonoBehaviour
 
     public GameObject DialogueBox;
 
-    public ScriptableObjectProfile CurrentWitnessOnStand;
+    public ScriptableObjectProfile JudgeProfile, DefenseProfile, ProsecutorProfile;//CurrentWitnessOnStand
 
     public string[] CurrentSceneDialogue;
 
@@ -29,19 +29,21 @@ public class GameplayControllerScript : MonoBehaviour
             maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
         }
 
-        OpenDialogueBox(1.5f);
+        //OpenDialogueBox(1.5f);
+        StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
 
-    public void MoveToNextSceneDialogue(Vector3 charPos){
+    public void MoveToNextSceneDialogue(){
 
             if(currentSceneIndex < maxFiles - 1){
 
                 if(GetComponent<GetDocumentsScript>()){
-                    StartCoroutine(DelayFade(charPos));
+                    StartCoroutine(DelayFade());
                     currentSceneIndex++;
                     CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-                    OpenDialogueBox(3f);
+                    //OpenDialogueBox(3f);
+                    StartCoroutine(DelayDialogueBox(1f, 0));
                 }else{
                     Debug.Log("case File Missing");
                 }
@@ -50,21 +52,28 @@ public class GameplayControllerScript : MonoBehaviour
         
     }
 
-    public IEnumerator DelayFade(Vector3 pos){
+    public IEnumerator DelayFade(){
         SceneFaderScript.i.StartFade();
         yield return new WaitForSeconds(1f);
-        if(pos != null)
-        CameraMover.instance.SnapCamHere(pos);
+
+        //if(pos != null)
+        //CameraMover.instance.SnapCamHere(pos);
     }
 
-    public void OpenDialogueBox(float openDelay){
-        StartCoroutine(DelayDialogueBox(openDelay));
-    }
-
-    private IEnumerator DelayDialogueBox(float t) {
-
-        yield return new WaitForSeconds(t);
+    public void OpenDialogueBox(float TextDelay){
         DialogueBox.SetActive(true);
+        DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(TextDelay);
+    }
+
+    public void OpenCrossExaminationBox(float openDelay){
+        
+    }
+
+    private IEnumerator DelayDialogueBox(float openDelay, float textD) {
+
+        yield return new WaitForSeconds(openDelay);
+        //DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(t);
+        OpenDialogueBox(textD);
     }
     
 }

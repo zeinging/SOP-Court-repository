@@ -2880,7 +2880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &660116572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5876,9 +5876,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1322616506}
-  CurrentWitnessOnStand: {fileID: 11400000, guid: 34dd3ad4b079ed54ab53e51b5a5f2e55, type: 2}
+  JudgeProfile: {fileID: 11400000, guid: 7b7344f1ebfbc9a48b1ad0d776c63ac1, type: 2}
+  DefenseProfile: {fileID: 11400000, guid: 4c2432b494862df4cb6fe5cddf975ea5, type: 2}
+  ProsecutorProfile: {fileID: 11400000, guid: 82ec53f6915844b46982981dd3d80b60, type: 2}
   CurrentSceneDialogue: []
-  CurrentDialogue: 0
+  currentSceneIndex: 0
+  maxFiles: 0
 --- !u!1 &1383431442
 GameObject:
   m_ObjectHideFlags: 0

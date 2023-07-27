@@ -15,10 +15,21 @@ public static class DocumentTags
     MurderWeapon = "[MurderWeapon]",
     Perpetrator = "[Perpetrator]",
     CrimeScene = "[CrimeScene]",
+
+    //replace with XLM file for better sorting
     Press = "[Press]",
     WitnessTestimony = "[WitnessTestimony]",
     CrossExamination = "[CrossExamination]",
     Contradiction = "[Contradiction]",
-    Confession = "[Confession]";
+    Confession = "[Confession]",
+
+
+    //Witness Stand Animation Tags
+    AnimStandingIdle = "[AnimStandingIdle]",
+    AnimWalkingIdle = "[AnimWalkingIdle]",
+    AnimShock = "[AnimShock]",
+    AnimRealization = "[AnimRealization]",
+    AnimSmirk = "[AnimSmirk]",
+    AnimBreakdown = "[AnimBreakdown]";
 
 }

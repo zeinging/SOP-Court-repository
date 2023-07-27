@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Bagel Man
   ProfileImage: {fileID: 21300000, guid: 10a8315001a9e734085a358f1763452d, type: 3}
-  myAnim: {fileID: 22100000, guid: 4d9e185be7632d043abbd74bbd1e6264, type: 2}
+  myAnim: {fileID: 9100000, guid: 83149f0c9a2ad974fb4425b33332a817, type: 2}
   WitnessProfesion: Made of 50% Bagel.
   WitnessEmoteFrames: []
   Confession: I had to do it, I'm Bagel Man!

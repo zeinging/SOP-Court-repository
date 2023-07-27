@@ -2801,7 +2801,7 @@ Animator:
   m_GameObject: {fileID: 616082144}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 4d9e185be7632d043abbd74bbd1e6264, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5810,7 +5810,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f141afcb0661ff459f90daa80b8eede, type: 2}
   - {fileID: 11400000, guid: 562ffb82b21a92c419e1f4745e81ee15, type: 2}
   - {fileID: 11400000, guid: 86baf78ed41efa7468764eafc574a95b, type: 2}
-  CurrentSuspectData: {fileID: 11400000, guid: 34dd3ad4b079ed54ab53e51b5a5f2e55, type: 2}
+  CurrentSuspectData: {fileID: 11400000, guid: 88a2dbfd70bb78746b9b4524c5d55bd3, type: 2}
   SuspectsEncounteredOrder: []
   RemainingSuspects: []
   ShuffleSuspects: 1

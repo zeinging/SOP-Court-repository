@@ -57,10 +57,14 @@ public class GetDocumentsScript : MonoBehaviour
 
     }
 
-    public string[] GetTextFromFileTest(){
+    public string[] GetTextFromFileTest(int s){
         //Debug.Log(FilesPathCase1Folder[0]);
-        string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[0]);
+        if( s < FilesPathCase1Folder.Count){
+        string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
         return Dialogue;
+        }
+        return null;
+        //return Dialogue;
         //string[] Dialogue = new string[1];
         //Dialogue[0] = "testing this fly is really anoying!";
     }

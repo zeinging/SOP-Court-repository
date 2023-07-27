@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DocumentTags
+public static class DocumentTags
 {
 
-    public string 
+    public static string 
+    Date = "[Date]",
     Defence = "[Defence]",
     Prosecutor = "[Prosecutor]",
-    Judge = "Judge",
+    Judge = "[Judge]",
     Witness = "[Witness]",
     Victim = "[Victim]",
     MurderWeapon = "[MurderWeapon]",

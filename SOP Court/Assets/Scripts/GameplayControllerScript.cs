@@ -11,7 +11,7 @@ public class GameplayControllerScript : MonoBehaviour
 
     public string[] CurrentSceneDialogue;
 
-    public int CurrentDialogue;
+    public int currentSceneIndex = 0, maxFiles = 0;
 
     public static GameplayControllerScript instance;
 
@@ -25,22 +25,46 @@ public class GameplayControllerScript : MonoBehaviour
         }
 
         if(GetComponent<GetDocumentsScript>()){
-            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest();
+            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+            maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
         }
 
-        StartCoroutine(OpenDialogueBox());
+        OpenDialogueBox(1.5f);
 
     }
 
-    private IEnumerator OpenDialogueBox() {
+    public void MoveToNextSceneDialogue(Vector3 charPos){
 
-        yield return new WaitForSeconds(1.5f);
-        DialogueBox.SetActive(true);
-    }
+            if(currentSceneIndex < maxFiles - 1){
 
-    // Update is called once per frame
-    void Update()
-    {
+                if(GetComponent<GetDocumentsScript>()){
+                    StartCoroutine(DelayFade(charPos));
+                    currentSceneIndex++;
+                    CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+                    OpenDialogueBox(3f);
+                }else{
+                    Debug.Log("case File Missing");
+                }
+
+            }
         
     }
+
+    public IEnumerator DelayFade(Vector3 pos){
+        SceneFaderScript.i.StartFade();
+        yield return new WaitForSeconds(1f);
+        if(pos != null)
+        CameraMover.instance.SnapCamHere(pos);
+    }
+
+    public void OpenDialogueBox(float openDelay){
+        StartCoroutine(DelayDialogueBox(openDelay));
+    }
+
+    private IEnumerator DelayDialogueBox(float t) {
+
+        yield return new WaitForSeconds(t);
+        DialogueBox.SetActive(true);
+    }
+    
 }

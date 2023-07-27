@@ -1,66 +1,106 @@
-<Cases>
-
-  <!-- Case One -->
-  <Case>
-    <TestimonySection>
-      <TestimonySeries>
+<Case>
+  <WitnessTestimony>
+    <TestimonySeries isConflicting="false">
+      <SectionList>
         <TestimonySection>
           <Text>I was going door-to-door</Text>
-          <IsConflicting>false</IsConflicting>
         </TestimonySection>
         <TestimonySection>
           <Text>selling subscriptions when I saw</Text>
-          <IsConflicting>false</IsConflicting>
         </TestimonySection>
         <TestimonySection>
           <Text>a man fleeing an apartment.</Text>
-          <IsConflicting>false</IsConflicting>
         </TestimonySection>
-      </TestimonySeries>
-      <TestimonySeries>
-        <TestimonySection>
-          <Text>I ran to the front</Text>
-          <IsConflicting>false</IsConflicting>
-        </TestimonySection>
-        <TestimonySection>
-          <Text>and turned around and the person who was</Text>
-          <IsConflicting>false</IsConflicting>
-        </TestimonySection>
-        <TestimonySection>
-          <Text>chasing me was dead on the floor.</Text>
-          <IsConflicting>false</IsConflicting>
-        </TestimonySection>
-      </TestimonySeries>
-    </TestimonySection>
-  </Case>
+      </SectionList>
+    </TestimonySeries>
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>I thought he must be in a</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>hurry because he left</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>the door half-open behind him.</Text>
+      </TestimonySection>
+    </TestimonySeries>
 
-  <!-- Case One -->
-  <Case>
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>Thinking it strange, I looked</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>inside the apartment.</Text>
+      </TestimonySection>
+    </TestimonySeries>
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>Then I saw her lying there...</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>A woman... not moving... dead!</Text>
+      </TestimonySection>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>I quailed in fright and found</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>myself unable to go inside.</Text>
+      </TestimonySection>
+    </TestimonySeries>
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>I thought to call the police</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>immediately!</Text>
+      </TestimonySection>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>However, the phone in her</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>apartment wasn't working.</Text>
+      </TestimonySection>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>I went to a nearby park and</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>found a public phone.</Text>
+      </TestimonySection>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>I remember the time exactly:</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>It was 1:00 PM.</Text>
+      </TestimonySection>
+    </TestimonySeries>
+
+
+    <TestimonySeries isConflicting="false">
+      <TestimonySection>
+        <Text>The man who ran was, without</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>a dobut, the defendant sitting</Text>
+      </TestimonySection>
+      <TestimonySection>
+        <Text>right over there.</Text>
+      </TestimonySection>
+    </TestimonySeries>
     <TestimonySection>
-      <TestimonySection>
-        <Text>I was at the store</Text>
-        <IsConflicting>true</IsConflicting>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>and was eating some icecream</Text>
-        <IsConflicting>false</IsConflicting>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>when suddenly someone attacked me.</Text>
-        <IsConflicting>false</IsConflicting>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>I ran to the front</Text>
-        <IsConflicting>false</IsConflicting>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>and turned around and the person who was</Text>
-        <IsConflicting>false</IsConflicting>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>chasing me was dead on the floor.</Text>
-        <IsConflicting>false</IsConflicting>
-      </TestimonySection>
+      <Text>a dobut, the defendant sitting</Text>
     </TestimonySection>
-  </Case>
-</Cases>
+
+  </WitnessTestimony>
+</Case>

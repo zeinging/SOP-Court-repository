@@ -1,19 +1,272 @@
 <Case>
-  <WitnessTestimony>
+  <CrossExamination>
     <TestimonySeries isConflicting="false">
-      <SectionList>
-        <TestimonySection>
-          <Text>I was going door-to-door</Text>
-        </TestimonySection>
-        <TestimonySection>
-          <Text>selling subscriptions when I saw</Text>
-        </TestimonySection>
-        <TestimonySection>
-          <Text>a man fleeing an apartment.</Text>
-        </TestimonySection>
-      </SectionList>
+      <TestimonyParagraph>
+        <Line>I was going door-to-door</Line>
+        <Line>selling subscriptions when I saw</Line>
+        <Line>a man fleeing an apartment.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Isn't a man leaving an</Line>
+            <Line>apartment a common sight?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>I find it odd you would</Line>
+            <Line>take notice of him...</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Er... heh.</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I don't know. He just seemed</Line>
+            <Line>strange to me, that's all</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Like he was mad, and yet</Line>
+            <Line>frightended at the same time.</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Just like... a criminal fleeing</Line>
+            <Line>the scene of a crime!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The defence requests that</Line>
+            <Line>the witness refrain from</Line>
+            <Line>conjecture!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>Of course. What the witness</Line>
+            <Line>means is that the man he saw</Line>
+            <Line>looked suspicious!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>So, what happened next?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+      <NestedTestimonySeries>
+        <TestimonyParagraph>
+          <Line>I thought he must be in a</Line>
+          <Line>hurry because he left the</Line>
+          <Line>door half-open behind him.</Line>
+        </TestimonyParagraph>
+        <PressedInteractions>
+          <PressedInteraction>
+            <character>Phoenix Wright</character>
+            <Paragraph>
+              <Line>Half-open... you say?</Line>
+              <Line>apartment a common sight?</Line>
+            </Paragraph>
+          </PressedInteraction>
+          <PressedInteraction>
+            <character>Sahwit</character>
+            <Paragraph>
+              <Line>Yes, yes, the door was</Line>
+              <Line>open halfway. Yes.</Line>
+            </Paragraph>
+          </PressedInteraction>
+
+          <PressedInteraction>
+            <character>Sahwit</character>
+            <Paragraph>
+              <Line>I watched for a moment, but</Line>
+              <Line>no one came to close the door.</Line>
+            </Paragraph>
+          </PressedInteraction>
+
+          <PressedInteraction>
+            <character>Sahwit</character>
+            <Paragraph>
+              <Line>"That's odd, in a big city  </Line>
+              <Line>like this," I thought...</Line>
+            </Paragraph>
+          </PressedInteraction>
+
+          <PressedInteraction>
+            <character>Payne</character>
+            <Paragraph>
+              <Line>I see.</Line>
+              <Line>And what happened next?</Line>
+            </Paragraph>
+          </PressedInteraction>
+        </PressedInteractions>
+
+        <NestedTestimonySeries>
+          
+        
+          <TestimonyParagraph>
+            <Line>Thinking it strange, I looked</Line>
+            <Line>inside of the apartment.</Line>
+          </TestimonyParagraph>
+          <PressedInteractions>
+            <PressedInteraction>
+              <character>Phoenix Wright</character>
+              <Paragraph>
+                <Line>What gave you the idea to do that?</Line>
+              </Paragraph>
+            </PressedInteraction>
+            <PressedInteraction>
+              <character>Sahwit</character>
+              <Paragraph>
+                <Line>Well, the door was half-open,</Line>
+                <Line>you see.</Line>
+              </Paragraph>
+            </PressedInteraction>
+
+            <PressedInteraction>
+              <character>Sahwit</character>
+              <Paragraph>
+                <Line>Isn't it only human</Line>
+                <Line>to want to... peek?</Line>
+              </Paragraph>
+            </PressedInteraction>
+
+            <PressedInteraction>
+              <character>Sahwit</character>
+              <Paragraph>
+                <Line>We climb mountains because</Line>
+                <Line>they are there!</Line> 
+                <Line>it's the same thing.</Line>
+              </Paragraph>
+            </PressedInteraction>
+
+            <PressedInteraction>
+              <character>Payne</character>
+              <Paragraph>
+                <Line>Truer words have never</Line>
+                <Line>been spoken!</Line>
+                <Line>Anyone would look inside!</Line>
+              </Paragraph>
+            </PressedInteraction>
+          
+          
+            <PressedInteraction>
+              <character>Phoenix Wright</character>
+              <Paragraph>
+                <Line>(Hmm... why did Payne cut</Line>
+                <Line>him off so quickly?)</Line>
+              </Paragraph>
+            </PressedInteraction>
+            
+            <PressedInteraction>
+              <character>Payne</character>
+              <Paragraph>
+                <Line>So you looked into the</Line>
+                <Line>apartment.</Line>
+                <Line>What happened then?</Line>
+              </Paragraph>
+            </PressedInteraction>
+          </PressedInteractions>
+          <NestedTestimonySeries>
+            
+          
+            <TestimonyParagraph>
+              <Line>Then I saw her lying there...</Line>
+              <Line>A wom</Line>
+            </TestimonyParagraph>
+            <PressedInteractions>
+              <PressedInteraction>
+                <character>Phoenix Wright</character>
+                <Paragraph>
+                  <Line>What gave you the idea to do that?</Line>
+                </Paragraph>
+              </PressedInteraction>
+              <PressedInteraction>
+                <character>Sahwit</character>
+                <Paragraph>
+                  <Line>Well, the door was half-open,</Line>
+                  <Line>you see.</Line>
+                </Paragraph>
+              </PressedInteraction>
+
+              <PressedInteraction>
+                <character>Sahwit</character>
+                <Paragraph>
+                  <Line>Isn't it only human</Line>
+                  <Line>to want to... peek?</Line>
+                </Paragraph>
+              </PressedInteraction>
+
+              <PressedInteraction>
+                <character>Sahwit</character>
+                <Paragraph>
+                  <Line>We climb mountains because</Line>
+                  <Line>they are there!</Line> 
+                  <Line>it's the same thing.</Line>
+                </Paragraph>
+              </PressedInteraction>
+
+              <PressedInteraction>
+                <character>Payne</character>
+                <Paragraph>
+                  <Line>Truer words have never</Line>
+                  <Line>been spoken!</Line>
+                  <Line>Anyone would look inside!</Line>
+                </Paragraph>
+              </PressedInteraction>
+            
+            
+              <PressedInteraction>
+                <character>Phoenix Wright</character>
+                <Paragraph>
+                  <Line>(Hmm... why did Payne cut</Line>
+                  <Line>him off so quickly?)</Line>
+                </Paragraph>
+              </PressedInteraction>
+              
+              <PressedInteraction>
+                <character>Payne</character>
+                <Paragraph>
+                  <Line>So you looked into the</Line>
+                  <Line>apartment.</Line>
+                  <Line>What happened then?</Line>
+                </Paragraph>
+              </PressedInteraction>
+            </PressedInteractions>
+            
+          </NestedTestimonySeries>
+
+        </NestedTestimonySeries>
+      </NestedTestimonySeries>
     </TestimonySeries>
-    <TestimonySeries isConflicting="false">
+    <!--<TestimonySeries isConflicting="false">
       <TestimonySection>
         <Text>I thought he must be in a</Text>
       </TestimonySection>
@@ -92,15 +345,11 @@
         <Text>The man who ran was, without</Text>
       </TestimonySection>
       <TestimonySection>
-        <Text>a dobut, the defendant sitting</Text>
+        <Text>a doubt, the defendant sitting</Text>
       </TestimonySection>
       <TestimonySection>
         <Text>right over there.</Text>
       </TestimonySection>
-    </TestimonySeries>
-    <TestimonySection>
-      <Text>a dobut, the defendant sitting</Text>
-    </TestimonySection>
-
-  </WitnessTestimony>
+    </TestimonySeries>-->
+  </CrossExamination>
 </Case>

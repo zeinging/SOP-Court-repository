@@ -410,11 +410,169 @@
       </PressedInteractions>
     </TestimonySeries>
     
-    <TestimonySeries isConflicting="false">
+    <TestimonySeries isConflicting="true">
       <TestimonyParagraph>
         <Line>I remember the time exactly:</Line>
         <Line>It was 1:00 PM.</Line>
       </TestimonyParagraph>
+      <PressedInteractions>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You found the body at 1:00PM.</Line>
+            <Line>You're sure?.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Yes.</Line>
+            <Line>It was 1:00 PM, for certain.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Frankly, I find that hard to </Line>
+            <Line>believe!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Your statement directly</Line>
+            <Line>conflicts the autopsy report.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The autopsy notes the time</Line>
+            <Line>of death at sometime after</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>There was nobody to... er...</Line>
+            <Line>no "body" to find at 1:00 PM!</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>How do you explain this</Line>
+            <Line>three hour gap?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>!!!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Oh, that! Oh, er...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>This is trivial! The witness</Line>
+            <Line>merely forgot the time!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>After his testimony, I find</Line>
+            <Line>that hard to believe.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Mr. Sahwit...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Why were you so certain</Line>
+            <Line>that you found the body</Line>
+            <Line>at 1:00 PM?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I... er... well, I...</Line>
+            <Line>Gee, that's a really good</Line>
+            <Line>question!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Great job, Wright!</Line>
+            <Line>Way to put him on the spot!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>That's all you have to do:</Line>
+            <Line>point out contradictions!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Lies always beget more lies!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>See through one, and their</Line>
+            <Line>whole story falls apart!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Wait!</Line>
+            <Line>I remember now!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Would you care to give</Line>
+            <Line>your testimony again?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
       <PressedInteractions item="Cindy's Autopsy Report">
 
         <PressedInteraction>
@@ -574,90 +732,5 @@
         </PressedInteraction>
       </PressedInteractions>
     </TestimonySeries>
-    <!--<TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>I thought he must be in a</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>hurry because he left</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>the door half-open behind him.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>Thinking it strange, I looked</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>inside the apartment.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>Then I saw her lying there...</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>A woman... not moving... dead!</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>I quailed in fright and found</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>myself unable to go inside.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>I thought to call the police</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>immediately!</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>However, the phone in her</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>apartment wasn't working.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>I went to a nearby park and</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>found a public phone.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>I remember the time exactly:</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>It was 1:00 PM.</Text>
-      </TestimonySection>
-    </TestimonySeries>
-
-
-    <TestimonySeries isConflicting="false">
-      <TestimonySection>
-        <Text>The man who ran was, without</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>a doubt, the defendant sitting</Text>
-      </TestimonySection>
-      <TestimonySection>
-        <Text>right over there.</Text>
-      </TestimonySection>
-    </TestimonySeries>-->
   </CrossExamination>
 </Case>

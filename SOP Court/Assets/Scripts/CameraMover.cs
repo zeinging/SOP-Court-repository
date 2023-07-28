@@ -39,6 +39,18 @@ public class CameraMover : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R)){
             SnapCamHere(Prosector.position);
         }
+
+        if(Input.GetKeyDown(KeyCode.H)){
+            GameplayControllerScript.instance.HoldIt(1f);
+        }
+
+        if(Input.GetKeyDown(KeyCode.O)){
+            GameplayControllerScript.instance.Objection(2f);
+        }
+
+        if(Input.GetKeyDown(KeyCode.T)){
+            GameplayControllerScript.instance.TakeThat(1f);
+        }
     }
 
     public void SnapCamHere(Vector3 Pos){

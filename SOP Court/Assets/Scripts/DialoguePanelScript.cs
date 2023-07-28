@@ -108,6 +108,22 @@ public class DialoguePanelScript : MonoBehaviour
 
     }
 
+    public void Press(){
+        GameplayControllerScript.instance.HoldIt(1f);
+    }
+
+    public void Present(){//should open the court record instead, before objection image appears
+        GameplayControllerScript.instance.Objection(2f);
+    }
+
+    public void moveInCrossExamination(bool isLeft){
+        if(isLeft){
+            Debug.Log("move back");
+        }else{
+            Debug.Log("move forward");
+        }
+    }
+
     public bool DialogueContainsTag(string dialogueTags,string tag){
         if(dialogueTags.Contains(tag.ToLower()) || dialogueTags.Contains(tag)){
             return true;

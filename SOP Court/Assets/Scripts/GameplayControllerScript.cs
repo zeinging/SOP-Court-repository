@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameplayControllerScript : MonoBehaviour
 {
 
-    public GameObject DialogueBox;
+    public GameObject DialogueBox, interuptionImage;
+
+    public Sprite[] interuptionSprites;
 
     public ScriptableObjectProfile JudgeProfile, DefenseProfile, ProsecutorProfile;//CurrentWitnessOnStand
 
@@ -35,6 +37,27 @@ public class GameplayControllerScript : MonoBehaviour
         StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
+
+    public void HoldIt(float holdItTimer){
+        StartCoroutine(InteruptionTimer(holdItTimer, 0));
+    }
+
+    public void Objection(float objectionTimer){
+        StartCoroutine(InteruptionTimer(objectionTimer, 1));
+    }
+
+    public void TakeThat(float takeThatTimer){
+        StartCoroutine(InteruptionTimer(takeThatTimer, 2));
+    }
+
+    private IEnumerator InteruptionTimer(float t, int spriteIndex){
+        interuptionImage.GetComponent<UnityEngine.UI.Image>().sprite = interuptionSprites[spriteIndex];
+        interuptionImage.SetActive(true);
+        yield return new WaitForSeconds(t);
+        interuptionImage.SetActive(false);
+    }
+
+    
 
     public void MoveToNextSceneDialogue(){
 

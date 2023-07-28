@@ -1683,88 +1683,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277096961}
   m_CullTransparentMesh: 1
---- !u!1 &299110908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 299110910}
-  - component: {fileID: 299110909}
-  m_Layer: 0
-  m_Name: Prosector Desk
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &299110909
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299110908}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.7735849, g: 0.39044145, b: 0.39044145, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &299110910
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299110908}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: -6, z: 0}
-  m_LocalScale: {x: 15, y: 4, z: 1}
-  m_Children: []
-  m_Father: {fileID: 803249952}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &300813574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,7 +3439,6 @@ Transform:
   m_Children:
   - {fileID: 260988924}
   - {fileID: 1945780801}
-  - {fileID: 299110910}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5341,6 +5258,7 @@ MonoBehaviour:
   rightArrowButton: {fileID: 2099471661}
   SpeakerName: {fileID: 721270571}
   Dialogue: {fileID: 1325334738}
+  currentSubjectanim: {fileID: 0}
   StoredDialogue: 
   textSpeed: 0.02
   CurrentDialogue: 0
@@ -5717,7 +5635,7 @@ Animator:
   m_GameObject: {fileID: 1342241646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83149f0c9a2ad974fb4425b33332a817, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5862,6 +5780,7 @@ GameObject:
   - component: {fileID: 1373645830}
   - component: {fileID: 1373645831}
   - component: {fileID: 1373645832}
+  - component: {fileID: 1373645833}
   m_Layer: 0
   m_Name: Gameplay Controller
   m_TagString: Untagged
@@ -5969,6 +5888,28 @@ MonoBehaviour:
   CurrentSceneDialogue: []
   currentSceneIndex: 0
   maxFiles: 0
+--- !u!114 &1373645833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373645827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01777968fb55f4b886e0d1f63ad6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueHolder:
+  - '[date]July 20th 12:00'
+  - '[judge]is the prosecution ready?'
+  - '[prosecutor][AnimDeskSlam]the prosection is ready your honor.'
+  - '[prosecutor][AnimSmirk]check out my smug animation.'
+  - '[prosecutor][AnimRealization]oh, no...'
+  - '[judge]is the defense ready?'
+  - '[defence]the defense is ready your honor.'
+  - '[defence][AnimRealization] I''m not sus.'
+  - '[judge]let''s hear the witness''s testimony.'
 --- !u!1 &1383431442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,6 +6232,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454730366}
   m_CullTransparentMesh: 1
+--- !u!1 &1457415337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457415339}
+  - component: {fileID: 1457415338}
+  m_Layer: 0
+  m_Name: Dialogue Holder Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1457415338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457415337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01777968fb55f4b886e0d1f63ad6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueHolder:
+  - '[date]July 20th 12:00'
+  - '[judge]is the prosecution ready?'
+  - '[prosecutor]the prosection is ready your honor.'
+  - '[judge]is the defense ready?'
+  - '[defence]the defense is ready your honor.'
+  - '[judge]let''s hear the witness''s testimony.'
+--- !u!4 &1457415339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457415337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459250703
 GameObject:
   m_ObjectHideFlags: 0

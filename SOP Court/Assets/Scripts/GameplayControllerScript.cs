@@ -24,10 +24,12 @@ public class GameplayControllerScript : MonoBehaviour
             instance = this;
         }
 
-        if(GetComponent<GetDocumentsScript>()){
-            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-            maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
-        }
+        // if(GetComponent<GetDocumentsScript>()){
+        //     CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+        //     maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+        // }
+
+        CurrentSceneDialogue = GetComponent<DialogueHolderTestScript>().DialogueHolder;//delete later
 
         //OpenDialogueBox(1.5f);
         StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
@@ -49,6 +51,7 @@ public class GameplayControllerScript : MonoBehaviour
                 }
 
             }
+            StartCoroutine(DelayFade());//delete later
         
     }
 

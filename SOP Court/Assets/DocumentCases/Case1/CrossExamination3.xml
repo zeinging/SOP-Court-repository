@@ -1,0 +1,1061 @@
+<Case>
+  <CrossExamination>
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>Actually I didn't "hear"</Line>
+        <Line>time time... I "saw" it.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>That strikes me as a very</Line>
+            <Line>suspicious mistake.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Yes, I can see how you'd</Line>
+            <Line>be a little doubtful...</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I'm really sorry, I only</Line>
+            <Line>just remembered that</Line>
+            <Line>table clock!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>judge</character>
+          <Paragraph>
+            <Line>A "table clock"?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="true">
+      <TestimonyParagraph>
+        <Line>There was a table clock in</Line>
+        <Line>the apartment, wasn't there!</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>A "table clock"?</Line>
+            <Line>Was there a clock</Line>
+            <Line>at the scene?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>This is the first</Line>
+            <Line>I've heard of it!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>Yeah, the murder weapon!</Line>
+        <Line>The killer  used it to</Line>
+        <Line>hit the victim!</Line>
+      </TestimonyParagraph>
+      <PressedInteractions item="Statue">
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Wait just a moment!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The murder weapon wasn't</Line>
+            <Line>a clock.</Line>
+            <Line>It was this statue!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Now how is this supposed</Line>
+            <Line>to be a clock?</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Whaa!?</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Y-you with your "objections"</Line>
+            <Line>and your "evidence"... Just</Line>
+            <Line>who do you think you are!?</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Just answer the question</Line>
+            <Line>Mr Sahwit.</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Hey, I... I saw it there, okay!</Line>
+            <Line>That's a clock!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>Your Honor!</Line>
+            <Line>If I may...</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Yes, Mr. Payne?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>As the witness stated, this</Line>
+            <Line>statue is indeed a clock.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>The neck is a switch. You just</Line>
+            <Line>tilt it, and it says the time</Line>
+            <Line>out loud.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>As it doesn't look like a</Line>
+            <Line>clock, I submitted it as a </Line>
+            <Line>statue. My apologies.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>I see.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>So the murder weapon was a</Line>
+            <Line>table clock after all.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Well, Mr. Wright?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>It appears that the witness's</Line>
+            <Line>testimony was correct.</Line>
+            <Line>This is a clock.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Do you have any problems</Line>
+            <Line>with this testimony now?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <!-- Has the player choose if they're satisifed or not. Assuming not satisfied-->
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Your Honor, there is</Line>
+            <Line>a gaping hole in the</Line>
+            <Line>witness's testimony!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The only way he could have</Line>
+            <Line>known it was a clock</Line>
+            <Line>is to hold it in his hand.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Yet the witness testified</Line>
+            <Line>that he never entered the</Line>
+            <Line>apartment!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Clearly, a contradiction</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Hmm... indeed!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The witness knew it was</Line>
+            <Line>a clock, because he...</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You're lying!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You're lying!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You were inside the apartment</Line>
+            <Line>on the day of the murder!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Oh yeah? Prove it!</Line>
+            <Line>Prove I went in there!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>I'll do better than that!</Line>
+            <Line>I can prove you were the one</Line>
+            <Line>who killed her!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>I'll do better than that!</Line>
+            <Line>I can prove you were the one</Line>
+            <Line>who killed her!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You struck her with the clock,</Line>
+            <Line>and the shock of the blow</Line>
+            <Line>triggered the clock's voice!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>That was the sound you heard!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Order in the court!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Intriguing.</Line>
+            <Line>Please continue Mr. Wright.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>Yes, Your Honor.</Line>
+            <Line>Please continue Mr. Wright.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>Mr Sahwit.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>The sound must have left</Line>
+            <Line>quite an impresion on you.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>Understandable, since the</Line>
+            <Line>murder weapon spoke just as</Line>
+            <Line>you hit the victim!</Line>
+            <Line>quite an impresion on you.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>That voice was burned</Line>
+            <Line>into your mind.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>That's why you were so</Line>
+            <Line>certain about the time!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>W-w-what's the meaning</Line>
+            <Line>of this?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>This is all baseless</Line>
+            <Line>conjecture!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>Baseless?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix</character>
+          <Paragraph>
+            <Line>Just look at the</Line>
+            <Line>witness's face!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Ngh... grrrah!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Would the witness</Line>
+            <Line>care to elaborate?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Did you strike the</Line>
+            <Line>victim with the clock?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I...I...!</Line>
+            <Line>That... that day...</Line>
+            
+            <Line>I... I never!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Look... I... the clock...</Line>
+            <Line>I heard, no!</Line>
+            <Line>I mean, I saw... Saw... nggg!</Line>
+            
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Gwaaaaaaaaaaaaaah!</Line>
+            
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Shutupshutupshutup!</Line>
+            <Line>I hate you!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I-it was him, I tell you!</Line>
+            <Line>I saw him!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>H-he killed her and he</Line>
+            <Line>should burn! Burn!</Line> 
+            <Line>Give him death!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Order!</Line>
+            <Line>Order in the court I say!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>Your Honor,</Line>
+            <Line>a-a moment please!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>There isn't a shred of</Line>
+            <Line>evidence supporting the</Line>
+            <Line>defense's claims!</Line> 
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Mr Wright!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Your Honor?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>You claim the sound the</Line>
+            <Line>witness heard came from</Line>
+            <Line>the clock...</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Do you have any evidence?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>(The whole case is riding</Line>
+            <Line>on this! I'd better think</Line>
+            <Line>it through carefully!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Y-Your Honor.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The sound Mr. Sahwit heard</Line>
+            <Line>was definitely from this clock.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>A fact which is clear</Line>
+            <Line>if you simply...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>Then I saw here lying there...</Line>
+        <Line>A woman... not moving... dead!</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Are you sure she was dead?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>W-Well, no, I guess I wasn't.</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>But, she wasn't moving at</Line>
+            <Line>all, and there was blood</Line>
+            <Line>everywhere.</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>(I guess that would look </Line>
+            <Line>fatal to anyone...)</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Very well, what happened next?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>I quailed in a fright and found</Line>
+        <Line>myself unable to go inside.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+
+        <!-- The guide I was wasn't didn't press this part so I'm just doing a simple one for now -->
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Ok, I believe you!</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+      </PressedInteractions>
+    </TestimonySeries>
+    
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>I thought to call the police</Line>
+        <Line>immediately!</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You "thought" to call</Line>
+            <Line>the police? Does that mean you</Line>
+            <Line>didn't actually call them!?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>Please, please... Listen to</Line>
+            <Line>the rest of the testimony.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>You thought to call the</Line>
+            <Line>police... What happened next?</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+      </PressedInteractions>
+    </TestimonySeries>
+    
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>However, the phone in her</Line>
+        <Line>apartment wasn't working.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The phone in her apartment</Line>
+            <Line>wasn't working?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Yes. I mean, no.</Line>
+            <Line>No, it wasn't. Right.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>But you said you didn't</Line>
+            <Line>go into the apartment...</Line>
+            <Line>or did you!?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Oh, oh, that? I can explain</Line>
+            <Line>that!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>There was a coordless phone</Line>
+            <Line>on a shelf in the entranceway.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I reached inside and tried</Line>
+            <Line>using that to call...</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>And that phone wasn't</Line>
+            <Line>working, correct?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>What happened next?</Line>
+          </Paragraph>
+        </PressedInteraction>
+
+      </PressedInteractions>
+    </TestimonySeries>
+    
+    <TestimonySeries isConflicting="false">
+      <TestimonyParagraph>
+        <Line>I went to a nearby park and</Line>
+        <Line>found a public phone.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Why use a public phone?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Well, you see, I don't</Line>
+            <Line>have a cell phone.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>And, being the middle of the</Line>
+            <Line>afternoon, there was no answer</Line>
+            <Line>at the nearby apartments.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Ah, right... what time</Line>
+            <Line>did you call again?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+    
+    <TestimonySeries isConflicting="true">
+      <TestimonyParagraph>
+        <Line>I remember the time exactly:</Line>
+        <Line>It was 1:00 PM.</Line>
+      </TestimonyParagraph>
+      <PressedInteractions>
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You found the body at 1:00PM.</Line>
+            <Line>You're sure?.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Yes.</Line>
+            <Line>It was 1:00 PM, for certain.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Frankly, I find that hard to </Line>
+            <Line>believe!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Your statement directly</Line>
+            <Line>conflicts the autopsy report.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The autopsy notes the time</Line>
+            <Line>of death at sometime after</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>There was nobody to... er...</Line>
+            <Line>no "body" to find at 1:00 PM!</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>How do you explain this</Line>
+            <Line>three hour gap?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>!!!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Oh, that! Oh, er...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>This is trivial! The witness</Line>
+            <Line>merely forgot the time!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>After his testimony, I find</Line>
+            <Line>that hard to believe.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Mr. Sahwit...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Why were you so certain</Line>
+            <Line>that you found the body</Line>
+            <Line>at 1:00 PM?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I... er... well, I...</Line>
+            <Line>Gee, that's a really good</Line>
+            <Line>question!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Great job, Wright!</Line>
+            <Line>Way to put him on the spot!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>That's all you have to do:</Line>
+            <Line>point out contradictions!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Lies always beget more lies!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>See through one, and their</Line>
+            <Line>whole story falls apart!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Wait!</Line>
+            <Line>I remember now!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Would you care to give</Line>
+            <Line>your testimony again?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+      <PressedInteractions item="Cindy's Autopsy Report">
+
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>You found the body at 1:00PM.</Line>
+            <Line>You're sure?.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Yes.</Line>
+            <Line>It was 1:00 PM, for certain.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Frankly, I find that hard to </Line>
+            <Line>believe!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>Your statement directly</Line>
+            <Line>conflicts the autopsy report.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>The autopsy notes the time</Line>
+            <Line>of death at sometime after</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>There was nobody to... er...</Line>
+            <Line>no "body" to find at 1:00 PM!</Line>
+            <Line>4PM.</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Phoenix Wright</character>
+          <Paragraph>
+            <Line>How do you explain this</Line>
+            <Line>three hour gap?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>!!!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Oh, that! Oh, er...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Payne</character>
+          <Paragraph>
+            <Line>This is trivial! The witness</Line>
+            <Line>merely forgot the time!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>After his testimony, I find</Line>
+            <Line>that hard to believe.</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Mr. Sahwit...</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Why were you so certain</Line>
+            <Line>that you found the body</Line>
+            <Line>at 1:00 PM?</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>I... er... well, I...</Line>
+            <Line>Gee, that's a really good</Line>
+            <Line>question!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Great job, Wright!</Line>
+            <Line>Way to put him on the spot!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>That's all you have to do:</Line>
+            <Line>point out contradictions!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>Lies always beget more lies!</Line>
+          </Paragraph>
+        </PressedInteraction>
+      
+        <PressedInteraction>
+          <character>Mia</character>
+          <Paragraph>
+            <Line>See through one, and their</Line>
+            <Line>whole story falls apart!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Sahwit</character>
+          <Paragraph>
+            <Line>Wait!</Line>
+            <Line>I remember now!</Line>
+          </Paragraph>
+        </PressedInteraction>
+        <PressedInteraction>
+          <character>Judge</character>
+          <Paragraph>
+            <Line>Would you care to give</Line>
+            <Line>your testimony again?</Line>
+          </Paragraph>
+        </PressedInteraction>
+      </PressedInteractions>
+    </TestimonySeries>
+  </CrossExamination>
+</Case>

@@ -92,7 +92,7 @@ public class GetDocumentsScript : MonoBehaviour
 
     }
 
-    public string[] GetTextFromFileTest()
+    public string[] GetTextFromFileTest(int currentSceneIndex)
     {
         //Debug.Log(FilesPathCase1Folder[0]);
         string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[0]);

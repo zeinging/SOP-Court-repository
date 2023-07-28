@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DialoguePanelScript : MonoBehaviour
 {
 
-    public GameObject ContinueButton;
+    public GameObject ContinueButton, pressButton, presentButton, leftArrowButton, rightArrowButton;
 
     public Text SpeakerName, Dialogue;
 
@@ -40,6 +40,15 @@ public class DialoguePanelScript : MonoBehaviour
 
     public void OpenDialogueBox(float openDelay){
         StartCoroutine(DelayDialogueBox(openDelay));
+    }
+
+    public void OpenCrossExaminationPanel(){
+        pressButton.SetActive(true);
+        presentButton.SetActive(true);
+        leftArrowButton.SetActive(true);
+        leftArrowButton.GetComponent<Button>().enabled = false;
+        rightArrowButton.SetActive(true);
+        ContinueButton.SetActive(false);
     }
 
     private IEnumerator DelayDialogueBox(float t) {
@@ -162,6 +171,7 @@ public class DialoguePanelScript : MonoBehaviour
             Dialogue.color = Color.red;
             Dialogue.alignment = TextAnchor.MiddleCenter;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.CrossExamination.Length);
+            OpenCrossExaminationPanel();
         }
 
     }

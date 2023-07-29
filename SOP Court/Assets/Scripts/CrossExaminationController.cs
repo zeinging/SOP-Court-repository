@@ -8,13 +8,16 @@ using UnityEngine.UI;
 public class CrossExaminationController : MonoBehaviour
 {
 
-    private static readonly string CaseXMLTag = "Case";
-    private static readonly string CrossExaminationXMLTag = "CrossExamination";
-    private static readonly string TestimonySeries = "TestimonySeries";
-    private static readonly string TestimonyParagraph = "TestimonySeries";
-    private static readonly string Line = "Line";
-    private static readonly string PressedInteractions = "PressedInteractions";
-    private static readonly string PressedInteraction = "PressedInteraction";
+    private static readonly string CASE_XML_TAG = "Case";
+    private static readonly string CROSS_EXAMINATION_XML_TAG = "CrossExamination";
+    private static readonly string TESTIMONY_SERIES_XML_TAG = "TestimonySeries";
+    private static readonly string TESTIMONY_PARAGRAPH_XML_TAG = "TestimonyParagraph";
+    private static readonly string LINE_XML_TAG = "Line";
+    private static readonly string PRESSED_INTERACTIONS_XML_TAG = "PressedInteractions";
+    private static readonly string PRESSED_INTERACTION_XML_TAG = "PressedInteraction";
+    private static readonly string CHARACTER_XML_TAG = "Character";
+    private static readonly string PARAGRAPH_XML_TAG = "Paragraph";
+
 
 
 
@@ -46,9 +49,9 @@ public class CrossExaminationController : MonoBehaviour
 
         currentTestimonySeriesSlot++;
 
-        IEnumerable<XElement> targetTestimonySeries = crossExamination.Elements("TestimonySeries").Skip(currentTestimonySeriesSlot - 1).Take(1);
+        XElement targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesSlot - 1).Take(1).ToList().First();
 
-        string displayText = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element("TestimonyParagraph")
+        string displayText = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
 
 
@@ -63,9 +66,9 @@ public class CrossExaminationController : MonoBehaviour
 
         XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 
-        crossExamination = firstFileXML.Element("CrossExamination");
+        crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 
-        string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element("TestimonySeries").Element("TestimonyParagraph"));
+        string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
         displayText.text = firstMessage;
     }

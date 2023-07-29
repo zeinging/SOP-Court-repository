@@ -1,15 +1,18 @@
 using System.Collections;
-using System.Xml.Linq;
 using UnityEngine;
 
 public class GameplayControllerScript : MonoBehaviour
 {
 
-    public GameObject DialogueBox;
+    public GameObject DialogueBox, interuptionImage;
+
+    public Sprite[] interuptionSprites;
 
     public ScriptableObjectProfile JudgeProfile, DefenseProfile, ProsecutorProfile;//CurrentWitnessOnStand
 
-    public XElement CurrentXMLData;
+    public string[] CurrentSceneDialogue;
+
+    public int currentSceneIndex = 0, maxFiles = 0;
 
     public static GameplayControllerScript instance;
 
@@ -25,15 +28,42 @@ public class GameplayControllerScript : MonoBehaviour
             instance = this;
         }
 
-        if (GetComponent<GetDocumentsScript>())
-        {
-            CurrentXMLData = GetComponent<GetDocumentsScript>().GetXmlFromFile(currentSceneIndex);
-        }
+        // if(GetComponent<GetDocumentsScript>()){
+        //     CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+        //     maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+        // }
+
+        CurrentSceneDialogue = GetComponent<DialogueHolderTestScript>().DialogueHolder;//delete later
 
         //OpenDialogueBox(1.5f);
         StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
+
+    public void HoldIt(float holdItTimer)
+    {
+        StartCoroutine(InteruptionTimer(holdItTimer, 0));
+    }
+
+    public void Objection(float objectionTimer)
+    {
+        StartCoroutine(InteruptionTimer(objectionTimer, 1));
+    }
+
+    public void TakeThat(float takeThatTimer)
+    {
+        StartCoroutine(InteruptionTimer(takeThatTimer, 2));
+    }
+
+    private IEnumerator InteruptionTimer(float t, int spriteIndex)
+    {
+        interuptionImage.GetComponent<UnityEngine.UI.Image>().sprite = interuptionSprites[spriteIndex];
+        interuptionImage.SetActive(true);
+        yield return new WaitForSeconds(t);
+        interuptionImage.SetActive(false);
+    }
+
+
 
     public void MoveToNextSceneDialogue()
     {
@@ -45,7 +75,7 @@ public class GameplayControllerScript : MonoBehaviour
             {
                 StartCoroutine(DelayFade());
                 currentSceneIndex++;
-                CurrentXMLData = GetComponent<GetDocumentsScript>().GetXmlFromFile(currentSceneIndex);
+                CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
                 //OpenDialogueBox(3f);
                 StartCoroutine(DelayDialogueBox(1f, 0));
             }
@@ -55,6 +85,7 @@ public class GameplayControllerScript : MonoBehaviour
             }
 
         }
+        StartCoroutine(DelayFade());//delete later
 
     }
 

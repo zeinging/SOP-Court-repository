@@ -74,7 +74,7 @@ public class DialoguePanelScript : MonoBehaviour
         else
         {
 
-            StoredDialogue.
+            //StoredDialogue.
 
 
 

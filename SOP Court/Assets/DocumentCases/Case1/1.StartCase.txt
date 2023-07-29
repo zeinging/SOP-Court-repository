@@ -1,6 +1,9 @@
 [date]July 20th 12:00 PM
 [judge] is the prosection ready?
 [prosecutor][AnimDeskSlam] the prosection is ready your honor.
+[prosecutor][AnimSmirk]check out my smug animation.
+[prosecutor][AnimRealization]oh, no...
 [judge] is the defence ready?
 [defence] the defence is ready your honor.
+[defence][AnimRealization] I'm not sus.
 [judge] Let's Hear the Witness's Testimony.

@@ -9,7 +9,9 @@ public class DialoguePanelScript : MonoBehaviour
 
     public GameObject ContinueButton, pressButton, presentButton, leftArrowButton, rightArrowButton;
 
-    public Text SpeakerName, Dialogue;
+    public Text SpeakerName;
+
+    public Text[] DialogueLines = new Text[3];
 
     public Animator currentSubjectanim;
 
@@ -60,6 +62,7 @@ public class DialoguePanelScript : MonoBehaviour
 
         ContinueButton.gameObject.SetActive(true);
         //SpeakerName.transform.parent.gameObject.SetActive(true);
+        //StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
         StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
         StartCoroutine(AnimateText());
     }
@@ -67,7 +70,12 @@ public class DialoguePanelScript : MonoBehaviour
     public void CloseDialogueBox(){
         CurrentDialogue = 0;
         StoredDialogue = "";
-        Dialogue.text = "";
+        // StoredDialogue[0] = "";
+        // StoredDialogue[1] = "";
+        // StoredDialogue[2] = "";
+        DialogueLines[0].text = "";
+        DialogueLines[1].text = "";
+        DialogueLines[2].text = "";
         SpeakerName.text = "";
         this.gameObject.SetActive(false);
         ContinueButton.SetActive(false);
@@ -93,12 +101,14 @@ public class DialoguePanelScript : MonoBehaviour
                         CurrentDialogue++;
                     }
                     StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
-                    Dialogue.text = "";
+                    DialogueLines[0].text = "";
+                    DialogueLines[1].text = "";
+                    DialogueLines[2].text = "";
                     StartCoroutine(AnimateText());
                 }
                 else { 
                     StopAllCoroutines();
-                    Dialogue.text = StoredDialogue;
+                    DialogueLines[0].text = StoredDialogue;
                     isAnimating = false;
                 }
 
@@ -140,14 +150,14 @@ public class DialoguePanelScript : MonoBehaviour
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Date.Length);
             //StoredDialogue = System.DateTime.Now.ToString();
             //Debug.Log("change color");
-            Dialogue.color = Color.green;
-            Dialogue.alignment = TextAnchor.MiddleCenter;
+            DialogueLines[0].color = Color.green;
+            DialogueLines[0].alignment = TextAnchor.MiddleCenter;
         }
         else
         {
             //SpeakerName.transform.parent.gameObject.SetActive(true);
-            Dialogue.color = Color.white;
-            Dialogue.alignment = TextAnchor.UpperLeft;
+            DialogueLines[0].color = Color.white;
+            DialogueLines[0].alignment = TextAnchor.UpperLeft;
         }
 
         if (DialogueContainsTag(StoredDialogue, DocumentTags.Defence))
@@ -189,8 +199,8 @@ public class DialoguePanelScript : MonoBehaviour
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
-            Dialogue.color = Color.green;
-            Dialogue.alignment = TextAnchor.MiddleCenter;
+            DialogueLines[0].color = Color.green;
+            DialogueLines[0].alignment = TextAnchor.MiddleCenter;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.WitnessTestimony.Length);
             currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
         }
@@ -199,8 +209,8 @@ public class DialoguePanelScript : MonoBehaviour
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
-            Dialogue.color = Color.red;
-            Dialogue.alignment = TextAnchor.MiddleCenter;
+            DialogueLines[0].color = Color.red;
+            DialogueLines[0].alignment = TextAnchor.MiddleCenter;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.CrossExamination.Length);
             currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
             OpenCrossExaminationPanel();
@@ -251,6 +261,8 @@ public class DialoguePanelScript : MonoBehaviour
 
         CheckForTags();
 
+        
+
         //for (int t = 0; t < StoredDialogue.Length; t++) {
         //    Dialogue.text += " ";
         //    Debug.Log("t = " + t);
@@ -267,7 +279,7 @@ public class DialoguePanelScript : MonoBehaviour
                 //Dialogue.text = Dialogue.text.Remove(i, 1);
                 //Dialogue.text = Dialogue.text.Insert(i, StoredDialogue.ToCharArray()[i].ToString());
                 //Debug.Log(Dialogue.text.ToCharArray()[i]);
-                Dialogue.text += StoredDialogue.ToCharArray()[i];
+                DialogueLines[0].text += StoredDialogue.ToCharArray()[i];
             }
 
             i++;

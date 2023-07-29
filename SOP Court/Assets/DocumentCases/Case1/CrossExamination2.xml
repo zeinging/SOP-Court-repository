@@ -7,21 +7,21 @@
       </TestimonyParagraph>
       <PressedInteractions>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>You said "heard"...</Line>
             <Line>Not "saw"?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Yes, heard.</Line>
           </Paragraph>
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>All I saw was the body</Line>
             <Line>lying there...</Line>
@@ -29,7 +29,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>I didn't think to look at</Line>
             <Line>anything else, least of all</Line>
@@ -39,7 +39,7 @@
 
 
         <PressedInteraction>
-          <character>Phoenix</character>
+          <Character>Phoenix</Character>
           <Paragraph>
             <Line>Hmm...</Line>
             <Line>Isn't that a little strange?</Line>
@@ -48,7 +48,7 @@
 
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>So you're saying you</Line>
             <Line>"heard" something.</Line>
@@ -57,7 +57,7 @@
 
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>But if you were so shocked by</Line>
             <Line>the body, you wouldn't hear</Line>
@@ -66,7 +66,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>The witness did say he</Line>
             <Line>actually heard the time.</Line>
@@ -74,7 +74,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>It's ludicrous to suggest</Line>
             <Line>he "wouldn't hear anything"!</Line>
@@ -82,7 +82,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Hmm...</Line>
             <Line>I have to agree with</Line>
@@ -91,7 +91,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Witness, continue</Line>
             <Line>your testimony.</Line>
@@ -108,13 +108,13 @@
       </TestimonyParagraph>
       <PressedInteractions item="Blackout Record">
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Hold it right there!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>The prosecution has said there</Line>
             <Line>was a blackout at the time of</Line>
@@ -123,14 +123,14 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>And this record proves it!</Line>
           </Paragraph>
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>...!</Line>
           </Paragraph>
@@ -138,70 +138,70 @@
 
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>You couldn't have heard</Line>
             <Line>a television... or a video!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Gah!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>I... well... urk!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>The defense has a point.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Do you have an explanation for this, Mr. Sahwit?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>No, I... I find it quite</Line>
             <Line>puzzling myself! Quite!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>...</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Aah!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>W-wait!</Line>
             <Line>I remember now!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Mr. Sahwit?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>The court would prefer to hear</Line>
             <Line>an accurate testimony from the</Line>
@@ -209,33 +209,33 @@
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>These constant corrections</Line>
             <Line>are harming your credibility.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>That and you seem</Line>
             <Line>rather... distraught.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>...!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>M-my apologies, Your Honor!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>It... er, it must have</Line>
             <Line>been the shock of finding</Line>
@@ -243,13 +243,13 @@
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Very well, Mr. Sahwit.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Let's hear your testimony</Line>
             <Line>once more please.</Line>
@@ -264,14 +264,14 @@
       </TestimonyParagraph>
       <PressedInteractions>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>What gave you the </Line>
             <Line>idea to do that?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Well the door was half-open,</Line>
             <Line>you see.</Line>
@@ -279,7 +279,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Isn't it only human</Line>
             <Line>to want to... peek?</Line>
@@ -287,7 +287,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>We climb mountains because</Line>
             <Line>they are there!</Line>
@@ -297,7 +297,7 @@
 
 
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>Truer words have never</Line>
             <Line>been spoken!</Line>
@@ -306,7 +306,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>(Hmm... why did Payne cut</Line>
             <Line>him off so quickly?)</Line>
@@ -314,7 +314,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>So you looked into the</Line>
             <Line>apartment.</Line>
@@ -332,20 +332,20 @@
       </TestimonyParagraph>
       <PressedInteractions>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Are you sure she was dead?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>W-Well, no, I guess I wasn't.</Line>
           </Paragraph>
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>But, she wasn't moving at</Line>
             <Line>all, and there was blood</Line>
@@ -354,7 +354,7 @@
         </PressedInteraction>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>(I guess that would look </Line>
             <Line>fatal to anyone...)</Line>
@@ -363,7 +363,7 @@
 
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Very well, what happened next?</Line>
           </Paragraph>
@@ -380,7 +380,7 @@
 
         <!-- The guide I was wasn't didn't press this part so I'm just doing a simple one for now -->
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Ok, I believe you!</Line>
           </Paragraph>
@@ -397,7 +397,7 @@
       <PressedInteractions>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>You "thought" to call</Line>
             <Line>the police? Does that mean you</Line>
@@ -406,7 +406,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>Please, please... Listen to</Line>
             <Line>the rest of the testimony.</Line>
@@ -414,7 +414,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>You thought to call the</Line>
             <Line>police... What happened next?</Line>
@@ -432,7 +432,7 @@
       <PressedInteractions>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>The phone in her apartment</Line>
             <Line>wasn't working?</Line>
@@ -440,7 +440,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Yes. I mean, no.</Line>
             <Line>No, it wasn't. Right.</Line>
@@ -448,7 +448,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>But you said you didn't</Line>
             <Line>go into the apartment...</Line>
@@ -456,7 +456,7 @@
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Oh, oh, that? I can explain</Line>
             <Line>that!</Line>
@@ -464,7 +464,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>There was a coordless phone</Line>
             <Line>on a shelf in the entranceway.</Line>
@@ -472,7 +472,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>I reached inside and tried</Line>
             <Line>using that to call...</Line>
@@ -480,14 +480,14 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>And that phone wasn't</Line>
             <Line>working, correct?</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>What happened next?</Line>
           </Paragraph>
@@ -504,14 +504,14 @@
       <PressedInteractions>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Why use a public phone?</Line>
           </Paragraph>
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Well, you see, I don't</Line>
             <Line>have a cell phone.</Line>
@@ -519,7 +519,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>And, being the middle of the</Line>
             <Line>afternoon, there was no answer</Line>
@@ -527,7 +527,7 @@
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Ah, right... what time</Line>
             <Line>did you call again?</Line>
@@ -544,7 +544,7 @@
       <PressedInteractions>
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>You found the body at 1:00PM.</Line>
             <Line>You're sure?.</Line>
@@ -552,7 +552,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Yes.</Line>
             <Line>It was 1:00 PM, for certain.</Line>
@@ -560,21 +560,21 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Frankly, I find that hard to </Line>
             <Line>believe!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Your statement directly</Line>
             <Line>conflicts the autopsy report.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>The autopsy notes the time</Line>
             <Line>of death at sometime after</Line>
@@ -583,7 +583,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>There was nobody to... er...</Line>
             <Line>no "body" to find at 1:00 PM!</Line>
@@ -592,7 +592,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>How do you explain this</Line>
             <Line>three hour gap?</Line>
@@ -600,21 +600,21 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>!!!</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Oh, that! Oh, er...</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>This is trivial! The witness</Line>
             <Line>merely forgot the time!</Line>
@@ -622,7 +622,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>After his testimony, I find</Line>
             <Line>that hard to believe.</Line>
@@ -630,14 +630,14 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Mr. Sahwit...</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Why were you so certain</Line>
             <Line>that you found the body</Line>
@@ -646,7 +646,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>I... er... well, I...</Line>
             <Line>Gee, that's a really good</Line>
@@ -655,7 +655,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>Great job, Wright!</Line>
             <Line>Way to put him on the spot!</Line>
@@ -663,7 +663,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>That's all you have to do:</Line>
             <Line>point out contradictions!</Line>
@@ -671,28 +671,28 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>Lies always beget more lies!</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>See through one, and their</Line>
             <Line>whole story falls apart!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Wait!</Line>
             <Line>I remember now!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Would you care to give</Line>
             <Line>your testimony again?</Line>
@@ -702,7 +702,7 @@
       <PressedInteractions item="Cindy's Autopsy Report">
 
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>You found the body at 1:00PM.</Line>
             <Line>You're sure?.</Line>
@@ -710,7 +710,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Yes.</Line>
             <Line>It was 1:00 PM, for certain.</Line>
@@ -718,21 +718,21 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Frankly, I find that hard to </Line>
             <Line>believe!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Your statement directly</Line>
             <Line>conflicts the autopsy report.</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>The autopsy notes the time</Line>
             <Line>of death at sometime after</Line>
@@ -741,7 +741,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>There was nobody to... er...</Line>
             <Line>no "body" to find at 1:00 PM!</Line>
@@ -750,7 +750,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Phoenix Wright</character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>How do you explain this</Line>
             <Line>three hour gap?</Line>
@@ -758,21 +758,21 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>!!!</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Oh, that! Oh, er...</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Payne</character>
+          <Character>Payne</Character>
           <Paragraph>
             <Line>This is trivial! The witness</Line>
             <Line>merely forgot the time!</Line>
@@ -780,7 +780,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>After his testimony, I find</Line>
             <Line>that hard to believe.</Line>
@@ -788,14 +788,14 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Mr. Sahwit...</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Why were you so certain</Line>
             <Line>that you found the body</Line>
@@ -804,7 +804,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>I... er... well, I...</Line>
             <Line>Gee, that's a really good</Line>
@@ -813,7 +813,7 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>Great job, Wright!</Line>
             <Line>Way to put him on the spot!</Line>
@@ -821,7 +821,7 @@
         </PressedInteraction>
         
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>That's all you have to do:</Line>
             <Line>point out contradictions!</Line>
@@ -829,28 +829,28 @@
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>Lies always beget more lies!</Line>
           </Paragraph>
         </PressedInteraction>
       
         <PressedInteraction>
-          <character>Mia</character>
+          <Character>Mia</Character>
           <Paragraph>
             <Line>See through one, and their</Line>
             <Line>whole story falls apart!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Sahwit</character>
+          <Character>Sahwit</Character>
           <Paragraph>
             <Line>Wait!</Line>
             <Line>I remember now!</Line>
           </Paragraph>
         </PressedInteraction>
         <PressedInteraction>
-          <character>Judge</character>
+          <Character>Judge</Character>
           <Paragraph>
             <Line>Would you care to give</Line>
             <Line>your testimony again?</Line>

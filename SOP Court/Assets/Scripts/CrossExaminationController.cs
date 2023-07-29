@@ -8,14 +8,24 @@ using UnityEngine.UI;
 public class CrossExaminationController : MonoBehaviour
 {
 
+    private static readonly string CaseXMLTag = "Case";
+    private static readonly string CrossExaminationXMLTag = "CrossExamination";
+    private static readonly string TestimonySeries = "TestimonySeries";
+    private static readonly string TestimonyParagraph = "TestimonySeries";
+    private static readonly string Line = "Line";
+    private static readonly string PressedInteractions = "PressedInteractions";
+    private static readonly string PressedInteraction = "PressedInteraction";
+
+
+
     private int currentFileNumber = 1;
 
-    private int currentTestimonySeriesIndex = 1;
+    private int currentTestimonySeriesSlot = 1;
 
 
 
 
-    private XElement currentTestimonySeries;
+    private XElement crossExamination;
 
     // Debugging
 
@@ -33,7 +43,15 @@ public class CrossExaminationController : MonoBehaviour
 
     public void Continue()
     {
-        Debug.Log("Continue");
+
+        currentTestimonySeriesSlot++;
+
+        IEnumerable<XElement> targetTestimonySeries = crossExamination.Elements("TestimonySeries").Skip(currentTestimonySeriesSlot - 1).Take(1);
+
+        string displayText = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element("TestimonyParagraph")
+
+
+
     }
     public void Press()
     {
@@ -45,9 +63,9 @@ public class CrossExaminationController : MonoBehaviour
 
         XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 
-        currentTestimonySeries = firstFileXML.Element("CrossExamination").Element("TestimonySeries");
+        crossExamination = firstFileXML.Element("CrossExamination");
 
-        string firstMessage = GetDislpayTextFromTestimonyParagraph(currentTestimonySeries.Element("TestimonyParagraph"));
+        string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element("TestimonySeries").Element("TestimonyParagraph"));
 
         displayText.text = firstMessage;
     }

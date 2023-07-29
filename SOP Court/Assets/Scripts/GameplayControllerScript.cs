@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class GameplayControllerScript : MonoBehaviour
@@ -9,24 +9,25 @@ public class GameplayControllerScript : MonoBehaviour
 
     public ScriptableObjectProfile JudgeProfile, DefenseProfile, ProsecutorProfile;//CurrentWitnessOnStand
 
-    public string[] CurrentSceneDialogue;
-
-    public int currentSceneIndex = 0, maxFiles = 0;
+    public XElement CurrentXMLData;
 
     public static GameplayControllerScript instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(instance != null && instance != this){
+        if (instance != null && instance != this)
+        {
             Destroy(this);
-        }else{
+        }
+        else
+        {
             instance = this;
         }
 
-        if(GetComponent<GetDocumentsScript>()){
-            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-            maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+        if (GetComponent<GetDocumentsScript>())
+        {
+            CurrentXMLData = GetComponent<GetDocumentsScript>().GetXmlFromFile(currentSceneIndex);
         }
 
         //OpenDialogueBox(1.5f);
@@ -34,25 +35,31 @@ public class GameplayControllerScript : MonoBehaviour
 
     }
 
-    public void MoveToNextSceneDialogue(){
+    public void MoveToNextSceneDialogue()
+    {
 
-            if(currentSceneIndex < maxFiles - 1){
+        if (currentSceneIndex < maxFiles - 1)
+        {
 
-                if(GetComponent<GetDocumentsScript>()){
-                    StartCoroutine(DelayFade());
-                    currentSceneIndex++;
-                    CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-                    //OpenDialogueBox(3f);
-                    StartCoroutine(DelayDialogueBox(1f, 0));
-                }else{
-                    Debug.Log("case File Missing");
-                }
-
+            if (GetComponent<GetDocumentsScript>())
+            {
+                StartCoroutine(DelayFade());
+                currentSceneIndex++;
+                CurrentXMLData = GetComponent<GetDocumentsScript>().GetXmlFromFile(currentSceneIndex);
+                //OpenDialogueBox(3f);
+                StartCoroutine(DelayDialogueBox(1f, 0));
             }
-        
+            else
+            {
+                Debug.Log("case File Missing");
+            }
+
+        }
+
     }
 
-    public IEnumerator DelayFade(){
+    public IEnumerator DelayFade()
+    {
         SceneFaderScript.i.StartFade();
         yield return new WaitForSeconds(1f);
 
@@ -60,20 +67,23 @@ public class GameplayControllerScript : MonoBehaviour
         //CameraMover.instance.SnapCamHere(pos);
     }
 
-    public void OpenDialogueBox(float TextDelay){
+    public void OpenDialogueBox(float TextDelay)
+    {
         DialogueBox.SetActive(true);
         DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(TextDelay);
     }
 
-    public void OpenCrossExaminationBox(float openDelay){
-        
+    public void OpenCrossExaminationBox(float openDelay)
+    {
+
     }
 
-    private IEnumerator DelayDialogueBox(float openDelay, float textD) {
+    private IEnumerator DelayDialogueBox(float openDelay, float textD)
+    {
 
         yield return new WaitForSeconds(openDelay);
         //DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(t);
         OpenDialogueBox(textD);
     }
-    
+
 }

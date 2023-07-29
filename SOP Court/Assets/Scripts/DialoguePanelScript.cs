@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +28,8 @@ public class DialoguePanelScript : MonoBehaviour
         // StartCoroutine(AnimateText());
     }
 
-    void OnDisable(){
+    void OnDisable()
+    {
         // CurrentDialogue = 0;
         // StoredDialogue = "";
         // Dialogue.text = "";
@@ -38,11 +38,13 @@ public class DialoguePanelScript : MonoBehaviour
         //GameplayControllerScript.instance.MoveToNextSceneDialogue(CameraMover.instance.Witness.position);
     }
 
-    public void OpenDialogueBox(float openDelay){
+    public void OpenDialogueBox(float openDelay)
+    {
         StartCoroutine(DelayDialogueBox(openDelay));
     }
 
-    public void OpenCrossExaminationPanel(){
+    public void OpenCrossExaminationPanel()
+    {
         pressButton.SetActive(true);
         presentButton.SetActive(true);
         leftArrowButton.SetActive(true);
@@ -51,7 +53,8 @@ public class DialoguePanelScript : MonoBehaviour
         ContinueButton.SetActive(false);
     }
 
-    private IEnumerator DelayDialogueBox(float t) {
+    private IEnumerator DelayDialogueBox(float t)
+    {
 
         yield return new WaitForSeconds(t);
         //this.gameObject.SetActive(true);
@@ -62,51 +65,56 @@ public class DialoguePanelScript : MonoBehaviour
         StartCoroutine(AnimateText());
     }
 
-    public void CloseDialogueBox(){
+    public void CloseDialogueBox()
+    {
         CurrentDialogue = 0;
         StoredDialogue = "";
         Dialogue.text = "";
         SpeakerName.text = "";
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         ContinueButton.SetActive(false);
         SpeakerName.transform.parent.gameObject.SetActive(false);
 
     }
 
-    public void Continue() {
+    public void Continue()
+    {
+        Debug.Log("Ran in Continue");
 
-            if(!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1){//where dialogue box closes
+        if (!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1)
+        {//where dialogue box closes
 
-                CloseDialogueBox();
-                
-                //GameplayControllerScript.instance.MoveToNextSceneDialogue(CameraMover.instance.Witness.position);
-                GameplayControllerScript.instance.MoveToNextSceneDialogue();
-                
-            }else{
+            CloseDialogueBox();
 
-                if (!isAnimating)
+            //GameplayControllerScript.instance.MoveToNextSceneDialogue(CameraMover.instance.Witness.position);
+            GameplayControllerScript.instance.MoveToNextSceneDialogue();
+
+        }
+        else
+        {
+
+            if (!isAnimating)
+            {
+                //Dialogue.text = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
+                if (CurrentDialogue < GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1)
                 {
-                    //Dialogue.text = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
-                    if(CurrentDialogue < GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1){
-                        CurrentDialogue++;
-                    }
-                    StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
-                    Dialogue.text = "";
-                    StartCoroutine(AnimateText());
+                    CurrentDialogue++;
                 }
-                else { 
-                    StopAllCoroutines();
-                    Dialogue.text = StoredDialogue;
-                    isAnimating = false;
-                }
-
+                StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
+                Dialogue.text = "";
+                StartCoroutine(AnimateText());
             }
-
-
-
+            else
+            {
+                StopAllCoroutines();
+                Dialogue.text = StoredDialogue;
+                isAnimating = false;
+            }
+        }
     }
 
-    private void CheckForTags() {
+    private void CheckForTags()
+    {
 
         if (StoredDialogue.Contains(DocumentTags.Date.ToLower()) || StoredDialogue.Contains(DocumentTags.Date))
         {
@@ -148,14 +156,16 @@ public class DialoguePanelScript : MonoBehaviour
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Judge.Length);
         }
 
-        if(StoredDialogue.Contains(DocumentTags.Witness.ToLower()) || StoredDialogue.Contains(DocumentTags.Witness)){
+        if (StoredDialogue.Contains(DocumentTags.Witness.ToLower()) || StoredDialogue.Contains(DocumentTags.Witness))
+        {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = SuspectProfileScript.instance.CurrentSuspectData.WitnessName;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Witness.Length);
         }
 
-        if(StoredDialogue.Contains(DocumentTags.WitnessTestimony.ToLower()) || StoredDialogue.Contains(DocumentTags.WitnessTestimony)){
+        if (StoredDialogue.Contains(DocumentTags.WitnessTestimony.ToLower()) || StoredDialogue.Contains(DocumentTags.WitnessTestimony))
+        {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
@@ -164,7 +174,8 @@ public class DialoguePanelScript : MonoBehaviour
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.WitnessTestimony.Length);
         }
 
-        if(StoredDialogue.Contains(DocumentTags.CrossExamination.ToLower()) || StoredDialogue.Contains(DocumentTags.CrossExamination)){
+        if (StoredDialogue.Contains(DocumentTags.CrossExamination.ToLower()) || StoredDialogue.Contains(DocumentTags.CrossExamination))
+        {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
@@ -176,7 +187,8 @@ public class DialoguePanelScript : MonoBehaviour
 
     }
 
-    public IEnumerator AnimateText() {
+    public IEnumerator AnimateText()
+    {
 
         CheckForTags();
 
@@ -188,11 +200,13 @@ public class DialoguePanelScript : MonoBehaviour
         //yield return new WaitForSeconds(textSpeed);//delay a bit before animating
         isAnimating = true;
         int i = 0;
-        while (i < StoredDialogue.Length && isAnimating) {
+        while (i < StoredDialogue.Length && isAnimating)
+        {
             yield return new WaitForSeconds(textSpeed);
             //Dialogue.text += StoredDialogue.ToCharArray()[i];
 
-            if (i < StoredDialogue.Length) {
+            if (i < StoredDialogue.Length)
+            {
                 //Dialogue.text = Dialogue.text.Remove(i, 1);
                 //Dialogue.text = Dialogue.text.Insert(i, StoredDialogue.ToCharArray()[i].ToString());
                 //Debug.Log(Dialogue.text.ToCharArray()[i]);
@@ -203,7 +217,7 @@ public class DialoguePanelScript : MonoBehaviour
             yield return null;
         }
         isAnimating = false;
-            
+
     }
 
 }

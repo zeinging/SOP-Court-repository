@@ -1,11 +1,14 @@
 using System.IO;
 using System.Xml.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrossExaminationController : MonoBehaviour
 {
 
     // Debugging
+
+    public Text displayText;
 
 
     public void Previous()
@@ -21,8 +24,15 @@ public class CrossExaminationController : MonoBehaviour
         Debug.Log("Press!");
     }
 
-    private void Start()
+    void Awake()
     {
+
+        Debug.Log("Start ran");
+
+        displayText.text = "TEST TACO";
+
+
+
 
     }
 

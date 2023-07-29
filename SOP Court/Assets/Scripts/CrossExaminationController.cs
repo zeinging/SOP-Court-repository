@@ -1,10 +1,21 @@
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CrossExaminationController : MonoBehaviour
 {
+
+    private int currentFileNumber = 1;
+
+    private int currentTestimonySeriesIndex = 1;
+
+
+
+
+    private XElement currentTestimonySeries;
 
     // Debugging
 
@@ -19,22 +30,47 @@ public class CrossExaminationController : MonoBehaviour
     {
         Debug.Log("Next!");
     }
+
+    public void Continue()
+    {
+        Debug.Log("Continue");
+    }
     public void Press()
     {
         Debug.Log("Press!");
     }
 
-    void Awake()
+    void Start()
     {
 
-        Debug.Log("Start ran");
+        XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 
-        displayText.text = "TEST TACO";
+        currentTestimonySeries = firstFileXML.Element("CrossExamination").Element("TestimonySeries");
 
+        string firstMessage = GetDislpayTextFromTestimonyParagraph(currentTestimonySeries.Element("TestimonyParagraph"));
 
-
-
+        displayText.text = firstMessage;
     }
+
+
+    private string GetDislpayTextFromTestimonyParagraph(XElement testimonyParagraph)
+    {
+
+        IEnumerable<string> lines = testimonyParagraph.Elements("Line").Select(x => x.Value);
+
+        Debug.Log("Lines:");
+
+        string combinedString = "";
+        foreach (string line in lines)
+        {
+            combinedString += line + "\n";
+            Debug.Log(line);
+        }
+
+        return combinedString;
+    }
+
+
 
 
     private XElement GetXmlFromFile(int crossExaminationNumber)

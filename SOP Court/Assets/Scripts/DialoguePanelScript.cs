@@ -1,5 +1,3 @@
-
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -83,7 +81,6 @@ public class DialoguePanelScript : MonoBehaviour
 
     public void Continue()
     {
-        Debug.Log("Ran in Continue");
 
         if (!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 1)
         {//where dialogue box closes
@@ -114,39 +111,42 @@ public class DialoguePanelScript : MonoBehaviour
                 Dialogue.text = StoredDialogue;
                 isAnimating = false;
             }
+
         }
+
+
+
     }
 
-<<<<<<< HEAD
-    private void CheckForTags()
+    public void Press()
     {
-=======
-    public void Press(){
         GameplayControllerScript.instance.HoldIt(1f);
     }
 
-    public void Present(){//should open the court record instead, before objection image appears
+    public void Present()
+    {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);
     }
 
-    public void moveInCrossExamination(bool isLeft){
-        if(isLeft){
+    public void moveInCrossExamination(bool isLeft)
+    {
+        if (isLeft)
+        {
             Debug.Log("move back");
-        }else{
+        }
+        else
+        {
             Debug.Log("move forward");
         }
     }
 
-    public bool DialogueContainsTag(string dialogueTags,string tag){
-        if(dialogueTags.Contains(tag.ToLower()) || dialogueTags.Contains(tag)){
-            return true;
-        }else{
-            return false;
-        }
+    public bool DialogueContainsTag(string dialogueTags, string tag)
+    {
+        return dialogueTags.Contains(tag.ToLower()) || dialogueTags.Contains(tag);
     }
 
-    private void CheckForTags() {
->>>>>>> main
+    private void CheckForTags()
+    {
 
         if (DialogueContainsTag(StoredDialogue, DocumentTags.Date))
         {
@@ -191,12 +191,8 @@ public class DialoguePanelScript : MonoBehaviour
             currentSubjectanim = CameraMover.instance.Judge.GetComponent<Animator>();
         }
 
-<<<<<<< HEAD
-        if (StoredDialogue.Contains(DocumentTags.Witness.ToLower()) || StoredDialogue.Contains(DocumentTags.Witness))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.Witness))
         {
-=======
-        if(DialogueContainsTag(StoredDialogue, DocumentTags.Witness)){
->>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = SuspectProfileScript.instance.CurrentSuspectData.WitnessName;
@@ -204,12 +200,8 @@ public class DialoguePanelScript : MonoBehaviour
             currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
         }
 
-<<<<<<< HEAD
-        if (StoredDialogue.Contains(DocumentTags.WitnessTestimony.ToLower()) || StoredDialogue.Contains(DocumentTags.WitnessTestimony))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.WitnessTestimony))
         {
-=======
-        if(DialogueContainsTag(StoredDialogue, DocumentTags.WitnessTestimony)){
->>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
@@ -219,12 +211,8 @@ public class DialoguePanelScript : MonoBehaviour
             currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
         }
 
-<<<<<<< HEAD
-        if (StoredDialogue.Contains(DocumentTags.CrossExamination.ToLower()) || StoredDialogue.Contains(DocumentTags.CrossExamination))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.CrossExamination))
         {
-=======
-        if(DialogueContainsTag(StoredDialogue, DocumentTags.CrossExamination)){
->>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;

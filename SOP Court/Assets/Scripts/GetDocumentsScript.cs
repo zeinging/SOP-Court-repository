@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GetDocumentsScript : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class GetDocumentsScript : MonoBehaviour
     FilesPathCase4Folder,
     FilesPathCase5Folder;
 
+    public string[] DialogueFromWebFile = new string[1];
+
     //public string[] Dialogue;
 
     // Start is called before the first frame update
@@ -28,6 +32,8 @@ public class GetDocumentsScript : MonoBehaviour
         GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
         GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
         GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
+
+        StartCoroutine(GetTextFromWebFile());
     }
 
     public void GetCaseFolders()
@@ -58,6 +64,30 @@ public class GetDocumentsScript : MonoBehaviour
                 Files.Add(AllFiles[i]);
             }
         }
+
+    }
+
+    IEnumerator GetTextFromWebFile()
+    {//probably run at start.
+        Debug.Log("start getting files");
+
+        UnityWebRequest www = UnityWebRequest.Get("/1.StartCase.txt");
+
+        yield return www.SendWebRequest();
+        //yield return new WaitForSeconds(1f);
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            string results = www.downloadHandler.text;
+            Debug.Log(results);
+            //DialogueFromWebFile = www.downloadHandler.text;
+        }
+
+        www.Dispose();
 
     }
 

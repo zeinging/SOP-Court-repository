@@ -20,6 +20,8 @@ public class DialoguePanelScript : MonoBehaviour
 
     public bool isAnimating = false;
 
+    private bool isUsingCrossExaminationScript = false;
+
 
     // Start is called before the first frame update
     void OnEnable()
@@ -61,10 +63,23 @@ public class DialoguePanelScript : MonoBehaviour
         yield return new WaitForSeconds(t);
         //this.gameObject.SetActive(true);
 
-        ContinueButton.gameObject.SetActive(true);
         //SpeakerName.transform.parent.gameObject.SetActive(true);
-        StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
-        StartCoroutine(AnimateText());
+        ContinueButton.gameObject.SetActive(true);
+        if (!isUsingCrossExaminationScript)
+        {
+            StoredDialogue = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
+            StartCoroutine(AnimateText());
+
+        }
+        else
+        {
+
+            StoredDialogue.
+
+
+
+        }
+
     }
 
     public void CloseDialogueBox()

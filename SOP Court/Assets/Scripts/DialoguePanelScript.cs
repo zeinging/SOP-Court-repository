@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class DialoguePanelScript : MonoBehaviour
     public GameObject ContinueButton, pressButton, presentButton, leftArrowButton, rightArrowButton;
 
     public Text SpeakerName, Dialogue;
+
+    public Animator currentSubjectanim;
 
     public string StoredDialogue;
 
@@ -114,10 +117,38 @@ public class DialoguePanelScript : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void CheckForTags()
     {
+=======
+    public void Press(){
+        GameplayControllerScript.instance.HoldIt(1f);
+    }
 
-        if (StoredDialogue.Contains(DocumentTags.Date.ToLower()) || StoredDialogue.Contains(DocumentTags.Date))
+    public void Present(){//should open the court record instead, before objection image appears
+        GameplayControllerScript.instance.Objection(2f);
+    }
+
+    public void moveInCrossExamination(bool isLeft){
+        if(isLeft){
+            Debug.Log("move back");
+        }else{
+            Debug.Log("move forward");
+        }
+    }
+
+    public bool DialogueContainsTag(string dialogueTags,string tag){
+        if(dialogueTags.Contains(tag.ToLower()) || dialogueTags.Contains(tag)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    private void CheckForTags() {
+>>>>>>> main
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.Date))
         {
             SpeakerName.transform.parent.gameObject.SetActive(false);
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Date.Length);
@@ -133,57 +164,121 @@ public class DialoguePanelScript : MonoBehaviour
             Dialogue.alignment = TextAnchor.UpperLeft;
         }
 
-        if (StoredDialogue.Contains(DocumentTags.Defence.ToLower()) || StoredDialogue.Contains(DocumentTags.Defence))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.Defence))
         {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Defence.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = GameplayControllerScript.instance.DefenseProfile.WitnessName;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Defence.Length);
+            currentSubjectanim = CameraMover.instance.Defence.GetComponent<Animator>();
         }
 
-        if (StoredDialogue.Contains(DocumentTags.Prosecutor.ToLower()) || StoredDialogue.Contains(DocumentTags.Prosecutor))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.Prosecutor))
         {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Prosector.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = GameplayControllerScript.instance.ProsecutorProfile.WitnessName;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Prosecutor.Length);
+            currentSubjectanim = CameraMover.instance.Prosector.GetComponent<Animator>();
         }
 
-        if (StoredDialogue.Contains(DocumentTags.Judge.ToLower()) || StoredDialogue.Contains(DocumentTags.Judge))
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.Judge))
         {
             CameraMover.instance.SnapCamHere(CameraMover.instance.Judge.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = GameplayControllerScript.instance.JudgeProfile.WitnessName;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Judge.Length);
+            currentSubjectanim = CameraMover.instance.Judge.GetComponent<Animator>();
         }
 
+<<<<<<< HEAD
         if (StoredDialogue.Contains(DocumentTags.Witness.ToLower()) || StoredDialogue.Contains(DocumentTags.Witness))
         {
+=======
+        if(DialogueContainsTag(StoredDialogue, DocumentTags.Witness)){
+>>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             SpeakerName.transform.parent.gameObject.SetActive(true);
             SpeakerName.text = SuspectProfileScript.instance.CurrentSuspectData.WitnessName;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.Witness.Length);
+            currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
         }
 
+<<<<<<< HEAD
         if (StoredDialogue.Contains(DocumentTags.WitnessTestimony.ToLower()) || StoredDialogue.Contains(DocumentTags.WitnessTestimony))
         {
+=======
+        if(DialogueContainsTag(StoredDialogue, DocumentTags.WitnessTestimony)){
+>>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
             Dialogue.color = Color.green;
             Dialogue.alignment = TextAnchor.MiddleCenter;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.WitnessTestimony.Length);
+            currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
         }
 
+<<<<<<< HEAD
         if (StoredDialogue.Contains(DocumentTags.CrossExamination.ToLower()) || StoredDialogue.Contains(DocumentTags.CrossExamination))
         {
+=======
+        if(DialogueContainsTag(StoredDialogue, DocumentTags.CrossExamination)){
+>>>>>>> main
             CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
             //SpeakerName.transform.parent.gameObject.SetActive(true);
             //SpeakerName.text = DocumentTags.Witness;
             Dialogue.color = Color.red;
             Dialogue.alignment = TextAnchor.MiddleCenter;
             StoredDialogue = StoredDialogue.Remove(0, DocumentTags.CrossExamination.Length);
+            currentSubjectanim = CameraMover.instance.Witness.GetComponent<Animator>();
             OpenCrossExaminationPanel();
+        }
+
+
+        //animation tags
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimDeskSlam))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimDeskSlam.Length);
+            currentSubjectanim.Play(DocumentTags.AnimDeskSlam);
+            //Debug.Log("Slam Desk");
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimSmirk))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimSmirk.Length);
+            currentSubjectanim.Play(DocumentTags.AnimSmirk);
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimBreakdown))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimBreakdown.Length);
+            currentSubjectanim.Play(DocumentTags.AnimBreakdown);
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimRealization))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimRealization.Length);
+            currentSubjectanim.Play(DocumentTags.AnimRealization);
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimShock))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimShock.Length);
+            currentSubjectanim.Play(DocumentTags.AnimShock);
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimStandingIdle))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimStandingIdle.Length);
+            currentSubjectanim.Play(DocumentTags.AnimStandingIdle);
+        }
+
+        if (DialogueContainsTag(StoredDialogue, DocumentTags.AnimWalkingIdle))
+        {
+            StoredDialogue = StoredDialogue.Remove(0, DocumentTags.AnimWalkingIdle.Length);
+            currentSubjectanim.Play(DocumentTags.AnimWalkingIdle);
         }
 
     }

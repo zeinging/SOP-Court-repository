@@ -22,6 +22,10 @@ public static class DocumentTags
     CrossExamination = "[CrossExamination]",
     Contradiction = "[Contradiction]",
     Confession = "[Confession]",
+    
+
+    //prosecutor/defense Animation Tags
+    AnimDeskSlam = "[AnimDeskSlam]",
 
 
     //Witness Stand Animation Tags

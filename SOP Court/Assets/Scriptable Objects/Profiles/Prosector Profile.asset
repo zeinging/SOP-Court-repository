@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Prosector
   ProfileImage: {fileID: 0}
+  myAnim: {fileID: 9100000, guid: b464facfcccdc5943aeb5caf97895228, type: 2}
   WitnessProfesion: 
   WitnessEmoteFrames: []
   Confession: 

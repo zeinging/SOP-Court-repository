@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Judge
   ProfileImage: {fileID: 0}
+  myAnim: {fileID: 9100000, guid: 83149f0c9a2ad974fb4425b33332a817, type: 2}
   WitnessProfesion: 
   WitnessEmoteFrames: []
   Confession: 

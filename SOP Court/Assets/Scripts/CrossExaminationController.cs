@@ -4,6 +4,29 @@ using UnityEngine;
 
 public class CrossExaminationController : MonoBehaviour
 {
+
+    // Debugging
+
+
+    public void Previous()
+    {
+        Debug.Log("Previous!");
+    }
+    public void Next()
+    {
+        Debug.Log("Next!");
+    }
+    public void Press()
+    {
+        Debug.Log("Press!");
+    }
+
+    private void Start()
+    {
+
+    }
+
+
     private XElement GetXmlFromFile(int crossExaminationNumber)
     {
 

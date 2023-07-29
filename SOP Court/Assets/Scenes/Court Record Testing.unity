@@ -5785,10 +5785,18 @@ MonoBehaviour:
   - {fileID: 1005870825}
   - {fileID: 350726278}
   currentSubjectanim: {fileID: 0}
-  StoredDialogue: 
+  StoredDialogue:
+  - 
+  - 
+  - 
   textSpeed: 0.02
   CurrentDialogue: 0
   isAnimating: 0
+  PlayAnimHere: 000000000000000000000000
+  PlayThisClip:
+  - 
+  - 
+  - 
 --- !u!1 &1322835531
 GameObject:
   m_ObjectHideFlags: 0

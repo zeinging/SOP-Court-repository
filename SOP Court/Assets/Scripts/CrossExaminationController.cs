@@ -51,8 +51,9 @@ public class CrossExaminationController : MonoBehaviour
 
         XElement targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesSlot - 1).Take(1).ToList().First();
 
-        string displayText = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        string text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
+        displayText.text = text;
 
 
     }

@@ -39,14 +39,37 @@ public class CrossExaminationController : MonoBehaviour
     public Text displayText;
 
     private bool progressingThroughPressedInteraction = false;
+    private IEnumerator<(string, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
-    // Not 0 based but 1 based.
-    private IEnumerable<XElement> getElementAtSlot(IEnumerable<XElement> query, int slot)
+    private IEnumerator<(string, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
     {
-        return query.Skip(slot - 1).Take(1);
+
+
+        IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTION_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
+
+        foreach (XElement pressedInteraction in pressedInteractions)
+        {
+
+            List<string> paragraphStringList = pressedInteraction.Element(PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(x => x.Value).ToList();
+
+            string combinedParagraph = string.Join("\n", paragraphStringList);
+
+            string character = pressedInteraction.Element(CHARACTER_XML_TAG).Value;
+
+            yield return (combinedParagraph, character);
+
+        }
+
+
+
+
     }
 
-
+    // 0 base.
+    private IEnumerable<XElement> getElementAtSlot(IEnumerable<XElement> query, int slot)
+    {
+        return query.Skip(slot).Take(1);
+    }
 
 
     public void Previous()
@@ -110,6 +133,25 @@ public class CrossExaminationController : MonoBehaviour
 
         currentTestimonySeriesIndex++;
 
+        if (progressingThroughPressedInteraction)
+        {
+
+            ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+
+            (string, string) test = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+
+            string paragraph = test.Item1;
+            string character = test.Item2;
+
+            displayText.text = paragraph;
+            // TODO: Write code here to use character
+
+
+            return;
+        }
+
+
+
         List<XElement> targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesIndex).Take(1).ToList();
 
         if (targetTestimonySeries.Count <= 0)
@@ -149,9 +191,11 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
+
+
         IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
 
-
+        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
 
 
     }

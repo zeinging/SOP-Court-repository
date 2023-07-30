@@ -19,6 +19,9 @@ public class CrossExaminationController : MonoBehaviour
     private static readonly string PARAGRAPH_XML_TAG = "Paragraph";
 
 
+    private static readonly string ON_STAND_XML_ATTRIBUTE = "onStand";
+
+
 
 
     private int currentFileNumber = 1;
@@ -33,6 +36,8 @@ public class CrossExaminationController : MonoBehaviour
 
 
     private XElement crossExamination;
+
+    private string OnStandCharacter;
 
     // Debugging
 
@@ -105,6 +110,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         displayText.text = combinedString;
+        characterText.text = OnStandCharacter;
 
     }
     public void Next()
@@ -131,6 +137,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         displayText.text = combinedString;
+        characterText.text = OnStandCharacter;
     }
 
     public void Continue()
@@ -167,6 +174,7 @@ public class CrossExaminationController : MonoBehaviour
                 }
 
                 displayText.text = combinedString;
+                characterText.text = OnStandCharacter;
                 return;
 
             }
@@ -199,6 +207,7 @@ public class CrossExaminationController : MonoBehaviour
             string toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
             displayText.text = toSetText;
+            characterText.text = OnStandCharacter;
 
             currentTestimonySeriesIndex = 0;
 
@@ -212,6 +221,7 @@ public class CrossExaminationController : MonoBehaviour
         string text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.First().Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
         displayText.text = text;
+        characterText.text = OnStandCharacter;
 
 
     }
@@ -251,11 +261,14 @@ public class CrossExaminationController : MonoBehaviour
 
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 
+        OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
+
         numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
 
         string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
         displayText.text = firstMessage;
+        characterText.text = OnStandCharacter;
     }
 
 

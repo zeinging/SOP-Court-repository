@@ -23,9 +23,11 @@ public class CrossExaminationController : MonoBehaviour
 
     private int currentFileNumber = 1;
 
-    private int currentTestimonySeriesSlot = 1;
+    private int currentTestimonySeriesIndex = 0;
 
     private bool inCrossExaminationMode = false;
+
+    private int numberOfSeries = -1;
 
 
 
@@ -36,6 +38,12 @@ public class CrossExaminationController : MonoBehaviour
 
     public Text displayText;
 
+    // Not 0 based but 1 based.
+    private IEnumerable<XElement> getElementAtSlot(IEnumerable<XElement> query, int slot)
+    {
+        return query.Skip(slot - 1).Take(1);
+    }
+
 
     public void Previous()
     {
@@ -43,7 +51,28 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+
         Debug.Log("Previous!");
+
+        if (currentTestimonySeriesIndex <= 0)
+        {
+            Debug.Log("User attempted to go to previous item when on the first item.");
+            return;
+        }
+
+        currentTestimonySeriesIndex--;
+
+        IEnumerable<string> lines = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value);
+
+        string combinedString = "";
+
+        foreach (string line in lines)
+        {
+            combinedString += line + "\n";
+        }
+
+        displayText.text = combinedString;
+
     }
     public void Next()
     {
@@ -52,15 +81,32 @@ public class CrossExaminationController : MonoBehaviour
             return;
         }
         Debug.Log("Next!");
+        if (currentTestimonySeriesIndex > numberOfSeries - 1)
+        {
+            Debug.Log("User attempted to go to next item when on the last item.");
+            return;
+        }
+        currentTestimonySeriesIndex++;
+
+        IEnumerable<string> lines = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value);
+
+        string combinedString = "";
+
+        foreach (string line in lines)
+        {
+            combinedString += line + "\n";
+        }
+
+        displayText.text = combinedString;
     }
 
     public void Continue()
     {
 
 
-        currentTestimonySeriesSlot++;
+        currentTestimonySeriesIndex++;
 
-        List<XElement> targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesSlot - 1).Take(1).ToList();
+        List<XElement> targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesIndex).Take(1).ToList();
 
         if (targetTestimonySeries.Count <= 0)
         {
@@ -72,6 +118,8 @@ public class CrossExaminationController : MonoBehaviour
             string toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
             displayText.text = toSetText;
+
+            currentTestimonySeriesIndex = 1;
 
 
 
@@ -97,6 +145,8 @@ public class CrossExaminationController : MonoBehaviour
         XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
+
+        numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
 
         string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 

@@ -212,7 +212,8 @@ public class CrossExaminationController : MonoBehaviour
 
         ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (string, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
-        Debug.Log("Test");
+
+        displayText.text = test2.Item1;
 
 
 

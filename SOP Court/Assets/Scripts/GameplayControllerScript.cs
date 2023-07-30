@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameplayControllerScript : MonoBehaviour
@@ -20,9 +19,12 @@ public class GameplayControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(instance != null && instance != this){
+        if (instance != null && instance != this)
+        {
             Destroy(this);
-        }else{
+        }
+        else
+        {
             instance = this;
         }
 
@@ -39,47 +41,57 @@ public class GameplayControllerScript : MonoBehaviour
 
     }
 
-    public void HoldIt(float holdItTimer){
+    public void HoldIt(float holdItTimer)
+    {
         StartCoroutine(InteruptionTimer(holdItTimer, 0));
     }
 
-    public void Objection(float objectionTimer){
+    public void Objection(float objectionTimer)
+    {
         StartCoroutine(InteruptionTimer(objectionTimer, 1));
     }
 
-    public void TakeThat(float takeThatTimer){
+    public void TakeThat(float takeThatTimer)
+    {
         StartCoroutine(InteruptionTimer(takeThatTimer, 2));
     }
 
-    private IEnumerator InteruptionTimer(float t, int spriteIndex){
+    private IEnumerator InteruptionTimer(float t, int spriteIndex)
+    {
         interuptionImage.GetComponent<UnityEngine.UI.Image>().sprite = interuptionSprites[spriteIndex];
         interuptionImage.SetActive(true);
         yield return new WaitForSeconds(t);
         interuptionImage.SetActive(false);
     }
 
-    
 
-    public void MoveToNextSceneDialogue(){
 
-            if(currentSceneIndex < maxFiles - 1){
+    public void MoveToNextSceneDialogue()
+    {
 
-                if(GetComponent<GetDocumentsScript>()){
-                    StartCoroutine(DelayFade());
-                    currentSceneIndex++;
-                    CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-                    //OpenDialogueBox(3f);
-                    StartCoroutine(DelayDialogueBox(1f, 0));
-                }else{
-                    Debug.Log("case File Missing");
-                }
+        if (currentSceneIndex < maxFiles - 1)
+        {
 
+            if (GetComponent<GetDocumentsScript>())
+            {
+                StartCoroutine(DelayFade());
+                currentSceneIndex++;
+                CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+                //OpenDialogueBox(3f);
+                StartCoroutine(DelayDialogueBox(1f, 0));
             }
-            StartCoroutine(DelayFade());//delete later
-        
+            else
+            {
+                Debug.Log("case File Missing");
+            }
+
+        }
+        StartCoroutine(DelayFade());//delete later
+
     }
 
-    public IEnumerator DelayFade(){
+    public IEnumerator DelayFade()
+    {
         SceneFaderScript.i.StartFade();
         yield return new WaitForSeconds(1f);
 
@@ -87,20 +99,23 @@ public class GameplayControllerScript : MonoBehaviour
         //CameraMover.instance.SnapCamHere(pos);
     }
 
-    public void OpenDialogueBox(float TextDelay){
+    public void OpenDialogueBox(float TextDelay)
+    {
         DialogueBox.SetActive(true);
         DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(TextDelay);
     }
 
-    public void OpenCrossExaminationBox(float openDelay){
-        
+    public void OpenCrossExaminationBox(float openDelay)
+    {
+
     }
 
-    private IEnumerator DelayDialogueBox(float openDelay, float textD) {
+    private IEnumerator DelayDialogueBox(float openDelay, float textD)
+    {
 
         yield return new WaitForSeconds(openDelay);
         //DialogueBox.GetComponent<DialoguePanelScript>().OpenDialogueBox(t);
         OpenDialogueBox(textD);
     }
-    
+
 }

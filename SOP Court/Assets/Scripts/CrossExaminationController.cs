@@ -25,6 +25,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private int currentTestimonySeriesSlot = 1;
 
+    private bool inCrossExaminationMode = false;
+
 
 
 
@@ -37,21 +39,48 @@ public class CrossExaminationController : MonoBehaviour
 
     public void Previous()
     {
+        if (!inCrossExaminationMode)
+        {
+            return;
+        }
         Debug.Log("Previous!");
     }
     public void Next()
     {
+        if (!inCrossExaminationMode)
+        {
+            return;
+        }
         Debug.Log("Next!");
     }
 
     public void Continue()
     {
 
+
         currentTestimonySeriesSlot++;
 
-        XElement targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesSlot - 1).Take(1).ToList().First();
+        List<XElement> targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesSlot - 1).Take(1).ToList();
 
-        string text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        if (targetTestimonySeries.Count <= 0)
+        {
+            // Last Testimony series perhaps. Handle transition to cross-examination mode
+
+            inCrossExaminationMode = true;
+
+
+            string toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
+
+            displayText.text = toSetText;
+
+
+
+            return;
+        }
+
+
+
+        string text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.First().Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
         displayText.text = text;
 

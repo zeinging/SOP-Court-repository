@@ -44,8 +44,16 @@ public class CrossExaminationController : MonoBehaviour
     private IEnumerator<(string, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
     {
 
+        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
 
-        IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTION_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
+        XElement targetSeries = series.ElementAt(currentTestimonySeriesIndex);
+
+        XElement pressedInteractions = targetSeries.Element(PRESSED_INTERACTION_XML_TAG);
+
+        IEnumerable<XElement> pressedInteraction = pressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
+
+
+        IEnumerable<XElement> pressedInteractions = pressedInteraction;
 
         foreach (XElement pressedInteraction in pressedInteractions)
         {
@@ -171,7 +179,7 @@ public class CrossExaminationController : MonoBehaviour
 
             displayText.text = toSetText;
 
-            currentTestimonySeriesIndex = 1;
+            currentTestimonySeriesIndex = 0;
 
 
 
@@ -201,7 +209,14 @@ public class CrossExaminationController : MonoBehaviour
 
         IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
 
+        List<XElement> test = pressedInteractions.ToList();
+
         ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep();
+
+        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        (string, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+        Debug.Log("Test");
+
 
 
     }

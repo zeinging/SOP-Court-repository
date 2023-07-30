@@ -146,7 +146,29 @@ public class CrossExaminationController : MonoBehaviour
         if (progressingThroughPressedInteraction)
         {
 
-            ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+            bool result = ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+
+            if (!result)
+            {
+                // last pressed interation. Go to next block
+                currentTestimonySeriesIndex++;
+
+                progressingThroughPressedInteraction = false;
+
+                IEnumerable<string> nextText = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
+
+                string combinedString = "";
+                foreach (string line in nextText)
+                {
+
+                    combinedString += line + "\n";
+
+                }
+
+                displayText.text = combinedString;
+                return;
+
+            }
 
             (string, string) test = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 

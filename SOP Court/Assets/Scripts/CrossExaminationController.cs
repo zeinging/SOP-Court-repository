@@ -48,14 +48,11 @@ public class CrossExaminationController : MonoBehaviour
 
         XElement targetSeries = series.ElementAt(currentTestimonySeriesIndex);
 
-        XElement pressedInteractions = targetSeries.Element(PRESSED_INTERACTION_XML_TAG);
+        XElement pressedInteractionsTag = targetSeries.Element(PRESSED_INTERACTIONS_XML_TAG);
 
-        IEnumerable<XElement> pressedInteraction = pressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
+        IEnumerable<XElement> pressedInteractionList = pressedInteractionsTag.Elements(PRESSED_INTERACTION_XML_TAG);
 
-
-        IEnumerable<XElement> pressedInteractions = pressedInteraction;
-
-        foreach (XElement pressedInteraction in pressedInteractions)
+        foreach (XElement pressedInteraction in pressedInteractionList)
         {
 
             List<string> paragraphStringList = pressedInteraction.Element(PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(x => x.Value).ToList();

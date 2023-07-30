@@ -37,6 +37,7 @@ public class CrossExaminationController : MonoBehaviour
     // Debugging
 
     public Text displayText;
+    public Text characterText;
 
     private bool progressingThroughPressedInteraction = false;
     private IEnumerator<(string, string)> ParagraphAndCharacterFromPressedInteractionInterator;
@@ -176,6 +177,7 @@ public class CrossExaminationController : MonoBehaviour
             string character = test.Item2;
 
             displayText.text = paragraph;
+            characterText.text = character;
             // TODO: Write code here to use character
 
 
@@ -236,6 +238,7 @@ public class CrossExaminationController : MonoBehaviour
         (string, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 
         displayText.text = test2.Item1;
+        characterText.text = test2.Item2;
 
 
 

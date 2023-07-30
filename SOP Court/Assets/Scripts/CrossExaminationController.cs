@@ -130,8 +130,13 @@ public class CrossExaminationController : MonoBehaviour
     public void Continue()
     {
 
+        if (!progressingThroughPressedInteraction && inCrossExaminationMode)
+        {
+            // don't want to use it in this case
+            return;
+        }
 
-        currentTestimonySeriesIndex++;
+
 
         if (progressingThroughPressedInteraction)
         {
@@ -151,6 +156,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
 
+        currentTestimonySeriesIndex++;
 
         List<XElement> targetTestimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Skip(currentTestimonySeriesIndex).Take(1).ToList();
 

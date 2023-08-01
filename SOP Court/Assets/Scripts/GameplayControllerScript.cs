@@ -16,6 +16,8 @@ public class GameplayControllerScript : MonoBehaviour
 
     public static GameplayControllerScript instance;
 
+    public bool IsInCrossExaminationScene = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +41,10 @@ public class GameplayControllerScript : MonoBehaviour
             maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
 
         }
-
-        StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+        if (!IsInCrossExaminationScene)
+        {
+            StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+        }
 
     }
 

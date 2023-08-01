@@ -6996,7 +6996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1373645828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7104,6 +7104,7 @@ MonoBehaviour:
   CurrentSceneDialogue: []
   currentSceneIndex: 0
   maxFiles: 0
+  IsInCrossExaminationScene: 1
 --- !u!1 &1383431442
 GameObject:
   m_ObjectHideFlags: 0

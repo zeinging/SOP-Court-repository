@@ -98,7 +98,6 @@ public class CrossExaminationController : MonoBehaviour
             return;
         }
 
-        ResetDisplayTexts();
 
         Debug.Log("Previous!");
 
@@ -107,6 +106,9 @@ public class CrossExaminationController : MonoBehaviour
             Debug.Log("User attempted to go to previous item when on the first item.");
             return;
         }
+
+
+        ResetDisplayTexts();
 
         currentTestimonySeriesIndex--;
 
@@ -129,7 +131,6 @@ public class CrossExaminationController : MonoBehaviour
             return;
         }
 
-        ResetDisplayTexts();
 
         Debug.Log("Next!");
         if (currentTestimonySeriesIndex > numberOfSeries - 1)
@@ -137,6 +138,9 @@ public class CrossExaminationController : MonoBehaviour
             Debug.Log("User attempted to go to next item when on the last item.");
             return;
         }
+
+        ResetDisplayTexts();
+
         currentTestimonySeriesIndex++;
 
         IEnumerable<string> lines = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value);

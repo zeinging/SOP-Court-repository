@@ -46,6 +46,13 @@ public class CrossExaminationController : MonoBehaviour
     private bool progressingThroughPressedInteraction = false;
     private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
+    private void ResetDisplayTexts()
+    {
+        displayTexts[0].text = "";
+        displayTexts[0].text = "";
+        displayTexts[0].text = "";
+    }
+
     private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
     {
 
@@ -83,10 +90,13 @@ public class CrossExaminationController : MonoBehaviour
 
     public void Previous()
     {
+
         if (!inCrossExaminationMode || progressingThroughPressedInteraction)
         {
             return;
         }
+
+        ResetDisplayTexts();
 
         Debug.Log("Previous!");
 
@@ -116,6 +126,9 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+
+        ResetDisplayTexts();
+
         Debug.Log("Next!");
         if (currentTestimonySeriesIndex > numberOfSeries - 1)
         {
@@ -138,6 +151,7 @@ public class CrossExaminationController : MonoBehaviour
 
     public void Continue()
     {
+        ResetDisplayTexts();
 
         if (!progressingThroughPressedInteraction && inCrossExaminationMode)
         {
@@ -266,7 +280,9 @@ public class CrossExaminationController : MonoBehaviour
         }
         characterText.text = test2.Item2;
     }
-    void Present()
+
+    // Open up the court record
+    public void Present()
     {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);
     }

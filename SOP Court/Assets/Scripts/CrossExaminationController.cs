@@ -161,12 +161,12 @@ public class CrossExaminationController : MonoBehaviour
                 progressingThroughPressedInteraction = false;
 
                 IEnumerable<string> nextText = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
-                int index = 0;
+                int indexFirst = 0;
                 foreach (string line in nextText)
                 {
-                    displayTexts[index].text = line;
+                    displayTexts[indexFirst].text = line;
 
-                    index++;
+                    indexFirst++;
 
                 }
 

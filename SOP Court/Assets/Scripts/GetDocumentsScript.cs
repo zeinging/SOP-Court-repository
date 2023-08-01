@@ -33,7 +33,7 @@ public class GetDocumentsScript : MonoBehaviour
         GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
         GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
 
-        StartCoroutine(GetTextFromWebFile());
+        //StartCoroutine(GetTextFromWebFile());
     }
 
     public void GetCaseFolders()
@@ -65,6 +65,11 @@ public class GetDocumentsScript : MonoBehaviour
             }
         }
 
+    }
+
+
+    public void StartGetTextFromWebFile(){
+        StartCoroutine(GetTextFromWebFile());
     }
 
     IEnumerator GetTextFromWebFile()

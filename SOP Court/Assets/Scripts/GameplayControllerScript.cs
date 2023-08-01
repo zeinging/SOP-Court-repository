@@ -32,27 +32,32 @@ public class GameplayControllerScript : MonoBehaviour
 
             //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().DialogueFromWebFile;
 
-             CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-             maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+            GetComponent<GetDocumentsScript>().StartGetTextFromWebFile();
+
+            //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+            //maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
 
         }
 
-        StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+        //StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
 
     public void HoldIt(float holdItTimer)
     {
+        AudioManagerScript.instance.PlaySound(1);
         StartCoroutine(InteruptionTimer(holdItTimer, 0));
     }
 
     public void Objection(float objectionTimer)
     {
+        AudioManagerScript.instance.PlaySound(0);
         StartCoroutine(InteruptionTimer(objectionTimer, 1));
     }
 
     public void TakeThat(float takeThatTimer)
     {
+        AudioManagerScript.instance.PlaySound(2);
         StartCoroutine(InteruptionTimer(takeThatTimer, 2));
     }
 

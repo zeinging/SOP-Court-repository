@@ -31,6 +31,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private int numberOfSeries = -1;
 
+    public GameObject ContinueButton;
+
 
 
 
@@ -151,13 +153,14 @@ public class CrossExaminationController : MonoBehaviour
 
     public void Continue()
     {
-        ResetDisplayTexts();
 
         if (!progressingThroughPressedInteraction && inCrossExaminationMode)
         {
             // don't want to use it in this case
             return;
         }
+
+        ResetDisplayTexts();
 
 
 
@@ -215,6 +218,13 @@ public class CrossExaminationController : MonoBehaviour
 
             inCrossExaminationMode = true;
 
+            if (ContinueButton == null)
+            {
+                Debug.LogError("Reference to ContinueButton is null while trying to disable it!");
+                return;
+            }
+            ContinueButton.SetActive(false);
+
 
             List<string> toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
@@ -260,7 +270,6 @@ public class CrossExaminationController : MonoBehaviour
 
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
-
 
 
         IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);

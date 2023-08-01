@@ -32,12 +32,14 @@ public class GameplayControllerScript : MonoBehaviour
 
             //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().DialogueFromWebFile;
 
-             CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-             maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+            GetComponent<GetDocumentsScript>().StartGetTextFromWebFile();
+
+            //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+            //maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
 
         }
 
-        StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+        //StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
 

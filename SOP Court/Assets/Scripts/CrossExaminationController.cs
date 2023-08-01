@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class CrossExaminationController : MonoBehaviour
 {
 
-    private static readonly string CASE_XML_TAG = "Case";
     private static readonly string CROSS_EXAMINATION_XML_TAG = "CrossExamination";
     private static readonly string TESTIMONY_SERIES_XML_TAG = "TestimonySeries";
     private static readonly string TESTIMONY_PARAGRAPH_XML_TAG = "TestimonyParagraph";

@@ -41,13 +41,13 @@ public class CrossExaminationController : MonoBehaviour
 
     // Debugging
 
-    public Text displayText;
+    public Text[] displayTexts;
     public Text characterText;
 
     private bool progressingThroughPressedInteraction = false;
-    private IEnumerator<(string, string)> ParagraphAndCharacterFromPressedInteractionInterator;
+    private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
-    private IEnumerator<(string, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
+    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
     {
 
         IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
@@ -63,11 +63,10 @@ public class CrossExaminationController : MonoBehaviour
 
             List<string> paragraphStringList = pressedInteraction.Element(PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(x => x.Value).ToList();
 
-            string combinedParagraph = string.Join("\n", paragraphStringList);
 
             string character = pressedInteraction.Element(CHARACTER_XML_TAG).Value;
 
-            yield return (combinedParagraph, character);
+            yield return (paragraphStringList, character);
 
         }
 
@@ -102,14 +101,13 @@ public class CrossExaminationController : MonoBehaviour
 
         IEnumerable<string> lines = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value);
 
-        string combinedString = "";
-
+        int index = 0;
         foreach (string line in lines)
         {
-            combinedString += line + "\n";
+            displayTexts[index].text = line;
+            index++;
         }
 
-        displayText.text = combinedString;
         characterText.text = OnStandCharacter;
 
     }
@@ -129,15 +127,14 @@ public class CrossExaminationController : MonoBehaviour
 
         IEnumerable<string> lines = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value);
 
-        string combinedString = "";
+        int index = 0;
 
         foreach (string line in lines)
         {
-            combinedString += line + "\n";
+            displayTexts[index].text = line;
+            index++;
         }
 
-        displayText.text = combinedString;
-        characterText.text = OnStandCharacter;
     }
 
     public void Continue()
@@ -164,34 +161,36 @@ public class CrossExaminationController : MonoBehaviour
                 progressingThroughPressedInteraction = false;
 
                 IEnumerable<string> nextText = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
-
-                string combinedString = "";
+                int index = 0;
                 foreach (string line in nextText)
                 {
+                    displayTexts[index].text = line;
 
-                    combinedString += line + "\n";
+                    index++;
 
                 }
 
-                displayText.text = combinedString;
                 characterText.text = OnStandCharacter;
                 return;
 
             }
 
-            (string, string) test = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+            (List<string>, string) test = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 
-            string paragraph = test.Item1;
+            List<string> paragraph = test.Item1;
             string character = test.Item2;
 
-            displayText.text = paragraph;
+            int indexSecond = 0;
+            foreach (string line in paragraph)
+            {
+                displayTexts[indexSecond].text = line;
+                indexSecond++;
+            }
+
             characterText.text = character;
             // TODO: Write code here to use character
-
-
             return;
         }
-
 
         currentTestimonySeriesIndex++;
 
@@ -204,9 +203,14 @@ public class CrossExaminationController : MonoBehaviour
             inCrossExaminationMode = true;
 
 
-            string toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
+            List<string> toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
-            displayText.text = toSetText;
+            int indexFirst = 0;
+            foreach (string line in toSetText)
+            {
+                displayTexts[indexFirst++].text = line;
+            }
+
             characterText.text = OnStandCharacter;
 
             currentTestimonySeriesIndex = 0;
@@ -218,9 +222,14 @@ public class CrossExaminationController : MonoBehaviour
 
 
 
-        string text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.First().Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        List<string> text = GetDislpayTextFromTestimonyParagraph(targetTestimonySeries.First().Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
-        displayText.text = text;
+        int index = 0;
+        foreach (string line in text)
+        {
+            displayTexts[index++].text = line;
+        }
+
         characterText.text = OnStandCharacter;
 
 
@@ -248,9 +257,14 @@ public class CrossExaminationController : MonoBehaviour
         ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep();
 
         ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
-        (string, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 
-        displayText.text = test2.Item1;
+        int index = 0;
+
+        foreach (string line in test2.Item1)
+        {
+            displayTexts[index++].text = line;
+        }
         characterText.text = test2.Item2;
     }
     void Present()
@@ -269,28 +283,25 @@ public class CrossExaminationController : MonoBehaviour
 
         numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
 
-        string firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
-        displayText.text = firstMessage;
+        int index = 0;
+
+        foreach (string line in firstMessage)
+        {
+            displayTexts[index++].text = line;
+        }
+
         characterText.text = OnStandCharacter;
     }
 
 
-    private string GetDislpayTextFromTestimonyParagraph(XElement testimonyParagraph)
+    private List<string> GetDislpayTextFromTestimonyParagraph(XElement testimonyParagraph)
     {
 
-        IEnumerable<string> lines = testimonyParagraph.Elements("Line").Select(x => x.Value);
+        List<string> lines = testimonyParagraph.Elements("Line").Select(x => x.Value).ToList();
 
-        Debug.Log("Lines:");
-
-        string combinedString = "";
-        foreach (string line in lines)
-        {
-            combinedString += line + "\n";
-            Debug.Log(line);
-        }
-
-        return combinedString;
+        return lines;
 
 
     }

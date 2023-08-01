@@ -133,7 +133,7 @@ public class CrossExaminationController : MonoBehaviour
 
 
         Debug.Log("Next!");
-        if (currentTestimonySeriesIndex > numberOfSeries - 1)
+        if (currentTestimonySeriesIndex >= numberOfSeries - 1)
         {
             Debug.Log("User attempted to go to next item when on the last item.");
             return;

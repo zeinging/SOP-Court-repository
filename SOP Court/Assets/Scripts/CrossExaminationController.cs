@@ -176,7 +176,21 @@ public class CrossExaminationController : MonoBehaviour
             if (!result)
             {
                 // last pressed interation. Go to next block
-                currentTestimonySeriesIndex++;
+                ContinueButton.SetActive(false);
+
+                // Check if it's the last series
+                if (currentTestimonySeriesIndex >= numberOfSeries - 1)
+                {
+
+                    // Means last series!
+                    Debug.Log("Need to implment loading next file");
+                    return;
+
+                }
+                else
+                {
+                    currentTestimonySeriesIndex++;
+                }
 
                 progressingThroughPressedInteraction = false;
 
@@ -267,6 +281,10 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+
+
+
+        ContinueButton.SetActive(true);
 
 
         GameplayControllerScript.instance.HoldIt(1f);

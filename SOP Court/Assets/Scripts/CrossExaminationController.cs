@@ -49,8 +49,8 @@ public class CrossExaminationController : MonoBehaviour
     private void ResetDisplayTexts()
     {
         displayTexts[0].text = "";
-        displayTexts[0].text = "";
-        displayTexts[0].text = "";
+        displayTexts[1].text = "";
+        displayTexts[2].text = "";
     }
 
     private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()

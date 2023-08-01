@@ -28,18 +28,19 @@ public class GameplayControllerScript : MonoBehaviour
             instance = this;
         }
 
-        if(GetComponent<GetDocumentsScript>()){
+        if (GetComponent<GetDocumentsScript>())
+        {
 
             //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().DialogueFromWebFile;
 
-            GetComponent<GetDocumentsScript>().StartGetTextFromWebFile();
+            //GetComponent<GetDocumentsScript>().StartGetTextFromWebFile();
 
-            //CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-            //maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+            maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
 
         }
 
-        //StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+        StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
 
     }
 

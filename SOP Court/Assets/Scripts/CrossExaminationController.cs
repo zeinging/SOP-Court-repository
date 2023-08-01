@@ -231,6 +231,9 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+
+
+        GameplayControllerScript.instance.HoldIt(1f);
         Debug.Log("Press!");
 
         // Set this variable to avoid weirdness with previous/next buttons
@@ -249,9 +252,10 @@ public class CrossExaminationController : MonoBehaviour
 
         displayText.text = test2.Item1;
         characterText.text = test2.Item2;
-
-
-
+    }
+    void Present()
+    {//should open the court record instead, before objection image appears
+        GameplayControllerScript.instance.Objection(2f);
     }
 
     void Start()
@@ -287,6 +291,8 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         return combinedString;
+
+
     }
 
 

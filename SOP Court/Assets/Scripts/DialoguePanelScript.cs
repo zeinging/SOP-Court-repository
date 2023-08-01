@@ -339,7 +339,7 @@ public class DialoguePanelScript : MonoBehaviour
 
         while (i < charactersInBox && isAnimating)
         {
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSeconds(textSpeed * 1000 * Time.deltaTime);
             //Dialogue.text += StoredDialogue.ToCharArray()[i];
 
             if (i < StoredDialogue[0].Length)

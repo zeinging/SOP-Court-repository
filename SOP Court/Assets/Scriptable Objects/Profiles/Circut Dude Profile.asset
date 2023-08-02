@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Circut Dude
   ProfileImage: {fileID: 21300000, guid: 02a3fe9206fe98243b1c7ea1a58dd5bb, type: 3}
-  WitnessProfesion: ???
+  myAnim: {fileID: 22100000, guid: b14d8b52a944a6a41a3f15d48ed543ec, type: 2}
+  WitnessProfesion: the victim of this crime
   WitnessEmoteFrames: []
   Confession: 
   DodgeTatic: 

@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 public class GetDocumentsScript : MonoBehaviour
 {
 
+    public UnityEngine.UI.Text URLTestText;
+
     private string myDocumentsFolderPath;
 
     public string[] FoldersInDocumentsFolder;
@@ -76,7 +78,8 @@ public class GetDocumentsScript : MonoBehaviour
     {//probably run at start.
         Debug.Log("start getting files");
 
-        UnityWebRequest www = UnityWebRequest.Get("/1.StartCase.txt");
+        //UnityWebRequest www = UnityWebRequest.Get("1.StartCase.txt");
+        UnityWebRequest www = UnityWebRequest.Get("https://zeinging.itch.io/sop-court");
 
         yield return www.SendWebRequest();
         //yield return new WaitForSeconds(1f);
@@ -84,11 +87,13 @@ public class GetDocumentsScript : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.Log(www.error);
+            URLTestText.text = www.error;
         }
         else
         {
             string results = www.downloadHandler.text;
             Debug.Log(results);
+            URLTestText.text = results;
             //DialogueFromWebFile = www.downloadHandler.text;
         }
 
@@ -101,7 +106,9 @@ public class GetDocumentsScript : MonoBehaviour
         //Debug.Log(FilesPathCase1Folder[0]);
         if (s < FilesPathCase1Folder.Count)
         {
-            string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
+            //URLTestText.text = Application.absoluteURL;
+            //string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
+            string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
             return Dialogue;
         }
         return null;

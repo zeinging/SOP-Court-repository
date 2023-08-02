@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    public GameObject MusicA;
+    public GameObject[] MusicObjects;
 
     public GameObject[] SFX;
+
+    public GameObject currentMusic;
 
     //public float volume;
 
@@ -24,6 +26,27 @@ public class AudioManagerScript : MonoBehaviour
         {
             instance = this;
         }
+
+        for(int s = 0; s < MusicObjects.Length; s++){
+            if(MusicObjects[s].activeInHierarchy){
+                currentMusic = MusicObjects[s];
+            }
+        }
+
+    }
+
+    public void PlayMusic(int i){
+
+        if(currentMusic != null){
+            currentMusic.SetActive(false);
+        }
+
+        currentMusic = MusicObjects[i];
+        MusicObjects[i].SetActive(true);
+    }
+
+    public void StopMusic(){
+        currentMusic.SetActive(false);
     }
 
     public void PlaySound(int index){
@@ -38,7 +61,10 @@ public class AudioManagerScript : MonoBehaviour
     }
 
     public void changeVolume(){
-        MusicA.GetComponent<AudioSource>().volume = volumeSlider.value;
+
+        for(int i = 0; i < MusicObjects.Length; i++){
+            MusicObjects[i].GetComponent<AudioSource>().volume = volumeSlider.value;
+        }
         SFX[0].GetComponent<AudioSource>().volume = volumeSlider.value;
         SFX[1].GetComponent<AudioSource>().volume = volumeSlider.value;
         SFX[2].GetComponent<AudioSource>().volume = volumeSlider.value;

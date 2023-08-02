@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ShawnsTestScene.unity
     guid: 4cb91973a0264b74c89db94c2b569d08
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/court room test SFX scene.unity
     guid: 6f6cc3d02f610ba44899e3d4f4b8b635
+  - enabled: 0
+    path: Assets/Scenes/CrossExaminationTesting.unity
+    guid: 406499ab348b78541bf1016b02e93482
+  - enabled: 1
+    path: Assets/Scenes/Court Record Testing - Copy.unity
+    guid: f15bf08a991d6434aac370b086466494
   m_configObjects: {}

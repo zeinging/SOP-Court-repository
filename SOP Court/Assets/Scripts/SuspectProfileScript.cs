@@ -5,6 +5,7 @@ using UnityEngine;
 public class SuspectProfileScript : MonoBehaviour
 {
 
+    public ScriptableObjectProfile[] Evidence;
     public ScriptableObjectProfile[] SuspectsInOrder;
 
     public ScriptableObjectProfile CurrentSuspectData;

@@ -1,0 +1,18 @@
+[date]July 20th 12:00 PM
+testing line 2.
+[date]testing line 3.
+[judge][StopMusic]is the prosection ready?
+
+
+[prosecutor][AnimDeskSlam][ObjectionMusic]the prosection is ready your honor.
+[prosecutor][AnimSmirk]check out my smug animation.
+[prosecutor][AnimRealization]oh, no...
+[judge][QuestioningWItnessMusic]is the defence ready?
+
+
+[defence][LastQuestioningWitnessMusic]the defence is ready your honor.
+[defence][AnimRealization]I'm not sus.
+
+[judge][PursuitCorneredMusic]Let's Hear the Witness's Testimony.
+
+

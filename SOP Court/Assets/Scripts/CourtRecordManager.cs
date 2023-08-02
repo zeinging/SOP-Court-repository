@@ -12,8 +12,8 @@ public class CourtRecordManager : MonoBehaviour
 
     public int SelectedProfile;
 
-    public GameObject ButtonsParent;
-    public List<Button> ProfileButtons;
+    public GameObject EvidenceButnParent, ProfileButnParent, EvidenceSectionButn, ProfileSectionButn;
+    public List<Button> EvidenceButtons, ProfileButtons;
 
     public Button LeftArrowButn, RightArrowButn;
 
@@ -42,22 +42,36 @@ public class CourtRecordManager : MonoBehaviour
             SuspectProfileScript.instance.GenerateListTest();
             GetButtons();
         }
-        SelectProfile(0);
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
+        SelectEvidence(0);
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(EvidenceButtons[0].gameObject);
     }
 
 
     private void GetButtons(){
 
-        for(int i = 0; i < ButtonsParent.transform.childCount; i++){
-            ProfileButtons.Add(ButtonsParent.transform.GetChild(i).GetComponent<Button>());
+        for(int i = 0; i < ProfileButnParent.transform.childCount; i++){
+            ProfileButtons.Add(ProfileButnParent.transform.GetChild(i).GetComponent<Button>());
+            EvidenceButtons.Add(EvidenceButnParent.transform.GetChild(i).GetComponent<Button>());
 
             int profileIndex = i;
 
-            ProfileButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
-            ProfileButtons[i].onClick.AddListener(() => SelectProfile(profileIndex));
+            if( i < SuspectProfileScript.instance.SuspectsInOrder.Length){
+                ProfileButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
+                ProfileButtons[i].onClick.AddListener(() => SelectProfile(profileIndex));
+            }else{
+                ProfileButtons[i].interactable = false;
+                ProfileButtons[i].transform.GetChild(0).gameObject.SetActive(false);
+            }
 
-            if(SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10){
+            if( i < SuspectProfileScript.instance.Evidence.Length){
+                EvidenceButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.Evidence[i].ProfileImage;
+                EvidenceButtons[i].onClick.AddListener(() => SelectEvidence(profileIndex));
+            }else{
+                EvidenceButtons[i].interactable = false;
+                EvidenceButtons[i].transform.GetChild(0).gameObject.SetActive(false);
+            }
+
+            if(SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10 || SuspectProfileScript.instance.Evidence.Length > 10){
                 LeftArrowButn.gameObject.SetActive(true);
                 RightArrowButn.gameObject.SetActive(true);
             }
@@ -77,6 +91,38 @@ public class CourtRecordManager : MonoBehaviour
         ProfileDescription.text = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessProfesion;
         //Debug.Log("selected " + SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].WitnessName);
         //ProfileButtons[profileIndex].transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void SelectEvidence(int evidenceIndex){
+        ProfileImage.sprite = SuspectProfileScript.instance.Evidence[evidenceIndex].ProfileImage;
+        ProfileName.text = SuspectProfileScript.instance.Evidence[evidenceIndex].WitnessName;
+        ProfileDescription.text = SuspectProfileScript.instance.Evidence[evidenceIndex].WitnessProfesion;
+    }
+
+    public void ProfileSectionButton(){
+        ProfileSectionButn.SetActive(false);
+        EvidenceSectionButn.SetActive(true);
+        EvidenceButnParent.SetActive(false);
+        ProfileButnParent.SetActive(true);
+        SelectProfile(0);
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
+    }
+
+    public void EvidenceSectionButton(){
+        EvidenceSectionButn.SetActive(false);
+        ProfileSectionButn.SetActive(true);
+        ProfileButnParent.SetActive(false);
+        EvidenceButnParent.SetActive(true);
+        SelectEvidence(0);
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(EvidenceButtons[0].gameObject);
+    }
+
+    public void BackButton(){
+        EvidenceSectionButn.SetActive(false);
+        ProfileSectionButn.SetActive(true);
+        ProfileButnParent.SetActive(false);
+        EvidenceButnParent.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -309,6 +309,45 @@ public class DialoguePanelScript : MonoBehaviour
             //currentSubjectanim.Play(DocumentTags.AnimWalkingIdle);
         }
 
+
+        //Music Tags
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.StopMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.StopMusic.Length);
+            AudioManagerScript.instance.StopMusic();
+        }
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.TrailMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.TrailMusic.Length);
+            AudioManagerScript.instance.PlayMusic(0);
+        }
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.ObjectionMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.ObjectionMusic.Length);
+            AudioManagerScript.instance.PlayMusic(1);
+        }
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.QuestioningWItnessMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.QuestioningWItnessMusic.Length);
+            AudioManagerScript.instance.PlayMusic(2);
+        }
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.LastQuestioningWitnessMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.LastQuestioningWitnessMusic.Length);
+            AudioManagerScript.instance.PlayMusic(3);
+        }
+
+        if (DialogueContainsTag(StoredDialogue[LineIndex], DocumentTags.PursuitCorneredMusic))
+        {
+            StoredDialogue[LineIndex] = StoredDialogue[LineIndex].Remove(0, DocumentTags.PursuitCorneredMusic.Length);
+            AudioManagerScript.instance.PlayMusic(4);
+        }
+
     }
 
     public IEnumerator AnimateText()
@@ -339,7 +378,8 @@ public class DialoguePanelScript : MonoBehaviour
 
         while (i < charactersInBox && isAnimating)
         {
-            yield return new WaitForSeconds(textSpeed * 1000 * Time.deltaTime);
+            //yield return new WaitForSeconds(textSpeed);
+            yield return MyCoroutineScript.WaitForRealSeconds(textSpeed);
             //Dialogue.text += StoredDialogue.ToCharArray()[i];
 
             if (i < StoredDialogue[0].Length)

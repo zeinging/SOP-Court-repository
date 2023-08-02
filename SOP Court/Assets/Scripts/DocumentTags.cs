@@ -34,6 +34,15 @@ public static class DocumentTags
     AnimShock = "[AnimShock]",
     AnimRealization = "[AnimRealization]",
     AnimSmirk = "[AnimSmirk]",
-    AnimBreakdown = "[AnimBreakdown]";
+    AnimBreakdown = "[AnimBreakdown]",
+    
+    
+    //music tags
+    StopMusic = "[StopMusic]",
+    TrailMusic = "[TrailMusic]",
+    ObjectionMusic = "[ObjectionMusic]",
+    QuestioningWItnessMusic = "[QuestioningWItnessMusic]",
+    LastQuestioningWitnessMusic = "[LastQuestioningWitnessMusic]",
+    PursuitCorneredMusic = "[PursuitCorneredMusic]";
 
 }

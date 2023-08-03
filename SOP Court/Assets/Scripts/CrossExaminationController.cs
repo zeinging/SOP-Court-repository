@@ -41,7 +41,7 @@ public class CrossExaminationController : MonoBehaviour
 
     private string OnStandCharacter;
 
-    public CourtRecordManager CourtRecordManager;
+    public GameObject CourtRecordManager;
 
     public GameObject dialogPanel;
     public GameObject crossExaminationPanel;
@@ -85,14 +85,31 @@ public class CrossExaminationController : MonoBehaviour
 
     private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed)
     {
+        int dg = currentTestimonySeriesIndex;
 
-        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Where(testimony => forPressed ? testimony.Attribute(ITEM_XML_ATTRIBUTE).Value == null : testimony.Attribute(ITEM_XML_ATTRIBUTE).Value != null);
+        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
+        List<XElement> testSeries = series.ToList();
 
-        XElement targetSeries = series.ElementAt(currentTestimonySeriesIndex);
+        XElement specificSeries = series.ElementAt(currentTestimonySeriesIndex);
 
-        XElement pressedInteractionsTag = targetSeries.Element(PRESSED_INTERACTIONS_XML_TAG);
+        IEnumerable<XElement> pressedInteractions = specificSeries.Elements(PRESSED_INTERACTIONS_XML_TAG);
 
-        IEnumerable<XElement> pressedInteractionList = pressedInteractionsTag.Elements(PRESSED_INTERACTION_XML_TAG);
+        List<XElement> testPressedInteractions = pressedInteractions.ToList();
+
+        IEnumerable<XElement> filteredPressedInteractions = pressedInteractions.Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value != null));
+
+
+
+
+        IEnumerable<XElement> pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value != null));
+
+        List<XElement> testValue = pressedInteractions.ToList();
+
+
+
+
+
+        IEnumerable<XElement> pressedInteractionList = pressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
 
         foreach (XElement pressedInteraction in pressedInteractionList)
         {
@@ -321,6 +338,13 @@ public class CrossExaminationController : MonoBehaviour
         characterText.text = test2.Item2;
     }
 
+    private void displayNotImportantMessages()
+    {
+
+        // use an iterator to display not important messages
+
+    }
+
 
     public void Press()
     {
@@ -340,6 +364,13 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
+        bool needToDisplayDefaultNotImportant = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Where(testimony => testimony.Attribute(ITEM_XML_ATTRIBUTE) == null).Count() <= 0;
+
+        if (needToDisplayDefaultNotImportant)
+        {
+            displayNotImportantMessages();
+        }
+
         StartInteratorForPressedInteraction(true);
 
     }
@@ -353,7 +384,7 @@ public class CrossExaminationController : MonoBehaviour
     {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);
 
-        ScriptableObjectProfile selectedEvidence = CourtRecordManager.CurrentlySelectedEvidence;
+        ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 
 
 
@@ -380,7 +411,7 @@ public class CrossExaminationController : MonoBehaviour
 
         string itemName = selectedEvidence.WitnessName;
 
-        string neededItem = testimonySeries.Element(PRESSED_INTERACTIONS_XML_TAG).Attribute("item").Value;
+        string neededItem = testimonySeries.Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null).First().Attribute(ITEM_XML_ATTRIBUTE).Value;
 
         if (neededItem.ToLower() != itemName.ToLower())
         {
@@ -394,6 +425,9 @@ public class CrossExaminationController : MonoBehaviour
         GameplayControllerScript.instance.HoldIt(1f);
         progressingThroughPressedInteraction = true;
         StartInteratorForPressedInteraction(false);
+
+        CourtRecordManager.SetActive(false);
+
 
     }
 

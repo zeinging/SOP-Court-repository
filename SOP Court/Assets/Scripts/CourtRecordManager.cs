@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +16,8 @@ public class CourtRecordManager : MonoBehaviour
 
     public Button LeftArrowButn, RightArrowButn;
 
+    public ScriptableObjectProfile CurrentlySelectedEvidence;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,9 @@ public class CourtRecordManager : MonoBehaviour
         // ProfileName.text = ProfileData[SelectedProfile].WitnessName;
         // ProfileDescription.text = ProfileData[SelectedProfile].WitnessProfesion;
         //SelectProfile(GameplayControllerScript.instance.CurrentSuspect);
-        
+
         //SuspectProfileScript.instance.GenerateListTest();
-        
+
 
 
         //SelectProfile(0);
@@ -38,7 +39,8 @@ public class CourtRecordManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (ProfileButtons.Count == 0) {
+        if (ProfileButtons.Count == 0)
+        {
             SuspectProfileScript.instance.GenerateListTest();
             GetButtons();
         }
@@ -47,31 +49,40 @@ public class CourtRecordManager : MonoBehaviour
     }
 
 
-    private void GetButtons(){
+    private void GetButtons()
+    {
 
-        for(int i = 0; i < ProfileButnParent.transform.childCount; i++){
+        for (int i = 0; i < ProfileButnParent.transform.childCount; i++)
+        {
             ProfileButtons.Add(ProfileButnParent.transform.GetChild(i).GetComponent<Button>());
             EvidenceButtons.Add(EvidenceButnParent.transform.GetChild(i).GetComponent<Button>());
 
             int profileIndex = i;
 
-            if( i < SuspectProfileScript.instance.SuspectsInOrder.Length){
+            if (i < SuspectProfileScript.instance.SuspectsInOrder.Length)
+            {
                 ProfileButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[i].ProfileImage;
                 ProfileButtons[i].onClick.AddListener(() => SelectProfile(profileIndex));
-            }else{
+            }
+            else
+            {
                 ProfileButtons[i].interactable = false;
                 ProfileButtons[i].transform.GetChild(0).gameObject.SetActive(false);
             }
 
-            if( i < SuspectProfileScript.instance.Evidence.Length){
+            if (i < SuspectProfileScript.instance.Evidence.Length)
+            {
                 EvidenceButtons[i].GetComponent<Image>().sprite = SuspectProfileScript.instance.Evidence[i].ProfileImage;
                 EvidenceButtons[i].onClick.AddListener(() => SelectEvidence(profileIndex));
-            }else{
+            }
+            else
+            {
                 EvidenceButtons[i].interactable = false;
                 EvidenceButtons[i].transform.GetChild(0).gameObject.SetActive(false);
             }
 
-            if(SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10 || SuspectProfileScript.instance.Evidence.Length > 10){
+            if (SuspectProfileScript.instance.SuspectsEncounteredOrder.Count > 10 || SuspectProfileScript.instance.Evidence.Length > 10)
+            {
                 LeftArrowButn.gameObject.SetActive(true);
                 RightArrowButn.gameObject.SetActive(true);
             }
@@ -83,7 +94,8 @@ public class CourtRecordManager : MonoBehaviour
     }
 
 
-    public void SelectProfile(int profileIndex){
+    public void SelectProfile(int profileIndex)
+    {
         //SelectedProfile = i;
         //Debug.Log("" + profileIndex);
         ProfileImage.sprite = SuspectProfileScript.instance.SuspectsEncounteredOrder[profileIndex].ProfileImage;
@@ -93,13 +105,18 @@ public class CourtRecordManager : MonoBehaviour
         //ProfileButtons[profileIndex].transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    public void SelectEvidence(int evidenceIndex){
-        ProfileImage.sprite = SuspectProfileScript.instance.Evidence[evidenceIndex].ProfileImage;
-        ProfileName.text = SuspectProfileScript.instance.Evidence[evidenceIndex].WitnessName;
-        ProfileDescription.text = SuspectProfileScript.instance.Evidence[evidenceIndex].WitnessProfesion;
+    public void SelectEvidence(int evidenceIndex)
+    {
+
+        CurrentlySelectedEvidence = SuspectProfileScript.instance.Evidence[evidenceIndex];
+
+        ProfileImage.sprite = CurrentlySelectedEvidence.ProfileImage;
+        ProfileName.text = CurrentlySelectedEvidence.WitnessName;
+        ProfileDescription.text = CurrentlySelectedEvidence.WitnessProfesion;
     }
 
-    public void ProfileSectionButton(){
+    public void ProfileSectionButton()
+    {
         ProfileSectionButn.SetActive(false);
         EvidenceSectionButn.SetActive(true);
         EvidenceButnParent.SetActive(false);
@@ -108,7 +125,8 @@ public class CourtRecordManager : MonoBehaviour
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(ProfileButtons[0].gameObject);
     }
 
-    public void EvidenceSectionButton(){
+    public void EvidenceSectionButton()
+    {
         EvidenceSectionButn.SetActive(false);
         ProfileSectionButn.SetActive(true);
         ProfileButnParent.SetActive(false);
@@ -117,7 +135,8 @@ public class CourtRecordManager : MonoBehaviour
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(EvidenceButtons[0].gameObject);
     }
 
-    public void BackButton(){
+    public void BackButton()
+    {
         EvidenceSectionButn.SetActive(false);
         ProfileSectionButn.SetActive(true);
         ProfileButnParent.SetActive(false);
@@ -128,6 +147,6 @@ public class CourtRecordManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

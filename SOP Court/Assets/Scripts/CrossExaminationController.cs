@@ -39,6 +39,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private string OnStandCharacter;
 
+    public CourtRecordManager CourtRecordManager;
+
     public GameObject dialogPanel;
     public GameObject crossExaminationPanel;
 
@@ -344,6 +346,18 @@ public class CrossExaminationController : MonoBehaviour
     public void Present()
     {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);
+
+        ScriptableObjectProfile current = CourtRecordManager.CurrentlySelectedEvidence;
+
+
+
+        XElement testimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex);
+
+        testimonySeries.Element
+
+
+
+
     }
 
     void Start()

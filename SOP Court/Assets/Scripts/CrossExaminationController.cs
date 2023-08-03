@@ -353,7 +353,24 @@ public class CrossExaminationController : MonoBehaviour
 
         XElement testimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex);
 
-        testimonySeries.Element
+        string isConflicting = testimonySeries.Attribute("isConflicting").Value;
+
+        //testimonySeries.Element
+        if (isConflicting == "false")
+        {
+            // Handle default not important interaction
+
+            return;
+
+        }
+        if (!(isConflicting == "true"))
+        {
+            // Handle odd case
+            Debug.LogError("IsConflicting is not a true or false value: " + isConflicting);
+            return;
+
+        }
+        // Is conflicting true
 
 
 

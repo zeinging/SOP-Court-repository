@@ -31,7 +31,6 @@ public class CrossExaminationController : MonoBehaviour
 
     private int numberOfSeries = -1;
 
-    public GameObject ContinueButton;
 
 
 
@@ -40,7 +39,10 @@ public class CrossExaminationController : MonoBehaviour
 
     private string OnStandCharacter;
 
-    // Debugging
+    public GameObject dialogPanel;
+    public GameObject crossExaminationPanel;
+
+    public GameObject ContinueButton;
 
     public Text[] displayTexts;
     public Text characterText;

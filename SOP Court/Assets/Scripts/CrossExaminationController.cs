@@ -20,6 +20,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private static readonly string ON_STAND_XML_ATTRIBUTE = "onStand";
 
+    private static readonly string ITEM_XML_ATTRIBUTE = "item";
+    private static readonly string IS_CONFLICIN_XML_ATTRIBUTE = "isConflicting";
 
 
 
@@ -81,10 +83,10 @@ public class CrossExaminationController : MonoBehaviour
         displayTexts[2].text = "";
     }
 
-    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
+    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed)
     {
 
-        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
+        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Where(testimony => forPressed ? testimony.Attribute(ITEM_XML_ATTRIBUTE).Value == null : testimony.Attribute(ITEM_XML_ATTRIBUTE).Value != null);
 
         XElement targetSeries = series.ElementAt(currentTestimonySeriesIndex);
 
@@ -301,6 +303,25 @@ public class CrossExaminationController : MonoBehaviour
 
 
     }
+
+    private void StartInteratorForPressedInteraction(bool forPressed)
+    {
+
+        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep(forPressed);
+
+        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+
+        int index = 0;
+
+        foreach (string line in test2.Item1)
+        {
+            displayTexts[index++].text = line;
+        }
+        characterText.text = test2.Item2;
+    }
+
+
     public void Press()
     {
         if (!inCrossExaminationMode)
@@ -319,23 +340,8 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
+        StartInteratorForPressedInteraction(true);
 
-        IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
-
-        List<XElement> test = pressedInteractions.ToList();
-
-        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep();
-
-        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
-        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
-
-        int index = 0;
-
-        foreach (string line in test2.Item1)
-        {
-            displayTexts[index++].text = line;
-        }
-        characterText.text = test2.Item2;
     }
 
     // Open up the court record
@@ -347,7 +353,7 @@ public class CrossExaminationController : MonoBehaviour
     {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);
 
-        ScriptableObjectProfile current = CourtRecordManager.CurrentlySelectedEvidence;
+        ScriptableObjectProfile selectedEvidence = CourtRecordManager.CurrentlySelectedEvidence;
 
 
 
@@ -372,8 +378,22 @@ public class CrossExaminationController : MonoBehaviour
         }
         // Is conflicting true
 
+        string itemName = selectedEvidence.WitnessName;
 
+        string neededItem = testimonySeries.Element(PRESSED_INTERACTIONS_XML_TAG).Attribute("item").Value;
 
+        if (neededItem.ToLower() != itemName.ToLower())
+        {
+
+            // Handle default not important interaction
+
+        }
+
+        // Correct information
+        CrossExaminationContinueButton.SetActive(true);
+        GameplayControllerScript.instance.HoldIt(1f);
+        progressingThroughPressedInteraction = true;
+        StartInteratorForPressedInteraction(false);
 
     }
 

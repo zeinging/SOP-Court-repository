@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Tower Toppler
   ProfileImage: {fileID: 21300000, guid: 849b962b5eb4e004f89250f98a34640f, type: 3}
+  myAnim: {fileID: 22100000, guid: 4d2d723cb8ab8084d998e2e1bef2ac23, type: 2}
   WitnessProfesion: ???
   WitnessEmoteFrames: []
   Confession: 

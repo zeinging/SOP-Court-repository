@@ -9362,7 +9362,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88a2dbfd70bb78746b9b4524c5d55bd3, type: 2}
   - {fileID: 11400000, guid: d49dc8aa831e18642b878562d54a1aad, type: 2}
   - {fileID: 11400000, guid: 1937c7e8e06bace48a0a1e440b1c9c42, type: 2}
-  CurrentSuspectData: {fileID: 11400000, guid: d49dc8aa831e18642b878562d54a1aad, type: 2}
+  CurrentSuspectData: {fileID: 11400000, guid: 86baf78ed41efa7468764eafc574a95b, type: 2}
   SuspectsEncounteredOrder: []
   RemainingSuspects: []
   ShuffleSuspects: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DialoguePanelScript : MonoBehaviour
 {
 
-    public GameObject ContinueButton, pressButton, presentButton, leftArrowButton, rightArrowButton;
+    public GameObject ContinueButton, pressButton, presentButton, leftArrowButton, rightArrowButton, crossExaminationController;
 
     public Text SpeakerName;
 
@@ -98,10 +98,18 @@ public class DialoguePanelScript : MonoBehaviour
         if (!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 3)
         {//where dialogue box closes
 
-            CloseDialogueBox();
+            // Going to disable these for now and will write code to run the cross examination manager
+
+            //CloseDialogueBox();
 
             //GameplayControllerScript.instance.MoveToNextSceneDialogue(CameraMover.instance.Witness.position);
-            GameplayControllerScript.instance.MoveToNextSceneDialogue();
+
+            //GameplayControllerScript.instance.MoveToNextSceneDialogue();
+
+            CrossExaminationController crossExaminationScript = crossExaminationController.GetComponent<CrossExaminationController>();
+
+            crossExaminationScript.StartCrossExamination();
+
 
         }
         else

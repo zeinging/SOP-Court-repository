@@ -337,6 +337,10 @@ public class CrossExaminationController : MonoBehaviour
     }
 
     // Open up the court record
+
+    /* Instead of the 'on click' button sending us the item, 
+     * we will reference the Court record to see which one is currently
+     selected*/
     public void Present()
     {//should open the court record instead, before objection image appears
         GameplayControllerScript.instance.Objection(2f);

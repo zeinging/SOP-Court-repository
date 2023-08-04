@@ -536,6 +536,8 @@ public class CrossExaminationController : MonoBehaviour
 
         string neededItem = testimonySeries.Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null).First().Attribute(ITEM_XML_ATTRIBUTE).Value;
 
+        isPress = false;
+
         if (neededItem.ToLower() != itemName.ToLower())
         {
 
@@ -546,7 +548,6 @@ public class CrossExaminationController : MonoBehaviour
 
         }
 
-        isPress = false;
 
 
 

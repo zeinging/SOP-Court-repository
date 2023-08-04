@@ -58,6 +58,7 @@ public class CrossExaminationController : MonoBehaviour
     private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
     private bool progressingThroughNotImportantDialog = false;
+    private bool isPress = false;
 
     private void MoveCameraToCharacter(string character)
     {
@@ -289,27 +290,42 @@ public class CrossExaminationController : MonoBehaviour
 
             if (!result)
             {
-
-                // last pressed interation. Go to next block
-                CrossExaminationContinueButton.SetActive(false);
-
-                // Check if it's the last series
-
-                if (!progressingThroughNotImportantDialog)
+                if (isPress)
                 {
+
                     if (currentTestimonySeriesIndex >= numberOfSeries - 1)
                     {
-
-                        // Means last series!
-                        Debug.Log("Need to implment loading next file");
-                        return;
-
+                        // Reached the end.
+                        currentTestimonySeriesIndex = 0;
                     }
                     else
                     {
                         currentTestimonySeriesIndex++;
                     }
+
                 }
+                else
+                {
+
+                    // Presenting
+
+                    if (progressingThroughNotImportantDialog)
+                    {
+                        // Not successful
+                        // Don't need to do anything
+                    }
+                    else
+                    {
+                        // Successful
+
+                        Debug.Log("Need to implement switch to next case");
+                    }
+
+
+                }
+
+                // last pressed interation. Go to next block
+                CrossExaminationContinueButton.SetActive(false);
 
                 progressingThroughPressedInteraction = false;
                 progressingThroughNotImportantDialog = false;
@@ -476,6 +492,8 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
+        isPress = true;
+
         StartInteratorForPressedInteraction(true);
 
     }
@@ -527,6 +545,10 @@ public class CrossExaminationController : MonoBehaviour
             // Handle default not important interaction
 
         }
+
+        isPress = false;
+
+
 
         // Correct information
         CrossExaminationContinueButton.SetActive(true);

@@ -442,7 +442,7 @@ public class CrossExaminationController : MonoBehaviour
             displayTexts[index++].text = line;
         }
         characterText.text = test2.Item2;
-        MoveCameraToCharacter(test2.item2);
+        MoveCameraToCharacter(test2.Item2);
     }
 
 

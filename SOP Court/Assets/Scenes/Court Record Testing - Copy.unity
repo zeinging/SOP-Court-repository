@@ -449,6 +449,7 @@ MonoBehaviour:
   ProfileButtons: []
   LeftArrowButn: {fileID: 1840197625}
   RightArrowButn: {fileID: 1478339877}
+  CurrentlySelectedEvidence: {fileID: 0}
 --- !u!1 &27243715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,17 +2335,29 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1355559330}
-        m_TargetAssemblyTypeName: CrossExaminationController, Assembly-CSharp
-        m_MethodName: Present
-        m_Mode: 1
+      - m_Target: {fileID: 22861075}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1074337510}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &295485554
 MonoBehaviour:
@@ -3302,9 +3315,9 @@ RectTransform:
   - {fileID: 1957460621}
   - {fileID: 22861076}
   - {fileID: 7463048}
-  - {fileID: 1313967788}
   - {fileID: 818990127}
   - {fileID: 1095643182}
+  - {fileID: 1313967788}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5899,7 +5912,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 417546692}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -7734,7 +7747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1074337511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7798,7 +7811,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074337513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355559330}
+        m_TargetAssemblyTypeName: CrossExaminationController, Assembly-CSharp
+        m_MethodName: Present
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7463047}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1074337513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7869,7 +7906,7 @@ RectTransform:
   m_Children:
   - {fileID: 1623944623}
   m_Father: {fileID: 417546692}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8737,7 +8774,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 417546692}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9770,6 +9807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c07a6aa15a1b974780a987590e46015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CourtRecordManager: {fileID: 22861075}
   dialogPanel: {fileID: 1322616506}
   crossExaminationPanel: {fileID: 1627908241}
   CrossExaminationContinueButton: {fileID: 1095643181}
@@ -11158,6 +11196,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1074337510}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1535366306
 MonoBehaviour:

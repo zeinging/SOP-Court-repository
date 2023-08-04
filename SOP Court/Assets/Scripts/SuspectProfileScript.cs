@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,35 +19,46 @@ public class SuspectProfileScript : MonoBehaviour
     void Awake()
     {
 
-        if(instance != null && instance != this){
+        if (instance != null && instance != this)
+        {
             Destroy(this);
-        }else{
+        }
+        else
+        {
             instance = this;
         }
-           
+
 
         GetSuspects();
         //NextSuspect();
-        
+
     }
 
 
-    public void GetSuspects(){
-        for(int i = 0; i < SuspectsInOrder.Length; i++){
+    public void GetSuspects()
+    {
+        for (int i = 0; i < SuspectsInOrder.Length; i++)
+        {
             RemainingSuspects.Add(SuspectsInOrder[i]);
         }
     }
 
-    public void GenerateListTest(){
-        if(ShuffleSuspects){
+    public void GenerateListTest()
+    {
+        if (ShuffleSuspects)
+        {
 
-            for(int i = 0; i < SuspectsInOrder.Length; i++){
+            for (int i = 0; i < SuspectsInOrder.Length; i++)
+            {
                 NextSuspect(Random.Range(0, RemainingSuspects.Count));
             }
 
-        }else{
-            
-            for(int i = 0; i < SuspectsInOrder.Length; i++){
+        }
+        else
+        {
+
+            for (int i = 0; i < SuspectsInOrder.Length; i++)
+            {
                 NextSuspect(i);
             }
             RemainingSuspects.Clear();
@@ -56,16 +66,17 @@ public class SuspectProfileScript : MonoBehaviour
         CurrentSuspectData = SuspectsEncounteredOrder[0];
     }
 
-    public void NextSuspect(int r){
+    public void NextSuspect(int r)
+    {
 
         //r = Random.Range(0, RemainingSuspects.Count);
         //CurrentSuspect = Random.Range(0, RemainingSuspects.Count);
         CurrentSuspectData = RemainingSuspects[r];
         SuspectsEncounteredOrder.Add(CurrentSuspectData);
 
-        if(ShuffleSuspects)
-        RemainingSuspects.Remove(CurrentSuspectData);
-                
+        if (ShuffleSuspects)
+            RemainingSuspects.Remove(CurrentSuspectData);
+
     }
 
 

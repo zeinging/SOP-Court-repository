@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class CrossExaminationController : MonoBehaviour
 {
 
+    private XElement NotImportantPressedInteractions;
+
     private static readonly string CROSS_EXAMINATION_XML_TAG = "CrossExamination";
     private static readonly string TESTIMONY_SERIES_XML_TAG = "TestimonySeries";
     private static readonly string TESTIMONY_PARAGRAPH_XML_TAG = "TestimonyParagraph";
@@ -20,6 +22,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private static readonly string ON_STAND_XML_ATTRIBUTE = "onStand";
 
+    private static readonly string ITEM_XML_ATTRIBUTE = "item";
+    private static readonly string IS_CONFLICIN_XML_ATTRIBUTE = "isConflicting";
 
 
 
@@ -39,6 +43,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private string OnStandCharacter;
 
+    public GameObject CourtRecordManager;
+
     public GameObject dialogPanel;
     public GameObject crossExaminationPanel;
 
@@ -50,6 +56,42 @@ public class CrossExaminationController : MonoBehaviour
 
     private bool progressingThroughPressedInteraction = false;
     private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
+
+    private void MoveCameraToCharacter(string character)
+    {
+
+
+        switch (character.ToLower())
+        {
+            case "phoenix wright":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Defence.position);
+                    break;
+                }
+            case "judge":
+                {
+
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Judge.position);
+                    break;
+                }
+            case "sahwit":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
+                    break;
+                }
+            case "payne":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Prosector.position);
+                    break;
+                }
+            default:
+                {
+                    throw new IOException("Unexpected value of " + character + "! Doesn't fit expected characters!");
+                }
+        }
+
+
+    }
 
     public void StartCrossExamination()
     {
@@ -69,6 +111,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
     }
 
@@ -79,16 +122,60 @@ public class CrossExaminationController : MonoBehaviour
         displayTexts[2].text = "";
     }
 
-    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep()
+    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed, string item = null)
     {
+        //int dg = currentTestimonySeriesIndex;
 
-        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
+        //IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
+        //List<XElement> testSeries = series.ToList();
 
-        XElement targetSeries = series.ElementAt(currentTestimonySeriesIndex);
+        //XElement specificSeries = series.ElementAt(currentTestimonySeriesIndex);
 
-        XElement pressedInteractionsTag = targetSeries.Element(PRESSED_INTERACTIONS_XML_TAG);
+        //IEnumerable<XElement> pressedInteractions = specificSeries.Elements(PRESSED_INTERACTIONS_XML_TAG);
 
-        IEnumerable<XElement> pressedInteractionList = pressedInteractionsTag.Elements(PRESSED_INTERACTION_XML_TAG);
+        //List<XElement> testPressedInteractions = pressedInteractions.ToList();
+
+        //XElement filteredPressedInteractions = pressedInteractions.Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null)).First();
+
+
+
+
+        XElement pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null)).First();
+
+        if (!forPressed)
+        {
+
+            XAttribute neededItem = pressedInteractionsComplete.Attribute(ITEM_XML_ATTRIBUTE);
+
+            if (neededItem == null)
+            {
+                Debug.LogError("Retreving item from pressedInterations is not working!");
+                throw new IOException("Couldn't find pressed Interations item tag when should've been there");
+            }
+
+            if (item == null)
+            {
+                Debug.LogError("Item paramter needs to be given!");
+                throw new IOException("Item parameter needs to be given!");
+            }
+
+            if (item.ToLower() != neededItem.Value.ToLower())
+            {
+
+
+
+
+
+                // Provided item but 
+
+                // Matching
+
+            }
+
+        }
+
+
+        IEnumerable<XElement> pressedInteractionList = pressedInteractionsComplete.Elements(PRESSED_INTERACTION_XML_TAG);
 
         foreach (XElement pressedInteraction in pressedInteractionList)
         {
@@ -146,6 +233,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
     }
     public void Next()
@@ -229,6 +317,7 @@ public class CrossExaminationController : MonoBehaviour
                 }
 
                 characterText.text = OnStandCharacter;
+                MoveCameraToCharacter(OnStandCharacter);
                 return;
 
             }
@@ -246,6 +335,8 @@ public class CrossExaminationController : MonoBehaviour
             }
 
             characterText.text = character;
+            MoveCameraToCharacter(character);
+
             // TODO: Write code here to use character
             return;
         }
@@ -277,6 +368,7 @@ public class CrossExaminationController : MonoBehaviour
             }
 
             characterText.text = OnStandCharacter;
+            MoveCameraToCharacter(OnStandCharacter);
 
             currentTestimonySeriesIndex = 0;
 
@@ -296,9 +388,66 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
 
     }
+
+    private void StartInteratorForPressedInteraction(bool forPressed, string item = null)
+    {
+
+        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep(forPressed, item);
+
+        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+
+        int index = 0;
+
+        foreach (string line in test2.Item1)
+        {
+            displayTexts[index++].text = line;
+        }
+        characterText.text = test2.Item2;
+        MoveCameraToCharacter(test2.Item2);
+    }
+
+    private IEnumerator<(List<string>, string)> NotImportantMessageIterator()
+    {
+
+        IEnumerable<XElement> PressedInteractions = NotImportantPressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
+
+        foreach (XElement PressedInteraction in PressedInteractions)
+        {
+            List<string> paragraph = PressedInteraction.Element(PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value).ToList();
+
+            string character = PressedInteraction.Element(CHARACTER_XML_TAG).Value;
+
+            yield return (paragraph, character);
+
+        }
+
+
+    }
+
+    private void DisplayNotImportantMessages()
+    {
+        progressingThroughPressedInteraction = true;
+        CrossExaminationContinueButton.SetActive(true);
+        ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();
+        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+
+        int index = 0;
+
+        foreach (string line in test2.Item1)
+        {
+            displayTexts[index++].text = line;
+        }
+        characterText.text = test2.Item2;
+        MoveCameraToCharacter(test2.Item2);
+    }
+
+
     public void Press()
     {
         if (!inCrossExaminationMode)
@@ -317,33 +466,86 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
+        StartInteratorForPressedInteraction(true);
 
-        IEnumerable<XElement> pressedInteractions = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
-
-        List<XElement> test = pressedInteractions.ToList();
-
-        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep();
-
-        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
-        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
-
-        int index = 0;
-
-        foreach (string line in test2.Item1)
-        {
-            displayTexts[index++].text = line;
-        }
-        characterText.text = test2.Item2;
     }
 
     // Open up the court record
+
+    /* Instead of the 'on click' button sending us the item, 
+     * we will reference the Court record to see which one is currently
+     selected*/
     public void Present()
     {//should open the court record instead, before objection image appears
-        GameplayControllerScript.instance.Objection(2f);
+     //GameplayControllerScript.instance.Objection(2f);
+
+        ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
+
+        CourtRecordManager.SetActive(false);
+
+        XElement testimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex);
+
+        string isConflicting = testimonySeries.Attribute("isConflicting").Value;
+
+        //testimonySeries.Element
+        if (isConflicting == "false")
+        {
+            // Handle default not important interaction
+            DisplayNotImportantMessages();
+            return;
+
+        }
+        if (!(isConflicting == "true"))
+        {
+            // Handle odd case
+            Debug.LogError("IsConflicting is not a true or false value: " + isConflicting);
+            return;
+
+        }
+        // Is conflicting true
+
+        string itemName = selectedEvidence.WitnessName;
+
+        string neededItem = testimonySeries.Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null).First().Attribute(ITEM_XML_ATTRIBUTE).Value;
+
+        if (neededItem.ToLower() != itemName.ToLower())
+        {
+
+            DisplayNotImportantMessages();
+            return;
+
+            // Handle default not important interaction
+
+        }
+
+        // Correct information
+        CrossExaminationContinueButton.SetActive(true);
+        GameplayControllerScript.instance.HoldIt(1f);
+        progressingThroughPressedInteraction = true;
+        StartInteratorForPressedInteraction(false, itemName);
+
+
     }
 
     void Start()
     {
+
+        // Do the Not Important One
+        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+
+        string xmlFileName = myDocumentsFolderPath + "Case1/NotImportant.xml";
+
+        if (!File.Exists(xmlFileName))
+        {
+            Debug.Log("Not Important File Doesn't Exist!");
+        }
+        else
+        {
+            NotImportantPressedInteractions = XElement.Load(xmlFileName);
+        }
+
+
+        // Do the main one
 
         XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 

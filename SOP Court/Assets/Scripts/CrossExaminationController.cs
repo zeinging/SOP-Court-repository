@@ -57,6 +57,42 @@ public class CrossExaminationController : MonoBehaviour
     private bool progressingThroughPressedInteraction = false;
     private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
+    private void MoveCameraToCharacter(string character)
+    {
+
+
+        switch (character)
+        {
+            case "phoenix wright":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Defence.position);
+                    break;
+                }
+            case "judge":
+                {
+
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Judge.position);
+                    break;
+                }
+            case "sahwit":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
+                    break;
+                }
+            case "payne":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Prosector.position);
+                    break;
+                }
+            default:
+                {
+                    throw new IOException("Unexpected value of " + character + "! Doesn't fit expected characters!");
+                }
+        }
+
+
+    }
+
     public void StartCrossExamination()
     {
 
@@ -75,6 +111,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
     }
 
@@ -196,6 +233,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
     }
     public void Next()
@@ -279,6 +317,7 @@ public class CrossExaminationController : MonoBehaviour
                 }
 
                 characterText.text = OnStandCharacter;
+                MoveCameraToCharacter(OnStandCharacter);
                 return;
 
             }
@@ -296,6 +335,8 @@ public class CrossExaminationController : MonoBehaviour
             }
 
             characterText.text = character;
+            MoveCameraToCharacter(character);
+
             // TODO: Write code here to use character
             return;
         }
@@ -327,6 +368,7 @@ public class CrossExaminationController : MonoBehaviour
             }
 
             characterText.text = OnStandCharacter;
+            MoveCameraToCharacter(OnStandCharacter);
 
             currentTestimonySeriesIndex = 0;
 
@@ -346,6 +388,7 @@ public class CrossExaminationController : MonoBehaviour
         }
 
         characterText.text = OnStandCharacter;
+        MoveCameraToCharacter(OnStandCharacter);
 
 
     }
@@ -365,6 +408,7 @@ public class CrossExaminationController : MonoBehaviour
             displayTexts[index++].text = line;
         }
         characterText.text = test2.Item2;
+        MoveCameraToCharacter(test2.Item2);
     }
 
     private IEnumerator<(List<string>, string)> NotImportantMessageIterator()
@@ -398,6 +442,7 @@ public class CrossExaminationController : MonoBehaviour
             displayTexts[index++].text = line;
         }
         characterText.text = test2.Item2;
+        MoveCameraToCharacter(test2.item2);
     }
 
 

@@ -103,6 +103,8 @@ public class CrossExaminationController : MonoBehaviour
         DialogPanelContinueButton.SetActive(false);
         crossExaminationPanel.SetActive(true);
         CrossExaminationContinueButton.SetActive(true);
+        AudioManagerScript.instance.PlayMusic(2);
+        DisplayTextsColor(Color.green);
 
         List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
 
@@ -123,6 +125,13 @@ public class CrossExaminationController : MonoBehaviour
         displayTexts[0].text = "";
         displayTexts[1].text = "";
         displayTexts[2].text = "";
+    }
+
+    private void DisplayTextsColor(Color textColor)
+    {
+        displayTexts[0].color = textColor;
+        displayTexts[1].color = textColor;
+        displayTexts[2].color = textColor;
     }
 
     private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed, string item = null)
@@ -326,6 +335,7 @@ public class CrossExaminationController : MonoBehaviour
 
                 // last pressed interation. Go to next block
                 CrossExaminationContinueButton.SetActive(false);
+                DisplayTextsColor(Color.green);
 
                 progressingThroughPressedInteraction = false;
                 progressingThroughNotImportantDialog = false;
@@ -382,6 +392,8 @@ public class CrossExaminationController : MonoBehaviour
                 return;
             }
             CrossExaminationContinueButton.SetActive(false);
+            AudioManagerScript.instance.PlayMusic(3);
+            DisplayTextsColor(Color.green);
 
 
             List<string> toSetText = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
@@ -459,6 +471,8 @@ public class CrossExaminationController : MonoBehaviour
         progressingThroughNotImportantDialog = true;
         progressingThroughPressedInteraction = true;
         CrossExaminationContinueButton.SetActive(true);
+        GameplayControllerScript.instance.Objection(1f);
+        DisplayTextsColor(Color.white);
         ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();
         ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
@@ -484,6 +498,7 @@ public class CrossExaminationController : MonoBehaviour
 
 
         CrossExaminationContinueButton.SetActive(true);
+        DisplayTextsColor(Color.white);
 
 
         GameplayControllerScript.instance.HoldIt(1f);
@@ -553,7 +568,9 @@ public class CrossExaminationController : MonoBehaviour
 
         // Correct information
         CrossExaminationContinueButton.SetActive(true);
-        GameplayControllerScript.instance.HoldIt(1f);
+        DisplayTextsColor(Color.white);
+        GameplayControllerScript.instance.Objection(1f);
+        AudioManagerScript.instance.StopMusic();
         progressingThroughPressedInteraction = true;
         StartInteratorForPressedInteraction(false, itemName);
 

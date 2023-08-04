@@ -431,6 +431,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private void DisplayNotImportantMessages()
     {
+        progressingThroughPressedInteraction = true;
+        CrossExaminationContinueButton.SetActive(true);
         ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();
         ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;

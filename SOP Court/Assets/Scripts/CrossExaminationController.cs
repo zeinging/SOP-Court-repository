@@ -61,7 +61,7 @@ public class CrossExaminationController : MonoBehaviour
     {
 
 
-        switch (character)
+        switch (character.ToLower())
         {
             case "phoenix wright":
                 {

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Craig
   ProfileImage: {fileID: 21300000, guid: 843db3fbd2a6721419101f4fb772d18d, type: 3}
+  myAnim: {fileID: 22100000, guid: 612d0a4f8dc13d74db774765ac6e1557, type: 2}
   WitnessProfesion: ???
   WitnessEmoteFrames: []
   Confession: 

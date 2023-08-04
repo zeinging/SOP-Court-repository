@@ -57,6 +57,8 @@ public class CrossExaminationController : MonoBehaviour
     private bool progressingThroughPressedInteraction = false;
     private IEnumerator<(List<string>, string)> ParagraphAndCharacterFromPressedInteractionInterator;
 
+    private bool progressingThroughNotImportantDialog = false;
+
     private void MoveCameraToCharacter(string character)
     {
 
@@ -287,24 +289,31 @@ public class CrossExaminationController : MonoBehaviour
 
             if (!result)
             {
+
                 // last pressed interation. Go to next block
                 CrossExaminationContinueButton.SetActive(false);
 
                 // Check if it's the last series
-                if (currentTestimonySeriesIndex >= numberOfSeries - 1)
-                {
 
-                    // Means last series!
-                    Debug.Log("Need to implment loading next file");
-                    return;
-
-                }
-                else
+                if (!progressingThroughNotImportantDialog)
                 {
-                    currentTestimonySeriesIndex++;
+                    if (currentTestimonySeriesIndex >= numberOfSeries - 1)
+                    {
+
+                        // Means last series!
+                        Debug.Log("Need to implment loading next file");
+                        return;
+
+                    }
+                    else
+                    {
+                        currentTestimonySeriesIndex++;
+                    }
                 }
 
                 progressingThroughPressedInteraction = false;
+                progressingThroughNotImportantDialog = false;
+
 
                 IEnumerable<string> nextText = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
                 int indexFirst = 0;
@@ -431,6 +440,7 @@ public class CrossExaminationController : MonoBehaviour
 
     private void DisplayNotImportantMessages()
     {
+        progressingThroughNotImportantDialog = true;
         progressingThroughPressedInteraction = true;
         CrossExaminationContinueButton.SetActive(true);
         ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();

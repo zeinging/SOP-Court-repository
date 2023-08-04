@@ -85,31 +85,31 @@ public class CrossExaminationController : MonoBehaviour
 
     private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed)
     {
-        int dg = currentTestimonySeriesIndex;
+        //int dg = currentTestimonySeriesIndex;
 
-        IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
-        List<XElement> testSeries = series.ToList();
+        //IEnumerable<XElement> series = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG);
+        //List<XElement> testSeries = series.ToList();
 
-        XElement specificSeries = series.ElementAt(currentTestimonySeriesIndex);
+        //XElement specificSeries = series.ElementAt(currentTestimonySeriesIndex);
 
-        IEnumerable<XElement> pressedInteractions = specificSeries.Elements(PRESSED_INTERACTIONS_XML_TAG);
+        //IEnumerable<XElement> pressedInteractions = specificSeries.Elements(PRESSED_INTERACTIONS_XML_TAG);
 
-        List<XElement> testPressedInteractions = pressedInteractions.ToList();
+        //List<XElement> testPressedInteractions = pressedInteractions.ToList();
 
-        IEnumerable<XElement> filteredPressedInteractions = pressedInteractions.Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value != null));
-
-
-
-
-        IEnumerable<XElement> pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE).Value != null));
-
-        List<XElement> testValue = pressedInteractions.ToList();
+        //XElement filteredPressedInteractions = pressedInteractions.Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null)).First();
 
 
 
 
+        IEnumerable<XElement> pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null));
 
-        IEnumerable<XElement> pressedInteractionList = pressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
+        List<XElement> testValue = pressedInteractionsComplete.ToList();
+
+
+
+
+
+        IEnumerable<XElement> pressedInteractionList = pressedInteractionsComplete.Elements(PRESSED_INTERACTION_XML_TAG);
 
         foreach (XElement pressedInteraction in pressedInteractionList)
         {

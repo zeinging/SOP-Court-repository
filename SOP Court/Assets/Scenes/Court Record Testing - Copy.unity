@@ -10010,7 +10010,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f141afcb0661ff459f90daa80b8eede, type: 2}
   - {fileID: 11400000, guid: 562ffb82b21a92c419e1f4745e81ee15, type: 2}
   - {fileID: 11400000, guid: 86baf78ed41efa7468764eafc574a95b, type: 2}
-  CurrentSuspectData: {fileID: 11400000, guid: cdd62a702f519514aa3e303f7611f257, type: 2}
+  CurrentSuspectData: {fileID: 11400000, guid: 1937c7e8e06bace48a0a1e440b1c9c42, type: 2}
   SuspectsEncounteredOrder: []
   RemainingSuspects: []
   ShuffleSuspects: 0

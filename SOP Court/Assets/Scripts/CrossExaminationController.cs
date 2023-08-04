@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class CrossExaminationController : MonoBehaviour
 {
 
+    private XElement NotImportantPressedInteractions;
+
     private static readonly string CROSS_EXAMINATION_XML_TAG = "CrossExamination";
     private static readonly string TESTIMONY_SERIES_XML_TAG = "TestimonySeries";
     private static readonly string TESTIMONY_PARAGRAPH_XML_TAG = "TestimonyParagraph";
@@ -83,7 +85,7 @@ public class CrossExaminationController : MonoBehaviour
         displayTexts[2].text = "";
     }
 
-    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed)
+    private IEnumerator<(List<string>, string)> GetParagraphAndCharacterFromPressedInteractionForCurrentStep(bool forPressed, string item = null)
     {
         //int dg = currentTestimonySeriesIndex;
 
@@ -101,12 +103,39 @@ public class CrossExaminationController : MonoBehaviour
 
 
 
-        IEnumerable<XElement> pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null));
+        XElement pressedInteractionsComplete = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Elements(PRESSED_INTERACTIONS_XML_TAG).Where(pressedInteraction => pressedInteraction != null && (forPressed ? pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) == null : pressedInteraction.Attribute(ITEM_XML_ATTRIBUTE) != null)).First();
 
-        List<XElement> testValue = pressedInteractionsComplete.ToList();
+        if (!forPressed)
+        {
+
+            XAttribute neededItem = pressedInteractionsComplete.Attribute(ITEM_XML_ATTRIBUTE);
+
+            if (neededItem == null)
+            {
+                Debug.LogError("Retreving item from pressedInterations is not working!");
+                throw new IOException("Couldn't find pressed Interations item tag when should've been there");
+            }
+
+            if (item == null)
+            {
+                Debug.LogError("Item paramter needs to be given!");
+                throw new IOException("Item parameter needs to be given!");
+            }
+
+            if (item.ToLower() != neededItem.Value.ToLower())
+            {
 
 
 
+
+
+                // Provided item but 
+
+                // Matching
+
+            }
+
+        }
 
 
         IEnumerable<XElement> pressedInteractionList = pressedInteractionsComplete.Elements(PRESSED_INTERACTION_XML_TAG);
@@ -321,10 +350,10 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
-    private void StartInteratorForPressedInteraction(bool forPressed)
+    private void StartInteratorForPressedInteraction(bool forPressed, string item = null)
     {
 
-        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep(forPressed);
+        ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep(forPressed, item);
 
         ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
@@ -338,11 +367,37 @@ public class CrossExaminationController : MonoBehaviour
         characterText.text = test2.Item2;
     }
 
-    private void displayNotImportantMessages()
+    private IEnumerator<(List<string>, string)> NotImportantMessageIterator()
     {
 
-        // use an iterator to display not important messages
+        IEnumerable<XElement> PressedInteractions = NotImportantPressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
 
+        foreach (XElement PressedInteraction in PressedInteractions)
+        {
+            List<string> paragraph = PressedInteraction.Elements(LINE_XML_TAG).Select(line => line.Value).ToList();
+
+            string character = PressedInteraction.Element(CHARACTER_XML_TAG).Value;
+
+            yield return (paragraph, character);
+
+        }
+
+
+    }
+
+    private void DisplayNotImportantMessages()
+    {
+        ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();
+        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
+
+        int index = 0;
+
+        foreach (string line in test2.Item1)
+        {
+            displayTexts[index++].text = line;
+        }
+        characterText.text = test2.Item2;
     }
 
 
@@ -364,13 +419,6 @@ public class CrossExaminationController : MonoBehaviour
         // Set this variable to avoid weirdness with previous/next buttons
         progressingThroughPressedInteraction = true;
 
-        bool needToDisplayDefaultNotImportant = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Where(testimony => testimony.Attribute(ITEM_XML_ATTRIBUTE) == null).Count() <= 0;
-
-        if (needToDisplayDefaultNotImportant)
-        {
-            displayNotImportantMessages();
-        }
-
         StartInteratorForPressedInteraction(true);
 
     }
@@ -382,7 +430,7 @@ public class CrossExaminationController : MonoBehaviour
      selected*/
     public void Present()
     {//should open the court record instead, before objection image appears
-        //GameplayControllerScript.instance.Objection(2f);
+     //GameplayControllerScript.instance.Objection(2f);
 
         ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 
@@ -396,7 +444,7 @@ public class CrossExaminationController : MonoBehaviour
         if (isConflicting == "false")
         {
             // Handle default not important interaction
-
+            DisplayNotImportantMessages();
             return;
 
         }
@@ -416,6 +464,8 @@ public class CrossExaminationController : MonoBehaviour
         if (neededItem.ToLower() != itemName.ToLower())
         {
 
+            DisplayNotImportantMessages();
+
             // Handle default not important interaction
 
         }
@@ -424,7 +474,7 @@ public class CrossExaminationController : MonoBehaviour
         CrossExaminationContinueButton.SetActive(true);
         GameplayControllerScript.instance.HoldIt(1f);
         progressingThroughPressedInteraction = true;
-        StartInteratorForPressedInteraction(false);
+        StartInteratorForPressedInteraction(false, itemName);
 
         CourtRecordManager.SetActive(false);
 
@@ -433,6 +483,23 @@ public class CrossExaminationController : MonoBehaviour
 
     void Start()
     {
+
+        // Do the Not Important One
+        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+
+        string xmlFileName = myDocumentsFolderPath + "Case1/NotImportant.xml";
+
+        if (!File.Exists(xmlFileName))
+        {
+            Debug.Log("Not Important File Doesn't Exist!");
+        }
+        else
+        {
+            NotImportantPressedInteractions = XElement.Load(xmlFileName);
+        }
+
+
+        // Do the main one
 
         XElement firstFileXML = GetXmlFromFile(currentFileNumber);
 

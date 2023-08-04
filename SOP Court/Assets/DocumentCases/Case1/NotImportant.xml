@@ -1,0 +1,46 @@
+<PressedInteractions>
+	<PressedInteraction>
+		<Character>Phoenix Wright</Character>
+		<Paragraph>
+			<Line>This evidence clearly reveals</Line>
+			<Line>the contradiction in that</Line>
+			<Line>statement, Your Honor!</Line>
+		</Paragraph>
+	</PressedInteraction>
+	<PressedInteraction>
+		<Character>Judge</Character>
+		<Paragraph>
+			<Line>How exactly are that</Line>
+			<Line>evidence and the statement</Line>
+			<Line>just now related?</Line>
+		</Paragraph>
+	</PressedInteraction>
+	<PressedInteraction>
+		<Character>Phoenix Wright</Character>
+		<Paragraph>
+			<Line>They aren't, are they...</Line>
+		</Paragraph>
+	</PressedInteraction>
+	<PressedInteraction>
+		<Character>Judge</Character>
+		<Paragraph>
+			<Line>Not at all.</Line>
+		</Paragraph>
+	</PressedInteraction>
+	<PressedInteraction>
+		<Character>Judge</Character>
+		<Paragraph>
+			<Line>Mr. Wright, please think</Line>
+			<Line>the facts over before</Line>
+			<Line>making accusations.</Line>
+		</Paragraph>
+	</PressedInteraction>
+	<PressedInteraction>
+		<Character>Phoenix Wright</Character>
+		<Paragraph>
+			<Line>(I don't think that won me</Line>
+			<Line>any points with the judge...)</Line>
+		</Paragraph>
+	</PressedInteraction>
+</PressedInteractions>
+

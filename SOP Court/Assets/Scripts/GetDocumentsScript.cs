@@ -107,8 +107,8 @@ public class GetDocumentsScript : MonoBehaviour
         if (s < FilesPathCase1Folder.Count)
         {
             //URLTestText.text = Application.absoluteURL;
-            //string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
-            string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
+            string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
+            //string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
             return Dialogue;
         }
         return null;

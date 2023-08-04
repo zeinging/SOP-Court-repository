@@ -382,7 +382,7 @@ public class CrossExaminationController : MonoBehaviour
      selected*/
     public void Present()
     {//should open the court record instead, before objection image appears
-        GameplayControllerScript.instance.Objection(2f);
+        //GameplayControllerScript.instance.Objection(2f);
 
         ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 

@@ -420,156 +420,21 @@
         <PressedInteraction>
           <Character>Phoenix Wright</Character>
           <Paragraph>
-            <Line>You found the body at 1:00PM.</Line>
-            <Line>You're sure?.</Line>
+			  <Line>Are you sure?</Line>
           </Paragraph>
         </PressedInteraction>
         
         <PressedInteraction>
           <Character>Sahwit</Character>
           <Paragraph>
-            <Line>Yes.</Line>
-            <Line>It was 1:00 PM, for certain.</Line>
+            <Line>Nope. But you can't prove it otherwise</Line>
           </Paragraph>
         </PressedInteraction>
         
         <PressedInteraction>
           <Character>Phoenix Wright</Character>
           <Paragraph>
-            <Line>Frankly, I find that hard to </Line>
-            <Line>believe!</Line>
-          </Paragraph>
-        </PressedInteraction>
-        <PressedInteraction>
-          <Character>Phoenix Wright</Character>
-          <Paragraph>
-            <Line>Your statement directly</Line>
-            <Line>conflicts the autopsy report.</Line>
-          </Paragraph>
-        </PressedInteraction>
-        <PressedInteraction>
-          <Character>Phoenix Wright</Character>
-          <Paragraph>
-            <Line>The autopsy notes the time</Line>
-            <Line>of death at sometime after</Line>
-            <Line>4PM.</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Phoenix Wright</Character>
-          <Paragraph>
-            <Line>There was nobody to... er...</Line>
-            <Line>no "body" to find at 1:00 PM!</Line>
-            <Line>4PM.</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Phoenix Wright</Character>
-          <Paragraph>
-            <Line>How do you explain this</Line>
-            <Line>three hour gap?</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Sahwit</Character>
-          <Paragraph>
-            <Line>!!!</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Sahwit</Character>
-          <Paragraph>
-            <Line>Oh, that! Oh, er...</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Payne</Character>
-          <Paragraph>
-            <Line>This is trivial! The witness</Line>
-            <Line>merely forgot the time!</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Judge</Character>
-          <Paragraph>
-            <Line>After his testimony, I find</Line>
-            <Line>that hard to believe.</Line>
-          </Paragraph>
-        </PressedInteraction>
-        
-        <PressedInteraction>
-          <Character>Judge</Character>
-          <Paragraph>
-            <Line>Mr. Sahwit...</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Judge</Character>
-          <Paragraph>
-            <Line>Why were you so certain</Line>
-            <Line>that you found the body</Line>
-            <Line>at 1:00 PM?</Line>
-          </Paragraph>
-        </PressedInteraction>
-        
-        <PressedInteraction>
-          <Character>Sahwit</Character>
-          <Paragraph>
-            <Line>I... er... well, I...</Line>
-            <Line>Gee, that's a really good</Line>
-            <Line>question!</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Mia</Character>
-          <Paragraph>
-            <Line>Great job, Wright!</Line>
-            <Line>Way to put him on the spot!</Line>
-          </Paragraph>
-        </PressedInteraction>
-        
-        <PressedInteraction>
-          <Character>Mia</Character>
-          <Paragraph>
-            <Line>That's all you have to do:</Line>
-            <Line>point out contradictions!</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Mia</Character>
-          <Paragraph>
-            <Line>Lies always beget more lies!</Line>
-          </Paragraph>
-        </PressedInteraction>
-      
-        <PressedInteraction>
-          <Character>Mia</Character>
-          <Paragraph>
-            <Line>See through one, and their</Line>
-            <Line>whole story falls apart!</Line>
-          </Paragraph>
-        </PressedInteraction>
-        <PressedInteraction>
-          <Character>Sahwit</Character>
-          <Paragraph>
-            <Line>Wait!</Line>
-            <Line>I remember now!</Line>
-          </Paragraph>
-        </PressedInteraction>
-        <PressedInteraction>
-          <Character>Judge</Character>
-          <Paragraph>
-            <Line>Would you care to give</Line>
-            <Line>your testimony again?</Line>
+			  <Line>Watch me!</Line>
           </Paragraph>
         </PressedInteraction>
       </PressedInteractions>
@@ -610,7 +475,6 @@
           <Paragraph>
             <Line>The autopsy notes the time</Line>
             <Line>of death at sometime after</Line>
-            <Line>4PM.</Line>
           </Paragraph>
         </PressedInteraction>
       
@@ -619,7 +483,6 @@
           <Paragraph>
             <Line>There was nobody to... er...</Line>
             <Line>no "body" to find at 1:00 PM!</Line>
-            <Line>4PM.</Line>
           </Paragraph>
         </PressedInteraction>
       

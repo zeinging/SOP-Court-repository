@@ -374,7 +374,7 @@ public class CrossExaminationController : MonoBehaviour
 
         foreach (XElement PressedInteraction in PressedInteractions)
         {
-            List<string> paragraph = PressedInteraction.Elements(LINE_XML_TAG).Select(line => line.Value).ToList();
+            List<string> paragraph = PressedInteraction.Element(PARAGRAPH_XML_TAG).Elements(LINE_XML_TAG).Select(line => line.Value).ToList();
 
             string character = PressedInteraction.Element(CHARACTER_XML_TAG).Value;
 
@@ -434,7 +434,7 @@ public class CrossExaminationController : MonoBehaviour
 
         ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 
-
+        CourtRecordManager.SetActive(false);
 
         XElement testimonySeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex);
 
@@ -475,8 +475,6 @@ public class CrossExaminationController : MonoBehaviour
         GameplayControllerScript.instance.HoldIt(1f);
         progressingThroughPressedInteraction = true;
         StartInteratorForPressedInteraction(false, itemName);
-
-        CourtRecordManager.SetActive(false);
 
 
     }

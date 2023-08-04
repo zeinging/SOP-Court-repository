@@ -470,6 +470,11 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
+    public void OpenCourtRecord()
+    {
+        CourtRecordManager.SetActive(true);
+    }
+
     // Open up the court record
 
     /* Instead of the 'on click' button sending us the item, 
@@ -512,6 +517,7 @@ public class CrossExaminationController : MonoBehaviour
         {
 
             DisplayNotImportantMessages();
+            return;
 
             // Handle default not important interaction
 

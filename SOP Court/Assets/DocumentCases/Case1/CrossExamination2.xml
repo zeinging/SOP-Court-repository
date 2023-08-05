@@ -1,5 +1,5 @@
 <Case>
-  <CrossExamination>
+  <CrossExamination onStand="Sahwit">
     <TestimonySeries isConflicting="false">
       <TestimonyParagraph>
         <Line>You see when I saw the </Line>

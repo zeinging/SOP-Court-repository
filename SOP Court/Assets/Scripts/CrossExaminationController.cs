@@ -336,6 +336,8 @@ public class CrossExaminationController : MonoBehaviour
 
                         currentTestimonySeriesIndex = 0;
                         crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
+
+                        OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
                         IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
                         int indexFirstTwo = 0;
                         inCrossExaminationMode = false;

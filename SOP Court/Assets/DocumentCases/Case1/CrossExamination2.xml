@@ -64,6 +64,8 @@
 						<Line>anything at all!</Line>
 					</Paragraph>
 				</PressedInteraction>
+				
+				<!-- Objection Noise when Payne's next statement is made -->
 
 				<PressedInteraction>
 					<Character>Payne</Character>

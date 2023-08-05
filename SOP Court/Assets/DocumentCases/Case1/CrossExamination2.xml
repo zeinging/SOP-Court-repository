@@ -39,7 +39,7 @@
 
 
         <PressedInteraction>
-          <Character>Phoenix</Character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>Hmm...</Line>
             <Line>Isn't that a little strange?</Line>
@@ -48,7 +48,7 @@
 
 
         <PressedInteraction>
-          <Character>Sahwit</Character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>So you're saying you</Line>
             <Line>"heard" something.</Line>
@@ -57,7 +57,7 @@
 
 
         <PressedInteraction>
-          <Character>Sahwit</Character>
+          <Character>Phoenix Wright</Character>
           <Paragraph>
             <Line>But if you were so shocked by</Line>
             <Line>the body, you wouldn't hear</Line>

@@ -20,10 +20,16 @@ public class CrossExaminationController : MonoBehaviour
     private static readonly string PARAGRAPH_XML_TAG = "Paragraph";
 
 
+
     private static readonly string ON_STAND_XML_ATTRIBUTE = "onStand";
 
     private static readonly string ITEM_XML_ATTRIBUTE = "item";
     private static readonly string IS_CONFLICIN_XML_ATTRIBUTE = "isConflicting";
+    private static readonly string START_MUSIC_XML_ATTRIBUTE = "startMusic";
+    private static readonly string STOP_MUSIC_XML_ATTRIBUTE = "stopMusic";
+
+    private static readonly string START_ANIMATION_XML_ATTRIBUTE = "startAnimation";
+    private static readonly string STOP_ANIMATION_XML_ATTRIBUTE = "stop[Animation";
 
 
 
@@ -107,7 +113,14 @@ public class CrossExaminationController : MonoBehaviour
         AudioManagerScript.instance.PlayMusic(2);
         DisplayTextsColor(Color.green);
 
-        List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        //const testimonyParagraph = 
+
+        XElement testimonyParagraph = crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG);
+
+
+        HandleMusicIfContainsAttribute(testimonyParagraph);
+
+        List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(testimonyParagraph);
 
         int index = 0;
 
@@ -651,6 +664,30 @@ public class CrossExaminationController : MonoBehaviour
         return lines;
 
 
+    }
+
+    private void HandleMusicIfContainsAttribute(XElement testimonyPargraph)
+    {
+
+        XAttribute startAttribute = testimonyPargraph.Attribute(START_MUSIC_XML_ATTRIBUTE);
+        XAttribute stopAttribute = testimonyPargraph.Attribute(STOP_MUSIC_XML_ATTRIBUTE);
+
+
+        if (startAttribute != null)
+        {
+            // Do stuff
+
+            string value = startAttribute.Value;
+
+            // Do stuff with Value. Need mark's help
+
+        }
+
+        if (stopAttribute != null)
+        {
+            // Do stuff
+
+        }
     }
 
 

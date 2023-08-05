@@ -1,5 +1,5 @@
 <Case>
-	<CrossExamination>
+	<CrossExamination onStand="Sahwit">
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
 				<Line>Actually I didn't "hear"</Line>
@@ -39,7 +39,7 @@
 			</PressedInteractions>
 		</TestimonySeries>
 
-		<TestimonySeries isConflicting="true">
+		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
 				<Line>There was a table clock in</Line>
 				<Line>the apartment, wasn't there!</Line>
@@ -62,10 +62,10 @@
 				</PressedInteraction>
 			</PressedInteractions>
 		</TestimonySeries>
-		<TestimonySeries isConflicting="false">
+		<TestimonySeries isConflicting="true">
 			<TestimonyParagraph>
 				<Line>Yeah, the murder weapon!</Line>
-				<Line>The killer  used it to</Line>
+				<Line>The killer used it to</Line>
 				<Line>hit the victim!</Line>
 			</TestimonyParagraph>
 			<PressedInteractions >
@@ -97,7 +97,7 @@
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
-			<PressedInteractions item="Statue">
+			<PressedInteractions item="autopsy Report">
 				<PressedInteraction>
 					<Character>Phoenix Wright</Character>
 					<Paragraph>
@@ -324,26 +324,26 @@
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>Yes, Your Honor.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>Mr Sahwit.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>The sound must have left</Line>
 						<Line>quite an impresion on you.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>Understandable, since the</Line>
 						<Line>murder weapon spoke just as</Line>
@@ -351,14 +351,14 @@
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>That voice was burned</Line>
 						<Line>into your mind.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>That's why you were so</Line>
 						<Line>certain about the time!</Line>
@@ -379,13 +379,13 @@
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>Baseless?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix</Character>
+					<Character>Phoenix Wright</Character>
 					<Paragraph>
 						<Line>Just look at the</Line>
 						<Line>witness's face!</Line>

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Grombit
   ProfileImage: {fileID: 21300000, guid: b4975e6687a03fd408dbf91aa2386edc, type: 3}
+  myAnim: {fileID: 22100000, guid: 771dc43f6a3403c46b1a5ad2fe7ea2a4, type: 2}
   WitnessProfesion: ???
   WitnessEmoteFrames: []
   Confession: 

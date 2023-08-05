@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FloraAnimatorOveride
+  m_Controller: {fileID: 9100000, guid: 83149f0c9a2ad974fb4425b33332a817, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f0c042ffe5821534094633d9955d0747, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c578b554e43747f44992a30acd79096e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c1ef149b790f2a34bb91678349a9fac2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 88051b034ae168742bb387bde38760cd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ce0f6850890c624d90bc31a92bce536, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: de3981f39322690458b27e4ad5092784, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79fde0ff5683a7246a1feaabd93abfc0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4178791e6259abc48b024c2601949c1d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ca9206b6247d1945875625979567db8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8ea90753c3265c744bfbe4f053108cc0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 64982323ecda2e64aa913315a0322653, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 02302c77ddb96724c928696e1de0342f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6ae07abc310e86b49bb2bd6206c94545, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d8a10143770851148b66b9aa4ff781e0, type: 2}

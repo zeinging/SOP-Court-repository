@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WitnessName: Flora
   ProfileImage: {fileID: 21300000, guid: c283b63e89d2e9940927b8b0581bb494, type: 3}
+  myAnim: {fileID: 22100000, guid: c65ef81fdc973bd48ade624bb6d722ee, type: 2}
   WitnessProfesion: ???
   WitnessEmoteFrames: []
   Confession: 

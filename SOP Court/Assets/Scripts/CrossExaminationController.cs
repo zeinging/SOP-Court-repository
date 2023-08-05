@@ -634,35 +634,71 @@ public class CrossExaminationController : MonoBehaviour
 
     private XElement LoadFileFromXMLTextAsset(TextAsset file)
     {
-        return XElement.Load(XmlReader.Create(new MemoryStream(file.bytes)).ReadSubtree());
+
+        XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
+
+        reader.ReadToFollowing("Case");
+
+        reader.ReadSubtree();
+
+
+        XElement element = XElement.Load(reader);
+
+        reader.Close();
+        return element;
     }
     private XElement LoadFileFromcurrentCrossExaminationFileNumber(int crossExaminationFileNumber)
     {
+
+        TextAsset file = null;
+
+
 
         switch (crossExaminationFileNumber)
         {
             case 1:
                 {
 
-                    return XElement.Load(XmlReader.Create(new MemoryStream(firstCaseFile.bytes)).ReadSubtree());
+                    file = firstCaseFile;
+                    break;
+
                 }
             case 2:
                 {
+                    file = secondCaseFile;
+                    break;
 
-                    return XElement.Load(XmlReader.Create(new MemoryStream(secondCaseFile.bytes)).ReadSubtree());
                 }
             case 3:
                 {
+                    file = thirdCaseFile;
+                    break;
 
-                    return XElement.Load(XmlReader.Create(new MemoryStream(thirdCaseFile.bytes)).ReadSubtree());
                 }
 
             default:
                 {
-                    throw new IOException("Can't find file with number" + crossExaminationFileNumber);
+                    file = null;
+                    break;
                 }
         }
 
+        if (file == null)
+        {
+            throw new IOException("Provided file number doesn't match!" + crossExaminationFileNumber);
+        }
+
+        XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
+
+        reader.ReadToFollowing("Case");
+
+        reader.ReadSubtree();
+
+
+        XElement element = XElement.Load(reader);
+
+        reader.Close();
+        return element;
 
     }
 

@@ -326,18 +326,20 @@ public class CrossExaminationController : MonoBehaviour
                     }
                     else
                     {
-                        // Successful
+                        // Successfuls
 
                         Debug.Log("Need to implement switch to next case");
-                        CrossExaminationContinueButton.SetActive(false);
+                        CrossExaminationContinueButton.SetActive(true);
                         DisplayTextsColor(Color.green);
                         progressingThroughPressedInteraction = false;
                         progressingThroughNotImportantDialog = false;
 
                         currentTestimonySeriesIndex = 0;
-                        crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber);
+                        crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
                         IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
                         int indexFirstTwo = 0;
+                        inCrossExaminationMode = false;
+
                         foreach (string line in nextTextTwo)
                         {
                             displayTexts[indexFirstTwo].text = line;

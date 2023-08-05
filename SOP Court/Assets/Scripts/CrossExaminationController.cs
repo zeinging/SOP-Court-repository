@@ -27,9 +27,10 @@ public class CrossExaminationController : MonoBehaviour
 
 
 
-    private int currentFileNumber = 1;
+    private int currentCrossExaminationFileNumber = 1;
 
     private int currentTestimonySeriesIndex = 0;
+
 
     private bool inCrossExaminationMode = false;
 
@@ -328,12 +329,31 @@ public class CrossExaminationController : MonoBehaviour
                         // Successful
 
                         Debug.Log("Need to implement switch to next case");
+                        CrossExaminationContinueButton.SetActive(false);
+                        DisplayTextsColor(Color.green);
+                        progressingThroughPressedInteraction = false;
+                        progressingThroughNotImportantDialog = false;
+
+                        currentTestimonySeriesIndex = 0;
+                        crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber);
+                        IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
+                        int indexFirstTwo = 0;
+                        foreach (string line in nextTextTwo)
+                        {
+                            displayTexts[indexFirstTwo].text = line;
+
+                            indexFirstTwo++;
+
+                        }
+
+                        characterText.text = OnStandCharacter;
+                        MoveCameraToCharacter(OnStandCharacter);
+                        return;
                     }
 
 
                 }
 
-                // last pressed interation. Go to next block
                 CrossExaminationContinueButton.SetActive(false);
                 DisplayTextsColor(Color.green);
 
@@ -597,7 +617,7 @@ public class CrossExaminationController : MonoBehaviour
 
         // Do the main one
 
-        XElement firstFileXML = GetXmlFromFile(currentFileNumber);
+        XElement firstFileXML = GetXmlFromFile(currentCrossExaminationFileNumber);
 
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 

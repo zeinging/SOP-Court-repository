@@ -1,12 +1,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CrossExaminationController : MonoBehaviour
 {
+
+    public TextAsset notImportantFile;
+
+    public TextAsset firstCaseFile;
+    public TextAsset secondCaseFile;
+    public TextAsset thirdCaseFile;
 
     private XElement NotImportantPressedInteractions;
 
@@ -348,7 +355,7 @@ public class CrossExaminationController : MonoBehaviour
                         progressingThroughNotImportantDialog = false;
 
                         currentTestimonySeriesIndex = 0;
-                        crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
+                        crossExamination = LoadFileFromcurrentCrossExaminationFileNumber(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
 
 
                         numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
@@ -625,27 +632,48 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
+    private XElement LoadFileFromXMLTextAsset(TextAsset file)
+    {
+        return XElement.Load(XmlReader.Create(new MemoryStream(file.bytes)).ReadSubtree());
+    }
+    private XElement LoadFileFromcurrentCrossExaminationFileNumber(int crossExaminationFileNumber)
+    {
+
+        switch (crossExaminationFileNumber)
+        {
+            case 1:
+                {
+
+                    return XElement.Load(XmlReader.Create(new MemoryStream(firstCaseFile.bytes)).ReadSubtree());
+                }
+            case 2:
+                {
+
+                    return XElement.Load(XmlReader.Create(new MemoryStream(secondCaseFile.bytes)).ReadSubtree());
+                }
+            case 3:
+                {
+
+                    return XElement.Load(XmlReader.Create(new MemoryStream(thirdCaseFile.bytes)).ReadSubtree());
+                }
+
+            default:
+                {
+                    throw new IOException("Can't find file with number" + crossExaminationFileNumber);
+                }
+        }
+
+
+    }
+
     void Start()
     {
 
-        // Do the Not Important One
-        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
-
-        string xmlFileName = myDocumentsFolderPath + "Case1/NotImportant.xml";
-
-        if (!File.Exists(xmlFileName))
-        {
-            Debug.Log("Not Important File Doesn't Exist!");
-        }
-        else
-        {
-            NotImportantPressedInteractions = XElement.Load(xmlFileName);
-        }
-
+        NotImportantPressedInteractions = LoadFileFromXMLTextAsset(notImportantFile);
 
         // Do the main one
 
-        XElement firstFileXML = GetXmlFromFile(currentCrossExaminationFileNumber);
+        XElement firstFileXML = LoadFileFromcurrentCrossExaminationFileNumber(currentCrossExaminationFileNumber);
 
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 
@@ -693,19 +721,19 @@ public class CrossExaminationController : MonoBehaviour
 
 
 
-    private XElement GetXmlFromFile(int crossExaminationNumber)
-    {
+    //private XElement GetXmlFromFile(int crossExaminationNumber)
+    //{
 
-        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+    //    string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
 
-        string xmlFileName = myDocumentsFolderPath + "Case1/CrossExamination" + crossExaminationNumber + ".xml";
+    //    string xmlFileName = myDocumentsFolderPath + "Case1/CrossExamination" + crossExaminationNumber + ".xml";
 
-        if (!File.Exists(xmlFileName))
-        {
-            Debug.Log("Target File Doesn't Exist!");
-            return null;
-        }
+    //    if (!File.Exists(xmlFileName))
+    //    {
+    //        Debug.Log("Target File Doesn't Exist!");
+    //        return null;
+    //    }
 
-        return XElement.Load(xmlFileName);
-    }
+    //    return XElement.Load(xmlFileName);
+    //}
 }

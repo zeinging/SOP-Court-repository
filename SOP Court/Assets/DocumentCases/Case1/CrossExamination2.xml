@@ -106,7 +106,7 @@
 			<TestimonyParagraph>
 				<Line>There was a voice saying the</Line>
 				<Line>time... It was probably</Line>
-				<Line>coming from the television.</Line>
+				<Line>coming from the television.</Line>/
 			</TestimonyParagraph>
 
 
@@ -168,7 +168,7 @@
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
-			<PressedInteractions item="Blackout Record">
+			<PressedInteractions item="autopsy Report">
 				<PressedInteraction>
 					<Character>Phoenix Wright</Character>
 					<Paragraph>

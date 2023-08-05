@@ -337,6 +337,9 @@ public class CrossExaminationController : MonoBehaviour
                         currentTestimonySeriesIndex = 0;
                         crossExamination = GetXmlFromFile(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
 
+
+                        numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
+
                         OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
                         IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
                         int indexFirstTwo = 0;
@@ -518,6 +521,7 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+        ResetDisplayTexts();
 
 
 
@@ -545,6 +549,13 @@ public class CrossExaminationController : MonoBehaviour
     public void Present()
     {//should open the court record instead, before objection image appears
      //GameplayControllerScript.instance.Objection(2f);
+
+
+        if (!inCrossExaminationMode)
+        {
+            return;
+        }
+        ResetDisplayTexts();
 
         ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 

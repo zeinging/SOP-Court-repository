@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CrossExaminationController : MonoBehaviour
 {
+
+    public TextAsset notImportantFile;
+
+    public TextAsset firstCaseFile;
+    public TextAsset secondCaseFile;
 
     private XElement NotImportantPressedInteractions;
 
@@ -20,16 +26,23 @@ public class CrossExaminationController : MonoBehaviour
     private static readonly string PARAGRAPH_XML_TAG = "Paragraph";
 
 
+
     private static readonly string ON_STAND_XML_ATTRIBUTE = "onStand";
 
     private static readonly string ITEM_XML_ATTRIBUTE = "item";
     private static readonly string IS_CONFLICIN_XML_ATTRIBUTE = "isConflicting";
+    private static readonly string START_MUSIC_XML_ATTRIBUTE = "startMusic";
+    private static readonly string STOP_MUSIC_XML_ATTRIBUTE = "stopMusic";
+
+    private static readonly string START_ANIMATION_XML_ATTRIBUTE = "startAnimation";
+    private static readonly string STOP_ANIMATION_XML_ATTRIBUTE = "stop[Animation";
 
 
 
-    private int currentFileNumber = 1;
+    private int currentCrossExaminationFileNumber = 1;
 
     private int currentTestimonySeriesIndex = 0;
+
 
     private bool inCrossExaminationMode = false;
 
@@ -67,7 +80,7 @@ public class CrossExaminationController : MonoBehaviour
 
         switch (character.ToLower())
         {
-            case "phoenix wright":
+            case "defence":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Defence.position);
                     break;
@@ -78,12 +91,17 @@ public class CrossExaminationController : MonoBehaviour
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Judge.position);
                     break;
                 }
-            case "sahwit":
+            case "craig":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
                     break;
                 }
-            case "payne":
+            case "bagel man":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
+                    break;
+                }
+            case "prosecution":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Prosector.position);
                     break;
@@ -115,7 +133,14 @@ public class CrossExaminationController : MonoBehaviour
         AudioManagerScript.instance.PlayMusic(2);
         DisplayTextsColor(Color.green);
 
-        List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG));
+        //const testimonyParagraph = 
+
+        XElement testimonyParagraph = crossExamination.Element(TESTIMONY_SERIES_XML_TAG).Element(TESTIMONY_PARAGRAPH_XML_TAG);
+
+
+        HandleMusicIfContainsAttribute(testimonyParagraph);
+
+        List<string> firstMessage = GetDislpayTextFromTestimonyParagraph(testimonyParagraph);
 
         int index = 0;
 
@@ -334,15 +359,41 @@ public class CrossExaminationController : MonoBehaviour
                     }
                     else
                     {
-                        // Successful
+                        // Successfuls
 
                         Debug.Log("Need to implement switch to next case");
+                        CrossExaminationContinueButton.SetActive(true);
+                        DisplayTextsColor(Color.green);
+                        progressingThroughPressedInteraction = false;
+                        progressingThroughNotImportantDialog = false;
+
+                        currentTestimonySeriesIndex = 0;
+                        crossExamination = LoadFileFromcurrentCrossExaminationFileNumber(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
+
+
+                        numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
+
+                        OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
+                        IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
+                        int indexFirstTwo = 0;
+                        inCrossExaminationMode = false;
+
+                        foreach (string line in nextTextTwo)
+                        {
+                            displayTexts[indexFirstTwo].text = line;
+
+                            indexFirstTwo++;
+
+                        }
+
+                        characterText.text = OnStandCharacter;
+                        MoveCameraToCharacter(OnStandCharacter);
+                        return;
                     }
 
 
                 }
 
-                // last pressed interation. Go to next block
                 CrossExaminationContinueButton.SetActive(false);
                 CrossExaminationButtons(true);
                 DisplayTextsColor(Color.green);
@@ -506,6 +557,7 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+        ResetDisplayTexts();
 
 
 
@@ -534,6 +586,13 @@ public class CrossExaminationController : MonoBehaviour
     public void Present()
     {//should open the court record instead, before objection image appears
      //GameplayControllerScript.instance.Objection(2f);
+
+
+        if (!inCrossExaminationMode)
+        {
+            return;
+        }
+        ResetDisplayTexts();
 
         ScriptableObjectProfile selectedEvidence = CourtRecordManager.GetComponent<CourtRecordManager>().CurrentlySelectedEvidence;
 
@@ -591,27 +650,78 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
+    private XElement LoadFileFromXMLTextAsset(TextAsset file)
+    {
+
+        XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
+
+        reader.ReadToFollowing("Case");
+
+        reader.ReadSubtree();
+
+
+        XElement element = XElement.Load(reader);
+
+        reader.Close();
+        return element;
+    }
+    private XElement LoadFileFromcurrentCrossExaminationFileNumber(int crossExaminationFileNumber)
+    {
+
+        TextAsset file = null;
+
+
+
+        switch (crossExaminationFileNumber)
+        {
+            case 1:
+                {
+
+                    file = firstCaseFile;
+                    break;
+
+                }
+            case 2:
+                {
+                    file = secondCaseFile;
+                    break;
+
+                }
+
+            default:
+                {
+                    file = null;
+                    break;
+                }
+        }
+
+        if (file == null)
+        {
+            throw new IOException("Provided file number doesn't match!" + crossExaminationFileNumber);
+        }
+
+        XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
+
+        reader.ReadToFollowing("Case");
+
+        reader.ReadSubtree();
+
+
+        XElement element = XElement.Load(reader);
+
+        reader.Close();
+        return element;
+
+    }
+
     void Start()
     {
 
-        // Do the Not Important One
-        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
-
-        string xmlFileName = myDocumentsFolderPath + "Case1/NotImportant.xml";
-
-        if (!File.Exists(xmlFileName))
-        {
-            Debug.Log("Not Important File Doesn't Exist!");
-        }
-        else
-        {
-            NotImportantPressedInteractions = XElement.Load(xmlFileName);
-        }
-
+        NotImportantPressedInteractions = LoadFileFromXMLTextAsset(notImportantFile);
 
         // Do the main one
 
-        XElement firstFileXML = GetXmlFromFile(currentFileNumber);
+        XElement firstFileXML = LoadFileFromcurrentCrossExaminationFileNumber(currentCrossExaminationFileNumber);
 
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 
@@ -632,22 +742,46 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
-
-
-
-    private XElement GetXmlFromFile(int crossExaminationNumber)
+    private void HandleMusicIfContainsAttribute(XElement testimonyPargraph)
     {
 
-        string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+        XAttribute startAttribute = testimonyPargraph.Attribute(START_MUSIC_XML_ATTRIBUTE);
+        XAttribute stopAttribute = testimonyPargraph.Attribute(STOP_MUSIC_XML_ATTRIBUTE);
 
-        string xmlFileName = myDocumentsFolderPath + "Case1/CrossExamination" + crossExaminationNumber + ".xml";
 
-        if (!File.Exists(xmlFileName))
+        if (startAttribute != null)
         {
-            Debug.Log("Target File Doesn't Exist!");
-            return null;
+            // Do stuff
+
+            string value = startAttribute.Value;
+
+            // Do stuff with Value. Need mark's help
+
         }
 
-        return XElement.Load(xmlFileName);
+        if (stopAttribute != null)
+        {
+            // Do stuff
+
+        }
     }
+
+
+
+
+    //private XElement GetXmlFromFile(int crossExaminationNumber)
+    //{
+
+    //    string myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+
+    //    string xmlFileName = myDocumentsFolderPath + "Case1/CrossExamination" + crossExaminationNumber + ".xml";
+
+    //    if (!File.Exists(xmlFileName))
+    //    {
+    //        Debug.Log("Target File Doesn't Exist!");
+    //        return null;
+    //    }
+
+    //    return XElement.Load(xmlFileName);
+    //}
 }

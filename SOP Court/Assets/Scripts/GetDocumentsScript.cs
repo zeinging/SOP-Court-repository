@@ -29,13 +29,13 @@ public class GetDocumentsScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
-        GetCaseFolders();
-        GetFilesInFolder(FoldersInDocumentsFolder[0], FilesPathCase1Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[1], FilesPathCase2Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
-        GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
+        //myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
+        //GetCaseFolders();
+        //GetFilesInFolder(FoldersInDocumentsFolder[0], FilesPathCase1Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[1], FilesPathCase2Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
+        //GetFilesInFolder(FoldersInDocumentsFolder[4], FilesPathCase5Folder);
 
         //StartCoroutine(GetTextFromWebFile());
     }

@@ -113,7 +113,7 @@ public class GetDocumentsScript : MonoBehaviour
         if (s < FilesPathCase1Folder.Count)
         {
             string t = BeginningTextFile.text;
-            string[] test = t.Split(new string[] { "\r\n\r\n\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] test = t.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
 
             string[] updatedList = new string[test.Length];
             int index = 0;

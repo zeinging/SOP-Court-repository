@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DeskSlam
+  m_Name: DefensePointing
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 9044a43a9159c544a888b4b0b073346a, type: 3}
-    - time: 0.26666668
-      value: {fileID: 21300000, guid: b5c6f067301248c4abc07bdf1fdf9f57, type: 3}
-    - time: 0.51666665
-      value: {fileID: 21300000, guid: 2cb0650f28afc6842ab0bca6c0db04cb, type: 3}
-    - time: 0.76666665
-      value: {fileID: 21300000, guid: 7a5c454c4f09d5e4b9da22f124571e91, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: 05ba7ac6778bc174581bcbd7b46c14fb, type: 3}
+      value: {fileID: 21300000, guid: 90c2980c4f3b6a74d9d77c1ada05e0d0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 9044a43a9159c544a888b4b0b073346a, type: 3}
-    - {fileID: 21300000, guid: b5c6f067301248c4abc07bdf1fdf9f57, type: 3}
-    - {fileID: 21300000, guid: 2cb0650f28afc6842ab0bca6c0db04cb, type: 3}
-    - {fileID: 21300000, guid: 7a5c454c4f09d5e4b9da22f124571e91, type: 3}
-    - {fileID: 21300000, guid: 05ba7ac6778bc174581bcbd7b46c14fb, type: 3}
+    - {fileID: 21300000, guid: 90c2980c4f3b6a74d9d77c1ada05e0d0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

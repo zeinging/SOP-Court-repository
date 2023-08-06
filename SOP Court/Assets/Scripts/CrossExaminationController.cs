@@ -50,6 +50,7 @@ public class CrossExaminationController : MonoBehaviour
 
     public GameObject CrossExaminationContinueButton;
     public GameObject DialogPanelContinueButton;
+    public GameObject previousButton,NextButton,PressButton,PresentButton;
 
     public Text[] displayTexts;
     public Text characterText;
@@ -96,11 +97,19 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
+    public void CrossExaminationButtons(bool Isactive){
+        PressButton.SetActive(Isactive);
+        PresentButton.SetActive(Isactive);
+        NextButton.SetActive(Isactive);
+        previousButton.SetActive(Isactive);
+    }
+
     public void StartCrossExamination()
     {
 
         dialogPanel.SetActive(false);
         DialogPanelContinueButton.SetActive(false);
+        CrossExaminationButtons(false);
         crossExaminationPanel.SetActive(true);
         CrossExaminationContinueButton.SetActive(true);
         AudioManagerScript.instance.PlayMusic(2);
@@ -335,6 +344,7 @@ public class CrossExaminationController : MonoBehaviour
 
                 // last pressed interation. Go to next block
                 CrossExaminationContinueButton.SetActive(false);
+                CrossExaminationButtons(true);
                 DisplayTextsColor(Color.green);
 
                 progressingThroughPressedInteraction = false;
@@ -392,6 +402,7 @@ public class CrossExaminationController : MonoBehaviour
                 return;
             }
             CrossExaminationContinueButton.SetActive(false);
+            CrossExaminationButtons(true);
             AudioManagerScript.instance.PlayMusic(3);
             DisplayTextsColor(Color.green);
 
@@ -470,6 +481,7 @@ public class CrossExaminationController : MonoBehaviour
     {
         progressingThroughNotImportantDialog = true;
         progressingThroughPressedInteraction = true;
+        CrossExaminationButtons(false);
         CrossExaminationContinueButton.SetActive(true);
         GameplayControllerScript.instance.Objection(1f);
         DisplayTextsColor(Color.white);
@@ -498,6 +510,7 @@ public class CrossExaminationController : MonoBehaviour
 
 
         CrossExaminationContinueButton.SetActive(true);
+        CrossExaminationButtons(false);
         DisplayTextsColor(Color.white);
 
 
@@ -568,6 +581,7 @@ public class CrossExaminationController : MonoBehaviour
 
         // Correct information
         CrossExaminationContinueButton.SetActive(true);
+        CrossExaminationButtons(false);
         DisplayTextsColor(Color.white);
         GameplayControllerScript.instance.Objection(1f);
         AudioManagerScript.instance.StopMusic();

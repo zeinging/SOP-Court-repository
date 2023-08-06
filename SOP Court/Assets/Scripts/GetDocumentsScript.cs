@@ -15,12 +15,12 @@ public class GetDocumentsScript : MonoBehaviour
 
     public TextAsset BeginningTextFile;
 
-    public List<string>
-    FilesPathCase1Folder,
-    FilesPathCase2Folder,
-    FilesPathCase3Folder,
-    FilesPathCase4Folder,
-    FilesPathCase5Folder;
+    //public List<string>
+    //FilesPathCase1Folder,
+    //FilesPathCase2Folder,
+    //FilesPathCase3Folder,
+    //FilesPathCase4Folder,
+    //FilesPathCase5Folder;
 
     public string[] DialogueFromWebFile = new string[1];
 
@@ -31,7 +31,7 @@ public class GetDocumentsScript : MonoBehaviour
     {
         //myDocumentsFolderPath = Application.dataPath + "/DocumentCases/";
         //GetCaseFolders();
-        //GetFilesInFolder(FoldersInDocumentsFolder[0], FilesPathCase1Folder);
+
         //GetFilesInFolder(FoldersInDocumentsFolder[1], FilesPathCase2Folder);
         //GetFilesInFolder(FoldersInDocumentsFolder[2], FilesPathCase3Folder);
         //GetFilesInFolder(FoldersInDocumentsFolder[3], FilesPathCase4Folder);
@@ -104,32 +104,32 @@ public class GetDocumentsScript : MonoBehaviour
 
     }
 
-    public string[] GetTextFromFileTest(int s)
+    public string[] GetTextFromFileTest()
     {
         //Debug.Log(FilesPathCase1Folder[0]);
         // ** To get the project built we'll just return the single file** //
         // ** Later we can implment a more flexible solution** //
 
-        if (s < FilesPathCase1Folder.Count)
+        //if (s < FilesPathCase1Folder.Count)
+        //{
+        string t = BeginningTextFile.text;
+        string[] test = t.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+
+        string[] updatedList = new string[test.Length];
+        int index = 0;
+        foreach (string f in test)
         {
-            string t = BeginningTextFile.text;
-            string[] test = t.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
-
-            string[] updatedList = new string[test.Length];
-            int index = 0;
-            foreach (string f in test)
-            {
-                updatedList[index] = f.Replace("\\'", "'");
-                index++;
-            }
-
-            return updatedList;
-            //URLTestText.text = Application.absoluteURL;
-            //string[] Dialogue = [";
-            //string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
-            //return Dialogue;
+            updatedList[index] = f.Replace("\\'", "'");
+            index++;
         }
-        return null;
+
+        return updatedList;
+        //URLTestText.text = Application.absoluteURL;
+        //string[] Dialogue = [";
+        //string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
+        //return Dialogue;
+        //}
+        //return null;
         //return Dialogue;
         //string[] Dialogue = new string[1];
         //Dialogue[0] = "testing this fly is really anoying!";

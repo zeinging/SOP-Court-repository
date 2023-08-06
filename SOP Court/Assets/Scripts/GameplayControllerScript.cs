@@ -37,13 +37,14 @@ public class GameplayControllerScript : MonoBehaviour
 
             //GetComponent<GetDocumentsScript>().StartGetTextFromWebFile();
 
-            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
-            maxFiles = GetComponent<GetDocumentsScript>().FilesPathCase1Folder.Count;
+            CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest();
+            // Hard coding for now
+            maxFiles = 1;
 
         }
         if (!IsInCrossExaminationScene)
         {
-            StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
+            _ = StartCoroutine(DelayDialogueBox(0.5f, 0.5f));
         }
 
     }
@@ -51,19 +52,19 @@ public class GameplayControllerScript : MonoBehaviour
     public void HoldIt(float holdItTimer)
     {
         AudioManagerScript.instance.PlaySound(1);
-        StartCoroutine(InteruptionTimer(holdItTimer, 0));
+        _ = StartCoroutine(InteruptionTimer(holdItTimer, 0));
     }
 
     public void Objection(float objectionTimer)
     {
         AudioManagerScript.instance.PlaySound(0);
-        StartCoroutine(InteruptionTimer(objectionTimer, 1));
+        _ = StartCoroutine(InteruptionTimer(objectionTimer, 1));
     }
 
     public void TakeThat(float takeThatTimer)
     {
         AudioManagerScript.instance.PlaySound(2);
-        StartCoroutine(InteruptionTimer(takeThatTimer, 2));
+        _ = StartCoroutine(InteruptionTimer(takeThatTimer, 2));
     }
 
     private IEnumerator InteruptionTimer(float t, int spriteIndex)
@@ -84,11 +85,11 @@ public class GameplayControllerScript : MonoBehaviour
 
             if (GetComponent<GetDocumentsScript>())
             {
-                StartCoroutine(DelayFade());
+                _ = StartCoroutine(DelayFade());
                 currentSceneIndex++;
-                CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest(currentSceneIndex);
+                CurrentSceneDialogue = GetComponent<GetDocumentsScript>().GetTextFromFileTest();
                 //OpenDialogueBox(3f);
-                StartCoroutine(DelayDialogueBox(1f, 0));
+                _ = StartCoroutine(DelayDialogueBox(1f, 0));
             }
             else
             {
@@ -96,7 +97,7 @@ public class GameplayControllerScript : MonoBehaviour
             }
 
         }
-        StartCoroutine(DelayFade());//delete later
+        _ = StartCoroutine(DelayFade());//delete later
 
     }
 

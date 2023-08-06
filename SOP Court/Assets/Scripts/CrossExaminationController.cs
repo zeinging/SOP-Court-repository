@@ -31,11 +31,19 @@ public class CrossExaminationController : MonoBehaviour
 
     private static readonly string ITEM_XML_ATTRIBUTE = "item";
     private static readonly string IS_CONFLICIN_XML_ATTRIBUTE = "isConflicting";
+    private static readonly string CONTINUE_AFTER_ALL_PRESSED_XML_ATTRIBUTE = "continueAfterAllPressed";
+
+
+
     private static readonly string START_MUSIC_XML_ATTRIBUTE = "startMusic";
     private static readonly string STOP_MUSIC_XML_ATTRIBUTE = "stopMusic";
 
     private static readonly string START_ANIMATION_XML_ATTRIBUTE = "startAnimation";
     private static readonly string STOP_ANIMATION_XML_ATTRIBUTE = "stop[Animation";
+
+    private List<int> PressedTestimonySeriesIndexes = new List<int>();
+
+    private bool CurrentCrossExaminationOnlyNeedsAllPresses = false;
 
 
 
@@ -73,6 +81,8 @@ public class CrossExaminationController : MonoBehaviour
 
     private bool progressingThroughNotImportantDialog = false;
     private bool isPress = false;
+
+    private bool PressedAllTestimoniesAndNeedToProgressToNextCase = false;
 
     private void MoveCameraToCharacter(string character)
     {
@@ -341,6 +351,46 @@ public class CrossExaminationController : MonoBehaviour
                     {
                         // Reached the end.
                         currentTestimonySeriesIndex = 0;
+
+                        if (PressedAllTestimoniesAndNeedToProgressToNextCase)
+                        {
+                            // Go to next case
+
+
+                            Debug.Log("Need to implement switch to next case");
+                            PressedTestimonySeriesIndexes = new List<int>();
+                            PressedAllTestimoniesAndNeedToProgressToNextCase = false;
+                            CurrentCrossExaminationOnlyNeedsAllPresses = false;
+                            CrossExaminationContinueButton.SetActive(true);
+                            DisplayTextsColor(Color.green);
+                            progressingThroughPressedInteraction = false;
+                            progressingThroughNotImportantDialog = false;
+
+                            currentTestimonySeriesIndex = 0;
+                            crossExamination = LoadFileFromcurrentCrossExaminationFileNumber(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
+
+
+                            numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
+
+                            OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
+                            IEnumerable<string> nextTextTwo = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).ElementAt(currentTestimonySeriesIndex).Element(TESTIMONY_PARAGRAPH_XML_TAG).Elements("Line").Select(line => line.Value);
+                            int indexFirstTwo = 0;
+                            inCrossExaminationMode = false;
+
+                            foreach (string line in nextTextTwo)
+                            {
+                                displayTexts[indexFirstTwo].text = line;
+
+                                indexFirstTwo++;
+
+                            }
+
+                            characterText.text = OnStandCharacter;
+                            MoveCameraToCharacter(OnStandCharacter);
+                            return;
+
+
+                        }
                     }
                     else
                     {
@@ -363,6 +413,9 @@ public class CrossExaminationController : MonoBehaviour
                         // Successfuls
 
                         Debug.Log("Need to implement switch to next case");
+                        PressedTestimonySeriesIndexes = new List<int>();
+                        CurrentCrossExaminationOnlyNeedsAllPresses = false;
+                        PressedAllTestimoniesAndNeedToProgressToNextCase = false;
                         CrossExaminationContinueButton.SetActive(true);
                         DisplayTextsColor(Color.green);
                         progressingThroughPressedInteraction = false;
@@ -559,6 +612,23 @@ public class CrossExaminationController : MonoBehaviour
         {
             return;
         }
+
+        if (CurrentCrossExaminationOnlyNeedsAllPresses)
+        {
+
+            if (!PressedTestimonySeriesIndexes.Contains(currentTestimonySeriesIndex))
+            {
+                PressedTestimonySeriesIndexes.Add(currentTestimonySeriesIndex);
+
+                if (PressedTestimonySeriesIndexes.Count >= numberOfSeries)
+                {
+                    // Pressed all interations. Go to next thing after pressed interations.
+                    PressedAllTestimoniesAndNeedToProgressToNextCase = true;
+                }
+            }
+        }
+
+
         ResetDisplayTexts();
 
 
@@ -725,6 +795,19 @@ public class CrossExaminationController : MonoBehaviour
         crossExamination = firstFileXML.Element(CROSS_EXAMINATION_XML_TAG);
 
         OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
+
+        XAttribute continueAfterAllPressedAttribue = crossExamination.Attribute(CONTINUE_AFTER_ALL_PRESSED_XML_ATTRIBUTE);
+
+        if (continueAfterAllPressedAttribue != null)
+        {
+
+            if (continueAfterAllPressedAttribue.Value == "true")
+            {
+
+                CurrentCrossExaminationOnlyNeedsAllPresses = true;
+            }
+
+        }
 
         numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
 

@@ -13,6 +13,8 @@ public class GetDocumentsScript : MonoBehaviour
 
     public string[] FoldersInDocumentsFolder;
 
+    public TextAsset BeginningTextFile;
+
     public List<string>
     FilesPathCase1Folder,
     FilesPathCase2Folder,
@@ -70,8 +72,9 @@ public class GetDocumentsScript : MonoBehaviour
     }
 
 
-    public void StartGetTextFromWebFile(){
-        StartCoroutine(GetTextFromWebFile());
+    public void StartGetTextFromWebFile()
+    {
+        _ = StartCoroutine(GetTextFromWebFile());
     }
 
     IEnumerator GetTextFromWebFile()
@@ -104,12 +107,27 @@ public class GetDocumentsScript : MonoBehaviour
     public string[] GetTextFromFileTest(int s)
     {
         //Debug.Log(FilesPathCase1Folder[0]);
+        // ** To get the project built we'll just return the single file** //
+        // ** Later we can implment a more flexible solution** //
+
         if (s < FilesPathCase1Folder.Count)
         {
+            string t = BeginningTextFile.text;
+            string[] test = t.Split(new string[] { "\r\n\r\n\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+
+            string[] updatedList = new string[test.Length];
+            int index = 0;
+            foreach (string f in test)
+            {
+                updatedList[index] = f.Replace("\\'", "'");
+                index++;
+            }
+
+            return updatedList;
             //URLTestText.text = Application.absoluteURL;
-            string[] Dialogue = File.ReadAllLines(FilesPathCase1Folder[s]);
+            //string[] Dialogue = [";
             //string[] Dialogue = File.ReadAllLines(Application.dataPath + "/1.StartCase.txt");
-            return Dialogue;
+            //return Dialogue;
         }
         return null;
         //return Dialogue;

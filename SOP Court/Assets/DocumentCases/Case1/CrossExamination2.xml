@@ -1,341 +1,37 @@
 <Case>
-	<CrossExamination onStand="Sahwit">
+	<CrossExamination onStand="Bagel Man">
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
-				<Line>You see when I saw the </Line>
-				<Line>body, I heard the time.</Line>
+				<Line>I was visiting Craig at</Line>
+				<Line>his house.</Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Defence</Character>
 					<Paragraph>
-						<Line>You said "heard"...</Line>
-						<Line>Not "saw"?</Line>
+						<Line>What was the occasion?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Sahwit</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Yes, heard.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>All I saw was the body</Line>
-						<Line>lying there...</Line>
+						<Line>Well, he had a new</Line>
+						<Line>pool installed.</Line>
 					</Paragraph>
 				</PressedInteraction>
 
 				<PressedInteraction>
-					<Character>Sahwit</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>I didn't think to look at</Line>
-						<Line>anything else, least of all</Line>
-						<Line>my watch.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>Hmm...</Line>
-						<Line>Isn't that a little strange?</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>So you're saying you</Line>
-						<Line>"heard" something.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>But if you were so shocked by</Line>
-						<Line>the body, you wouldn't hear</Line>
-						<Line>anything at all!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				
-				<!-- Objection Noise when Payne's next statement is made -->
-
-				<PressedInteraction>
-					<Character>Payne</Character>
-					<Paragraph>
-						<Line>The witness did say he</Line>
-						<Line>actually heard the time.</Line>
+						<Line>So, I'd figure I'd see if he wanted to go swimming.</Line>
 					</Paragraph>
 				</PressedInteraction>
 
 				<PressedInteraction>
-					<Character>Payne</Character>
+					<Character>Prosecution</Character>
 					<Paragraph>
-						<Line>It's ludicrous to suggest</Line>
-						<Line>he "wouldn't hear anything"!</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Hmm...</Line>
-						<Line>I have to agree with</Line>
-						<Line>the prosecution.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Witness, continue</Line>
-						<Line>your testimony.</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-		</TestimonySeries>
-
-		<TestimonySeries isConflicting="true">
-			<TestimonyParagraph>
-				<Line>There was a voice saying the</Line>
-				<Line>time... It was probably</Line>
-				<Line>coming from the television.</Line>/
-			</TestimonyParagraph>
-
-
-			<PressedInteractions>
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>Are you sure it was a</Line>
-						<Line>television and not... a radio?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>Well, no, I guess it</Line>
-						<Line>might have been a radio.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Payne</Character>
-					<Paragraph>
-						<Line>Incidentally, there was</Line>
-						<Line>no radio on the premises.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Payne</Character>
-					<Paragraph>
-						<Line>There was only one</Line>
-						<Line>large television.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Mia</Character>
-					<Paragraph>
-						<Line>Wright!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Mia</Character>
-					<Paragraph>
-						<Line>I can't put my finger on it,</Line>
-						<Line>but something about this seems</Line>
-						<Line>fishy.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Mia</Character>
-					<Paragraph>
-						<Line>Something about "hearing"</Line>
-						<Line>the television...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Payne</Character>
-					<Paragraph>
-						<Line>The witness has testified.</Line>
-						<Line>He heard the time.</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-			<PressedInteractions item="autopsy Report">
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>Hold it right there!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>The prosecution has said there</Line>
-						<Line>was a blackout at the time of</Line>
-						<Line>the discovery!</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>And this record proves it!</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>...!</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>You couldn't have heard</Line>
-						<Line>a television... or a video!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>Gah!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>I... well... urk!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>The defense has a point.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Do you have an explanation for this, Mr. Sahwit?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>No, I... I find it quite</Line>
-						<Line>puzzling myself! Quite!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>Aah!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>W-wait!</Line>
-						<Line>I remember now!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Mr. Sahwit?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>The court would prefer to hear</Line>
-						<Line>an accurate testimony from the</Line>
-						<Line>very beginning.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>These constant corrections</Line>
-						<Line>are harming your credibility.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>That and you seem</Line>
-						<Line>rather... distraught.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>...!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>M-my apologies, Your Honor!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Sahwit</Character>
-					<Paragraph>
-						<Line>It... er, it must have</Line>
-						<Line>been the shock of finding</Line>
-						<Line>the body</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Very well, Mr. Sahwit.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Let's hear your testimony</Line>
-						<Line>once more please.</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-		</TestimonySeries>
-		<TestimonySeries isConflicting="false">
-			<TestimonyParagraph>
-				<Line>Oh but it was three hours</Line>
-				<Line>off, wasn't it?</Line>
-			</TestimonyParagraph>
-			<PressedInteractions>
-				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
-					<Paragraph>
-						<Line>How do you explain the gap!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Well, witness?</Line>
-						<Line>Can you explain this?</Line>
+						<Line>Can't blame him. It was</Line>
+						<Line>a hot week.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
@@ -343,48 +39,59 @@
 
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
-				<Line>I guess the victim must</Line>
-				<Line>have been watching a video</Line>
-				<Line>of a taped program!</Line>
+				<Line>He didn't answer his door,</Line>
+				<Line>so I checked around back.</Line>
+			</TestimonyParagraph>
+
+
+			<PressedInteractions>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Did craig seem to be home?</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>I had noticed his car</Line>
+						<Line>was out front.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>So, I assumed he was</Line>
+						<Line>still at home.</Line>
+					</Paragraph>
+				</PressedInteraction>
+			</PressedInteractions>
+		</TestimonySeries>
+		<TestimonySeries isConflicting="false">
+			<TestimonyParagraph>
+				<Line>When I got there, I saw</Line>
+				<Line>him with Circuit Man.</Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Defence</Character>
 					<Paragraph>
-						<Line>A... video?</Line>
+						<Line>Did you know Circuit Man was</Line>
+						<Line>going to be there?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Sahwit</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Yes, that would explain</Line>
-						<Line>why the time was wrong!</Line>
+						<Line>Not really. We both knew</Line>
+						<Line>Craig, though.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>True, true...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Mia</Character>
-					<Paragraph>
-						<Line>Wright!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Mia</Character>
-					<Paragraph>
-						<Line>I think the problem lies</Line>
-						<Line>someplace else...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>We're agreed that you heard</Line>
-						<Line>the time at the scene, then.</Line>
+						<Line>So I guess it's not surprising</Line>
+						<Line>that he was there as well.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
@@ -392,52 +99,45 @@
 
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
-				<Line>That's why I thought</Line>
-				<Line>it was 1:00PM!</Line>
+				<Line>Circuit Man was face-down</Line>
+				<Line>on the ground, bleeding</Line>
+				<Line>out from a head wound.</Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
-
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Defence</Character>
 					<Paragraph>
-						<Line>Are you sure the voice you</Line>
-						<Line>heard said it was 1:00PM?</Line>
+						<Line>Where was Craig standing</Line>
+						<Line>in this scenario?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Sahwit</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Yes, I can pratically hear</Line>
-						<Line>it now. It was quite clear.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Judge</Character>
-					<Paragraph>
-						<Line>Mr. Payne, has the prosecution</Line>
-						<Line>verified this testimony?</Line>
+						<Line>From the way Circuit Man</Line>
+						<Line>was laying, Craig would'</Line>
+						<Line>been...</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Payne</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>My apologies, Your Honor.</Line>
+						<Line>...pretty sure it would've been</Line>
+						<Line>behind him.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Payne</Character>
+					<Character>Defence</Character>
 					<Paragraph>
-						<Line>I, too, have only just learned</Line>
-						<Line>that the witness "heard"</Line>
-						<Line>the time.</Line>
+						<Line>So it would've been a sneak</Line>
+						<Line>attack?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
-					<Character>Sahwit</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Oh, I'm really sorry. I only</Line>
-						<Line>remembered it just now.</Line>
+						<Line>Probably, I just saw</Line>
+						<Line>the aftermath.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
@@ -445,24 +145,156 @@
 
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
-				<Line>Terribly sorry about</Line>
-				<Line>the misunderstanding...</Line>
+				<Line>And Craig was holding a</Line>
+				<Line>pool cleaning stick, the murder</Line>
+				<Line>weapon, I believe.</Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
 
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Defence</Character>
 					<Paragraph>
-						<Line>Well, you just watch it!</Line>
+						<Line>Pool cleaning sticks aren't</Line>
+						<Line>*that* hard. </Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Do you really think that</Line>
+						<Line>killed him?</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>Right, the hard floor around</Line>
+						<Line>the pool.</Line>
 					</Paragraph>
 				</PressedInteraction>
 
 				<PressedInteraction>
-					<Character>Phoenix Wright</Character>
+					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>(Hmm... Not much point</Line>
-						<Line>pressing him on that one,</Line>
-						<Line>was there?)</Line>
+						<Line>Craig probably knocked him</Line>
+						<Line>over with the stick...</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>...And then Circuit Man hit his head badly.</Line>
+					</Paragraph>
+				</PressedInteraction>
+			</PressedInteractions>
+		</TestimonySeries>
+
+		<TestimonySeries isConflicting="false">
+			<TestimonyParagraph>
+				<Line>I shouted at him and </Line>
+				<Line>tried to give chase.</Line>
+			</TestimonyParagraph>
+			<PressedInteractions>
+
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Did Craig say anything</Line>
+						<Line>back?</Line>
+					</Paragraph>
+				</PressedInteraction>
+
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>No, nothing. He seemed more</Line>
+						<Line>surprised that I was there.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>But he sure knew how to run!</Line>
+					</Paragraph>
+				</PressedInteraction>
+			</PressedInteractions>
+		</TestimonySeries>
+		<TestimonySeries isConflicting="false">
+			<TestimonyParagraph>
+				<Line>But Craig kicked the body into</Line>
+				<Line>the pool and escaped.</Line>
+			</TestimonyParagraph>
+			<PressedInteractions>
+
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>But Circuit Man's body was found</Line>
+						<Line>outside of the pool.</Line>
+					</Paragraph>
+				</PressedInteraction>
+
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>That's right. I wound up pulling</Line>
+						<Line>him out .</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>It didn't feel right to leave</Line>
+						<Line>him just lying in there.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>That... that doesn't count as tampering</Line>
+						<Line>with a crime scene, right?</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Prosecution</Character>
+					<Paragraph>
+						<Line>Now's not the time to worry about that.</Line>
+					</Paragraph>
+				</PressedInteraction>
+			</PressedInteractions>
+		</TestimonySeries>
+		<TestimonySeries isConflicting="false">
+			<TestimonyParagraph>
+				<Line>That's when I called the</Line>
+				<Line>police</Line>
+			</TestimonyParagraph>
+			<PressedInteractions>
+
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>So, you were the one to</Line>
+						<Line>call the police?</Line>
+					</Paragraph>
+				</PressedInteraction>
+
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>Yep, that was me.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>Couldn't leave my friend</Line>
+						<Line>in a bad situation like that!</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>Event if he was dead.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>

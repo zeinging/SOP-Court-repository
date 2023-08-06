@@ -13,7 +13,6 @@ public class CrossExaminationController : MonoBehaviour
 
     public TextAsset firstCaseFile;
     public TextAsset secondCaseFile;
-    public TextAsset thirdCaseFile;
 
     private XElement NotImportantPressedInteractions;
 
@@ -80,7 +79,7 @@ public class CrossExaminationController : MonoBehaviour
 
         switch (character.ToLower())
         {
-            case "phoenix wright":
+            case "defence":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Defence.position);
                     break;
@@ -91,12 +90,17 @@ public class CrossExaminationController : MonoBehaviour
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Judge.position);
                     break;
                 }
-            case "sahwit":
+            case "craig":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
                     break;
                 }
-            case "payne":
+            case "bagel man":
+                {
+                    CameraMover.instance.SnapCamHere(CameraMover.instance.Witness.position);
+                    break;
+                }
+            case "prosecution":
                 {
                     CameraMover.instance.SnapCamHere(CameraMover.instance.Prosector.position);
                     break;
@@ -666,12 +670,6 @@ public class CrossExaminationController : MonoBehaviour
             case 2:
                 {
                     file = secondCaseFile;
-                    break;
-
-                }
-            case 3:
-                {
-                    file = thirdCaseFile;
                     break;
 
                 }

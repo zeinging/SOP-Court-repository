@@ -63,7 +63,7 @@ public class CrossExaminationController : MonoBehaviour
 
     public GameObject CrossExaminationContinueButton;
     public GameObject DialogPanelContinueButton;
-    public GameObject previousButton,NextButton,PressButton,PresentButton;
+    public GameObject previousButton, NextButton, PressButton, PresentButton;
 
     public Text[] displayTexts;
     public Text characterText;
@@ -115,7 +115,8 @@ public class CrossExaminationController : MonoBehaviour
 
     }
 
-    public void CrossExaminationButtons(bool Isactive){
+    public void CrossExaminationButtons(bool Isactive)
+    {
         PressButton.SetActive(Isactive);
         PresentButton.SetActive(Isactive);
         NextButton.SetActive(Isactive);
@@ -497,7 +498,7 @@ public class CrossExaminationController : MonoBehaviour
 
         ParagraphAndCharacterFromPressedInteractionInterator = GetParagraphAndCharacterFromPressedInteractionForCurrentStep(forPressed, item);
 
-        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        _ = ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 
         int index = 0;
@@ -513,7 +514,8 @@ public class CrossExaminationController : MonoBehaviour
     private IEnumerator<(List<string>, string)> NotImportantMessageIterator()
     {
 
-        IEnumerable<XElement> PressedInteractions = NotImportantPressedInteractions.Elements(PRESSED_INTERACTION_XML_TAG);
+
+        IEnumerable<XElement> PressedInteractions = NotImportantPressedInteractions.Element(PRESSED_INTERACTIONS_XML_TAG).Elements(PRESSED_INTERACTION_XML_TAG);
 
         foreach (XElement PressedInteraction in PressedInteractions)
         {
@@ -537,7 +539,7 @@ public class CrossExaminationController : MonoBehaviour
         GameplayControllerScript.instance.Objection(1f);
         DisplayTextsColor(Color.white);
         ParagraphAndCharacterFromPressedInteractionInterator = NotImportantMessageIterator();
-        ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
+        _ = ParagraphAndCharacterFromPressedInteractionInterator.MoveNext();
         (List<string>, string) test2 = ParagraphAndCharacterFromPressedInteractionInterator.Current;
 
         int index = 0;
@@ -655,9 +657,9 @@ public class CrossExaminationController : MonoBehaviour
 
         XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
 
-        reader.ReadToFollowing("Case");
+        _ = reader.ReadToFollowing("Case");
 
-        reader.ReadSubtree();
+        _ = reader.ReadSubtree();
 
 
         XElement element = XElement.Load(reader);
@@ -668,10 +670,7 @@ public class CrossExaminationController : MonoBehaviour
     private XElement LoadFileFromcurrentCrossExaminationFileNumber(int crossExaminationFileNumber)
     {
 
-        TextAsset file = null;
-
-
-
+        TextAsset file;
         switch (crossExaminationFileNumber)
         {
             case 1:
@@ -702,9 +701,9 @@ public class CrossExaminationController : MonoBehaviour
 
         XmlReader reader = XmlReader.Create(new MemoryStream(file.bytes));
 
-        reader.ReadToFollowing("Case");
+        _ = reader.ReadToFollowing("Case");
 
-        reader.ReadSubtree();
+        _ = reader.ReadSubtree();
 
 
         XElement element = XElement.Load(reader);
@@ -753,7 +752,7 @@ public class CrossExaminationController : MonoBehaviour
         {
             // Do stuff
 
-            string value = startAttribute.Value;
+            _ = startAttribute.Value;
 
             // Do stuff with Value. Need mark's help
 

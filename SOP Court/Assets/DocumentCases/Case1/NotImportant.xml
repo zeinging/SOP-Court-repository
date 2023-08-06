@@ -1,7 +1,7 @@
 <Case>
 	<PressedInteractions>
 		<PressedInteraction>
-			<Character>Phoenix Wright</Character>
+			<Character>Defence</Character>
 			<Paragraph>
 				<Line>This evidence clearly reveals</Line>
 				<Line>the contradiction in that</Line>
@@ -17,7 +17,7 @@
 			</Paragraph>
 		</PressedInteraction>
 		<PressedInteraction>
-			<Character>Phoenix Wright</Character>
+			<Character>Defence</Character>
 			<Paragraph>
 				<Line>They aren't, are they...</Line>
 			</Paragraph>
@@ -37,7 +37,7 @@
 			</Paragraph>
 		</PressedInteraction>
 		<PressedInteraction>
-			<Character>Phoenix Wright</Character>
+			<Character>Defence</Character>
 			<Paragraph>
 				<Line>(I don't think that won me</Line>
 				<Line>any points with the judge...)</Line>

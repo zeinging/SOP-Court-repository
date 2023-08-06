@@ -16,7 +16,8 @@
 				<PressedInteraction>
 					<Character>Craig</Character>
 					<Paragraph>
-						<Line>I'd say it was around 2 in the afternoon.</Line>
+						<Line>I'd say it was around 2 in the</Line>
+						<Line>afternoon.</Line>	
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
@@ -131,7 +132,8 @@
 				<PressedInteraction>
 					<Character>Craig</Character>
 					<Paragraph>
-						<Line>Uhh, no one I know. The cashier, maybe?</Line>
+						<Line>Uhh, no one I know. The cashier,</Line>
+						<Line>maybe?</Line>
 					</Paragraph>
 				</PressedInteraction>
 
@@ -157,7 +159,7 @@
 					<Paragraph>
 						<Line>Asking them to single out one</Line>
 						<Line>person they saw would be</Line>
-						<Line>rediculous.</Line>
+						<Line>ridiculous.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>

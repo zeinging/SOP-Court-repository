@@ -1,5 +1,5 @@
 <Case>
-	<CrossExamination onStand="Craig">
+	<CrossExamination continueAfterAllPressed="true" onStand="Craig">
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
 				<Line>I was hanging out with</Line>

@@ -796,6 +796,19 @@ public class CrossExaminationController : MonoBehaviour
 
         OnStandCharacter = crossExamination.Attribute(ON_STAND_XML_ATTRIBUTE).Value;
 
+        XAttribute continueAfterAllPressedAttribue = crossExamination.Attribute(CONTINUE_AFTER_ALL_PRESSED_XML_ATTRIBUTE);
+
+        if (continueAfterAllPressedAttribue != null)
+        {
+
+            if (continueAfterAllPressedAttribue.Value == "true")
+            {
+
+                CurrentCrossExaminationOnlyNeedsAllPresses = true;
+            }
+
+        }
+
         numberOfSeries = crossExamination.Elements(TESTIMONY_SERIES_XML_TAG).Count();
 
     }

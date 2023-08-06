@@ -357,6 +357,10 @@ public class CrossExaminationController : MonoBehaviour
                             // Go to next case
 
 
+
+
+                            AnimationManager.instance.WitnessAnim.runtimeAnimatorController = SuspectProfileScript.instance.SuspectsInOrder[0].myAnim;
+
                             Debug.Log("Need to implement switch to next case");
                             PressedTestimonySeriesIndexes = new List<int>();
                             PressedAllTestimoniesAndNeedToProgressToNextCase = false;

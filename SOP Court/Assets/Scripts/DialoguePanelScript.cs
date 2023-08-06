@@ -47,7 +47,7 @@ public class DialoguePanelScript : MonoBehaviour
 
     public void OpenDialogueBox(float openDelay)
     {
-        StartCoroutine(DelayDialogueBox(openDelay));
+        _ = StartCoroutine(DelayDialogueBox(openDelay));
     }
 
     public void OpenCrossExaminationPanel()
@@ -72,7 +72,7 @@ public class DialoguePanelScript : MonoBehaviour
         StoredDialogue[0] = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue];
         StoredDialogue[1] = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue + 1];
         StoredDialogue[2] = GameplayControllerScript.instance.CurrentSceneDialogue[CurrentDialogue + 2];
-        StartCoroutine(AnimateText());
+        _ = StartCoroutine(AnimateText());
     }
 
     public void CloseDialogueBox()
@@ -95,7 +95,8 @@ public class DialoguePanelScript : MonoBehaviour
     public void Continue()
     {
 
-        if (!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 3)
+        // Putting in 4 here instead of 3 to account for weird extra space
+        if (!isAnimating && CurrentDialogue == GameplayControllerScript.instance.CurrentSceneDialogue.Length - 4)
         {//where dialogue box closes
 
             // Going to disable these for now and will write code to run the cross examination manager
@@ -128,7 +129,7 @@ public class DialoguePanelScript : MonoBehaviour
                 DialogueLines[0].text = "";
                 DialogueLines[1].text = "";
                 DialogueLines[2].text = "";
-                StartCoroutine(AnimateText());
+                _ = StartCoroutine(AnimateText());
             }
             else
             {

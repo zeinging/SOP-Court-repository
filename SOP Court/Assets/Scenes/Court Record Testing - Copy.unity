@@ -10069,6 +10069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   URLTestText: {fileID: 818990128}
   FoldersInDocumentsFolder: []
+  BeginningTextFile: {fileID: 4900000, guid: 38fe31d47a7bf624eb8bf44851be902b, type: 3}
   FilesPathCase1Folder: []
   FilesPathCase2Folder: []
   FilesPathCase3Folder: []

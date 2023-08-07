@@ -105,12 +105,18 @@
 			</TestimonyParagraph>
 			<PressedInteractions>
 				<PressedInteraction>
-					<Character>Prosecutor</Character>
+					<Character>Prosecution</Character>
 					<Paragraph>
-						<Line>As my witnes said, we have</Line>
-						<Line>evidence to support that the</Line>
-						<Line>user of the stick used</Line>
-						<Line>their right hand.</Line>
+						<Line>The finger prints we have of</Line>
+						<Line>the weapon indicate the user was</Line>
+						<Line>using their right hand</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Prosecution</Character>
+					<Paragraph>
+						<Line>This support my client's</Line>
+						<Line>testimony.</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
@@ -286,7 +292,7 @@
 			<PressedInteractions>
 
 				<PressedInteraction>
-					<Character>Prosecutor</Character>
+					<Character>Prosecution</Character>
 					<Paragraph>
 						<Line>What did you do next?</Line>
 					</Paragraph>

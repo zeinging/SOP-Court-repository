@@ -14,6 +14,8 @@ public class CrossExaminationController : MonoBehaviour
     public TextAsset firstCaseFile;
     public TextAsset secondCaseFile;
 
+    public GameObject NotGuiltyText;
+
     private XElement NotImportantPressedInteractions;
 
     private static readonly string CROSS_EXAMINATION_XML_TAG = "CrossExamination";
@@ -428,6 +430,17 @@ public class CrossExaminationController : MonoBehaviour
                         progressingThroughNotImportantDialog = false;
 
                         currentTestimonySeriesIndex = 0;
+
+                        if (currentCrossExaminationFileNumber == 2)
+                        {
+                            NotGuiltyText.SetActive(true);
+
+
+
+                            return;
+                        }
+
+
                         crossExamination = LoadFileFromcurrentCrossExaminationFileNumber(++currentCrossExaminationFileNumber).Element(CROSS_EXAMINATION_XML_TAG);
 
 

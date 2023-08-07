@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a7dca818eec98647a178769f89b8fe5, type: 3}
-  m_Name: Circut Dude's Phone
+  m_Name: Doctor's Note
   m_EditorClassIdentifier: 
-  WitnessName: Circut Dude's Phone
+  WitnessName: Doctor's Note
   ProfileImage: {fileID: 21300000, guid: 9b38ea8bc8d76f7449f26effd043a6a3, type: 3}
   myAnim: {fileID: 0}
-  WitnessProfesion: has a text message threat from Craig.
+  WitnessProfesion: A note stating Craig's right arm is incapacitated.
   WitnessEmoteFrames: []
   Confession: 
   DodgeTatic: 

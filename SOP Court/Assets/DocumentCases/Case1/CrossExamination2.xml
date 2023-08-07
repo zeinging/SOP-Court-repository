@@ -97,204 +97,239 @@
 			</PressedInteractions>
 		</TestimonySeries>
 
-		<TestimonySeries isConflicting="false">
+		<TestimonySeries isConflicting="true">
 			<TestimonyParagraph>
-				<Line>Circuit Man was face-down</Line>
-				<Line>on the ground, bleeding</Line>
-				<Line>out from a head wound.</Line>
+				<Line>As I turned the corner, Craig whacked</Line>
+				<Line>Circuit Dude with a pool cleaning</Line>
+				<Line> stick with his right hand.</Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
 				<PressedInteraction>
-					<Character>Defence</Character>
+					<Character>Prosecution</Character>
 					<Paragraph>
-						<Line>Where was Craig standing</Line>
-						<Line>in this scenario?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>From the way Circuit Man</Line>
-						<Line>was laying, Craig would'</Line>
-						<Line>been...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>...pretty sure it would've been</Line>
-						<Line>behind him.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Defence</Character>
-					<Paragraph>
-						<Line>So it would've been a sneak</Line>
-						<Line>attack?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>Probably, I just saw</Line>
-						<Line>the aftermath.</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-		</TestimonySeries>
-
-		<TestimonySeries isConflicting="false">
-			<TestimonyParagraph>
-				<Line>And Craig was holding a</Line>
-				<Line>pool cleaning stick, the murder</Line>
-				<Line>weapon, I believe.</Line>
-			</TestimonyParagraph>
-			<PressedInteractions>
-
-				<PressedInteraction>
-					<Character>Defence</Character>
-					<Paragraph>
-						<Line>Pool cleaning sticks aren't</Line>
-						<Line>*that* hard. </Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Defence</Character>
-					<Paragraph>
-						<Line>Do you really think that</Line>
-						<Line>killed him?</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>Right, the hard floor around</Line>
-						<Line>the pool.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>Craig probably knocked him</Line>
-						<Line>over with the stick...</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>...And then Circuit Man hit his head badly.</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-		</TestimonySeries>
-
-		<TestimonySeries isConflicting="false">
-			<TestimonyParagraph>
-				<Line>I shouted at him and </Line>
-				<Line>tried to give chase.</Line>
-			</TestimonyParagraph>
-			<PressedInteractions>
-
-				<PressedInteraction>
-					<Character>Defence</Character>
-					<Paragraph>
-						<Line>Did Craig say anything</Line>
-						<Line>back?</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>No, nothing. He seemed more</Line>
-						<Line>surprised that I was there.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>But he sure knew how to run!</Line>
-					</Paragraph>
-				</PressedInteraction>
-			</PressedInteractions>
-		</TestimonySeries>
-		<TestimonySeries isConflicting="false">
-			<TestimonyParagraph>
-				<Line>But Craig kicked the body into</Line>
-				<Line>the pool and escaped.</Line>
-			</TestimonyParagraph>
-			<PressedInteractions>
-
-				<PressedInteraction>
-					<Character>Defence</Character>
-					<Paragraph>
-						<Line>But Circuit Man's body was found</Line>
-						<Line>outside of the pool.</Line>
-					</Paragraph>
-				</PressedInteraction>
-
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>That's right. I wound up pulling</Line>
-						<Line>him out .</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>It didn't feel right to leave</Line>
-						<Line>him just lying in there.</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>That... that doesn't count as tampering</Line>
-						<Line>with a crime scene, right?</Line>
+						<Line>The finger prints we have of</Line>
+						<Line>the weapon indicate the user was</Line>
+						<Line>using their right hand</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
 					<Character>Prosecution</Character>
 					<Paragraph>
-						<Line>Now's not the time to worry about that.</Line>
+						<Line>This support my client's</Line>
+						<Line>testimony.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Are you sure it was Craig?</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>I'm 100% sure.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>What happened after Circuit Dude was hit?</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>
+			<PressedInteractions item="Doctor's Note">
+				
+				
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>The person who commited these acts</Line>
+						<Line>described by Bagel Man</Line>
+						<Line>couldn't have been my client.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Craig has a doctors note indicating</Line>
+						<Line>that his right arm has incapacitated</Line>
+						<Line>for 3 days.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>!!!</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>That's impossible! He</Line>
+						<Line>must've forged that note!</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Prosecution</Character>
+					<Paragraph>
+						<Line>Yes, that would be the most</Line>
+						<Line>logical conclusion!</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>We could check with his doctor</Line>
+						<Line>if the check is fored.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>W-Wha!! I'd bet my</Line>
+						<Line>left food it's forged!</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>We've received the autospy</Line>
+						<Line>report. The cause of death is</Line>
+						<Line>the following:</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>It appears that the victim suffered</Line>
+						<Line>an intial blow to his left ribcage.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>Followed shortly by a much more</Line>
+						<Line>damaging blow to his forehead.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>It appears the victim was then</Line>
+						<Line>submered in water for roughly</Line>
+						<Line>10 minutes.</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>See!! That's EXACTLY what I told</Line>
+						<Line>you! I can't believe you'd believe</Line>
+						<Line>this guy!</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>Now let's move on already and</Line>
+						<Line>convict this guy!</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>Just one second, Bagel Man.</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>I have received notice</Line>
+						<Line>from the Baliff that he</Line>
+						<Line>has validated the doctors note.</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>With this new inforamtion,</Line>
+						<Line>I am intruiged with the fact</Line>
+						<Line>that you, Bagel Man...</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>Stated exactly what happened,</Line>
+						<Line>but with a person who is unable</Line>
+						<Line>to perform these acts.</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>I'll be seeing you shortly,</Line>
+						<Line>Bagel Man, I'm quite sure.</Line>
+					</Paragraph>	
+				</PressedInteraction>
+				
+				<PressedInteraction>
+					<Character>Judge</Character>
+					<Paragraph>
+						<Line>Thus, I find the defendant</Line>
+						<Line>Not Guilty!</Line>
+					</Paragraph>	
+				</PressedInteraction>
+			</PressedInteractions>
 		</TestimonySeries>
+
 		<TestimonySeries isConflicting="false">
 			<TestimonyParagraph>
-				<Line>That's when I called the</Line>
-				<Line>police</Line>
+				<Line>Circuit Dude's head split open</Line>
+				<Line>falling on the concrete. </Line>
 			</TestimonyParagraph>
 			<PressedInteractions>
 
 				<PressedInteraction>
-					<Character>Defence</Character>
+					<Character>Prosecution</Character>
 					<Paragraph>
-						<Line>So, you were the one to</Line>
-						<Line>call the police?</Line>
+						<Line>What did you do next?</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>I immediately stepped back and</Line>
+						<Line>called the police.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Bagel Man</Character>
+					<Paragraph>
+						<Line>I was trying to hide because</Line>
+						<Line>he looked angry.</Line>
 					</Paragraph>
 				</PressedInteraction>
 
 				<PressedInteraction>
 					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Yep, that was me.</Line>
+						<Line>And then Craig pushed Circuit Dude</Line>
+						<Line>into the pool.</Line>
+					</Paragraph>
+				</PressedInteraction>
+				<PressedInteraction>
+					<Character>Defence</Character>
+					<Paragraph>
+						<Line>Where did Craig go after this?</Line>
 					</Paragraph>
 				</PressedInteraction>
 				<PressedInteraction>
 					<Character>Bagel Man</Character>
 					<Paragraph>
-						<Line>Couldn't leave my friend</Line>
-						<Line>in a bad situation like that!</Line>
-					</Paragraph>
-				</PressedInteraction>
-				<PressedInteraction>
-					<Character>Bagel Man</Character>
-					<Paragraph>
-						<Line>Event if he was dead.</Line>
+						<Line>He saw me on the phone with the police.</Line>
+						<Line>He darted away after he saw that.</Line>
 					</Paragraph>
 				</PressedInteraction>
 			</PressedInteractions>

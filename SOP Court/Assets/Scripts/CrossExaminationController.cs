@@ -359,6 +359,8 @@ public class CrossExaminationController : MonoBehaviour
 
 
 
+                            AudioManagerScript.instance.PlayMusic(2);
+
                             AnimationManager.instance.WitnessAnim.runtimeAnimatorController = SuspectProfileScript.instance.SuspectsInOrder[0].myAnim;
 
                             Debug.Log("Need to implement switch to next case");
